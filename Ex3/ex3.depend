@@ -1,0 +1,66 @@
+# depslib dependency file v1.0
+1446671344 source:c:\users\alon\desktop\ex3\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1464527399 source:c:\users\alon\desktop\ex3\splist.c
+	"SPList.h"
+	<stdlib.h>
+
+1464527399 c:\users\alon\desktop\ex3\splist.h
+	<stdbool.h>
+	"SPListElement.h"
+
+1464527399 c:\users\alon\desktop\ex3\splistelement.h
+
+1464527399 source:c:\users\alon\desktop\ex3\splistelement.c
+	"SPListElement.h"
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+
+1464533148 source:c:\users\alon\desktop\ex3\splogger.c
+	"SPLogger.h"
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1464532277 c:\users\alon\desktop\ex3\splogger.h
+
+1464530624 source:c:\users\alon\desktop\ex3\sppoint.c
+	"SPPoint.h"
+	<stdlib.h>
+	<assert.h>
+	<stdio.h>
+
+1464527399 c:\users\alon\desktop\ex3\sppoint.h
+
+1464530700 source:c:\users\alon\desktop\ex3\unit_tests\sp_point_unit_test.c
+	"../SPPoint.h"
+	"unit_test_util.h"
+	<stdbool.h>
+
+1464527399 c:\users\alon\desktop\ex3\unit_tests\unit_test_util.h
+	<stdio.h>
+
+1464533280 source:c:\users\alon\desktop\ex3\unit_tests\sp_logger_unit_test.c
+	<stdbool.h>
+	<stdlib.h>
+	<stdio.h>
+	"unit_test_util.h"
+	"../SPLogger.h"
+
+1464540027 source:c:\users\alon\desktop\ex3\spbpriorityqueue.c
+	"SPBPriorityQueue.h"
+	"SPListElement.h"
+	<stdlib.h>
+	<assert.h>
+
+1464527399 c:\users\alon\desktop\ex3\spbpriorityqueue.h
+	"SPListElement.h"
+	<stdbool.h>
+
+1464539800 source:c:\users\alon\desktop\ex3\sp_bpqueue_unit_test.c
+	<stdio.h>
+	"SPBPriorityQueue.h"
+
