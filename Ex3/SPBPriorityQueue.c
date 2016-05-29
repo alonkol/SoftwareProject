@@ -2,6 +2,7 @@
 #include "SPListElement.h"
 #include <stdlib.h>
 #include <assert.h>
+#include <stdio.h>
 
 struct node* copyNode(struct node* n);
 struct node* newNode(int index, double value);
@@ -26,6 +27,8 @@ SPBPQueue spBPQueueCreate(int maxSize){
     struct sp_bp_queue_t *q = malloc(sizeof(struct sp_bp_queue_t));
     q->maxSize = maxSize;
     q->size = 0;
+    q->first=NULL;
+    q->last=NULL;
     return q;
 }
 
@@ -85,7 +88,7 @@ SPBPQueue spBPQueueCopy(SPBPQueue source){
      }
 
      res->element = spListElementCreate(index, value);
-
+    res->next=NULL;
      return res;
  }
 
@@ -149,7 +152,7 @@ SP_BPQUEUE_MSG spBPQueueEnqueue(SPBPQueue source, SPListElement element){
         free(source->last);
     }
 
-    if (!source->first){
+    if (source->first==NULL){
         source->first = new_node;
         source->last = new_node;
     } else {
@@ -246,14 +249,16 @@ void printQueue(SPBPQueue q){
     printf("size: %d\n", spBPQueueSize(q));
     printf("maxSize: %d\n", spBPQueueGetMaxSize(q));
 
-    //struct node* n = q->first;
-    SPListElement elem = spListElementCreate(2, 1.0);
-    printf("created\n");
-    spListElementGetValue(elem);
-    //while(n){
-        //printf("%f->",spListElementGetValue(n->element));
-      //  n = n->next;
-    //}
+    struct node* n = q->first;
+    //SPListElement elem = spListElementCreate(2, 1.0);
+    //printf("created\n");
+    //spListElementGetValue(elem);
+    while(n){
+        double d=spListElementGetValue(n->element);
+        SPListElement elem = n->element;
+        printf("(%d,%f)->",spListElementGetIndex(elem),spListElementGetValue(elem));
+        n = n->next;
+    }
     printf(" \n");
 }
 
