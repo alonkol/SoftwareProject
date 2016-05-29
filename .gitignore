@@ -41,3 +41,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.cbp
+Ex3/Ex3/bin/Debug/Ex3.exe
+Ex3/Ex3/Ex3.depend
+*.o
