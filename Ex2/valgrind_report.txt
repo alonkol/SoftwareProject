@@ -1,0 +1,1273 @@
+==4000==    by 0xD6244C5: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libcudart.so.7.5.18)
+==4000==    by 0xD61290B: __cudaRegisterFunction (in /usr/local/stow/cuda-7.5.18               /lib/cuda-7.5.18/lib64/libcudart.so.7.5.18)
+==4000==    by 0x4E452B2: __sti____cudaRegisterAll_51_tmpxft_000060d2_00000000_1               3_surf_compute_35_cpp1_ii_7dbebf78() (in /usr/local/stow/opencv-3.1.0/lib/opencv               -3.1.0/lib/libopencv_xfeatures2d.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 88 bytes in 1 blocks are still reachable in loss record 18,488 of 18,61               4
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0xD6244C5: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libcudart.so.7.5.18)
+==4000==    by 0xD61290B: __cudaRegisterFunction (in /usr/local/stow/cuda-7.5.18               /lib/cuda-7.5.18/lib64/libcudart.so.7.5.18)
+==4000==    by 0x4E452F7: __sti____cudaRegisterAll_51_tmpxft_000060d2_00000000_1               3_surf_compute_35_cpp1_ii_7dbebf78() (in /usr/local/stow/opencv-3.1.0/lib/opencv               -3.1.0/lib/libopencv_xfeatures2d.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 88 bytes in 1 blocks are still reachable in loss record 18,489 of 18,61               4
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0xD6244C5: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libcudart.so.7.5.18)
+==4000==    by 0xD61290B: __cudaRegisterFunction (in /usr/local/stow/cuda-7.5.18               /lib/cuda-7.5.18/lib64/libcudart.so.7.5.18)
+==4000==    by 0x4E4533C: __sti____cudaRegisterAll_51_tmpxft_000060d2_00000000_1               3_surf_compute_35_cpp1_ii_7dbebf78() (in /usr/local/stow/opencv-3.1.0/lib/opencv               -3.1.0/lib/libopencv_xfeatures2d.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 88 bytes in 1 blocks are still reachable in loss record 18,490 of 18,61               4
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0xD6244C5: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libcudart.so.7.5.18)
+==4000==    by 0xD61290B: __cudaRegisterFunction (in /usr/local/stow/cuda-7.5.18               /lib/cuda-7.5.18/lib64/libcudart.so.7.5.18)
+==4000==    by 0x4E45381: __sti____cudaRegisterAll_51_tmpxft_000060d2_00000000_1               3_surf_compute_35_cpp1_ii_7dbebf78() (in /usr/local/stow/opencv-3.1.0/lib/opencv               -3.1.0/lib/libopencv_xfeatures2d.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 88 bytes in 1 blocks are still reachable in loss record 18,491 of 18,61               4
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0xD6244C5: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libcudart.so.7.5.18)
+==4000==    by 0xD61290B: __cudaRegisterFunction (in /usr/local/stow/cuda-7.5.18               /lib/cuda-7.5.18/lib64/libcudart.so.7.5.18)
+==4000==    by 0x4E453C6: __sti____cudaRegisterAll_51_tmpxft_000060d2_00000000_1               3_surf_compute_35_cpp1_ii_7dbebf78() (in /usr/local/stow/opencv-3.1.0/lib/opencv               -3.1.0/lib/libopencv_xfeatures2d.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 88 bytes in 1 blocks are still reachable in loss record 18,492 of 18,61               4
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0xD6244C5: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libcudart.so.7.5.18)
+==4000==    by 0xD61290B: __cudaRegisterFunction (in /usr/local/stow/cuda-7.5.18               /lib/cuda-7.5.18/lib64/libcudart.so.7.5.18)
+==4000==    by 0x4E4540B: __sti____cudaRegisterAll_51_tmpxft_000060d2_00000000_1               3_surf_compute_35_cpp1_ii_7dbebf78() (in /usr/local/stow/opencv-3.1.0/lib/opencv               -3.1.0/lib/libopencv_xfeatures2d.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 88 bytes in 1 blocks are still reachable in loss record 18,493 of 18,61               4
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0xD6244C5: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libcudart.so.7.5.18)
+==4000==    by 0xD61290B: __cudaRegisterFunction (in /usr/local/stow/cuda-7.5.18               /lib/cuda-7.5.18/lib64/libcudart.so.7.5.18)
+==4000==    by 0x4E45450: __sti____cudaRegisterAll_51_tmpxft_000060d2_00000000_1               3_surf_compute_35_cpp1_ii_7dbebf78() (in /usr/local/stow/opencv-3.1.0/lib/opencv               -3.1.0/lib/libopencv_xfeatures2d.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 88 bytes in 1 blocks are still reachable in loss record 18,494 of 18,61               4
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0xD6244C5: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libcudart.so.7.5.18)
+==4000==    by 0xD61290B: __cudaRegisterFunction (in /usr/local/stow/cuda-7.5.18               /lib/cuda-7.5.18/lib64/libcudart.so.7.5.18)
+==4000==    by 0x4E45495: __sti____cudaRegisterAll_51_tmpxft_000060d2_00000000_1               3_surf_compute_35_cpp1_ii_7dbebf78() (in /usr/local/stow/opencv-3.1.0/lib/opencv               -3.1.0/lib/libopencv_xfeatures2d.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 96 bytes in 1 blocks are still reachable in loss record 18,495 of 18,61               4
+==4000==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x40118A2: _dl_check_map_versions (dl-version.c:293)
+==4000==    by 0x4014EEC: dl_open_worker (dl-open.c:278)
+==4000==    by 0x400FFF3: _dl_catch_error (dl-error.c:187)
+==4000==    by 0x40143BA: _dl_open (dl-open.c:661)
+==4000==    by 0xED0902A: dlopen_doit (dlopen.c:66)
+==4000==    by 0x400FFF3: _dl_catch_error (dl-error.c:187)
+==4000==    by 0xED0962C: _dlerror_run (dlerror.c:163)
+==4000==    by 0xED090C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==4000==    by 0x7077C77: (anonymous namespace)::opencl_fn3<58, int, unsigned in               t, _cl_platform_id**, unsigned int*>::switch_fn(unsigned int, _cl_platform_id**,                unsigned int*) (in /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_               core.so.3.1.0)
+==4000==    by 0x705E482: cv::ocl::haveOpenCL() (in /usr/local/stow/opencv-3.1.0               /lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x706A684: cv::ocl::useOpenCL() (in /usr/local/stow/opencv-3.1.0/               lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==
+==4000== 100 bytes in 1 blocks are possibly lost in loss record 18,496 of 18,614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x5152B30: cv::PxMEncoder::PxMEncoder() (in /usr/local/stow/openc               v-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x513C515: cv::ImageCodecInitializer::ImageCodecInitializer() (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x5137585: _GLOBAL__sub_I_loadsave.cpp (in /usr/local/stow/opencv               -3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 104 bytes in 1 blocks are still reachable in loss record 18,497 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0xD623D6F: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libcudart.so.7.5.18)
+==4000==    by 0xE6AAA8F: pthread_once (pthread_once.S:103)
+==4000==    by 0xD652228: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libcudart.so.7.5.18)
+==4000==    by 0xD61F426: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libcudart.so.7.5.18)
+==4000==    by 0xD61FE86: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libcudart.so.7.5.18)
+==4000==    by 0xD653655: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libcudart.so.7.5.18)
+==4000==    by 0xD611ACA: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libcudart.so.7.5.18)
+==4000==
+==4000== 104 bytes in 1 blocks are still reachable in loss record 18,498 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x13712D8F: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libcufft.so.7.5.18)
+==4000==    by 0xE6AAA8F: pthread_once (pthread_once.S:103)
+==4000==    by 0x13742178: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libcufft.so.7.5.18)
+==4000==    by 0x13712D14: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libcufft.so.7.5.18)
+==4000==    by 0x13743745: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libcufft.so.7.5.18)
+==4000==    by 0x134F6A92: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libcufft.so.7.5.18)
+==4000==    by 0xFFF000557: ???
+==4000==    by 0x40100FC: call_init.part.0 (dl-init.c:64)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 104 bytes in 1 blocks are still reachable in loss record 18,499 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0xF39B79F: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libnppc.so.7.5.18)
+==4000==    by 0xE6AAA8F: pthread_once (pthread_once.S:103)
+==4000==    by 0xF3CAB88: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libnppc.so.7.5.18)
+==4000==    by 0xF39B724: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libnppc.so.7.5.18)
+==4000==    by 0xF3CC155: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libnppc.so.7.5.18)
+==4000==    by 0xF37EE4A: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libnppc.so.7.5.18)
+==4000==    by 0xFFF000557: ???
+==4000==    by 0x40100FC: call_init.part.0 (dl-init.c:64)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 104 bytes in 1 blocks are still reachable in loss record 18,500 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x10119B2F: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libnppi.so.7.5.18)
+==4000==    by 0xE6AAA8F: pthread_once (pthread_once.S:103)
+==4000==    by 0x10148F18: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libnppi.so.7.5.18)
+==4000==    by 0x10119AB4: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libnppi.so.7.5.18)
+==4000==    by 0x1014A4E5: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libnppi.so.7.5.18)
+==4000==    by 0xF660612: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libnppi.so.7.5.18)
+==4000==    by 0xFFF000557: ???
+==4000==    by 0x40100FC: call_init.part.0 (dl-init.c:64)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 124 bytes in 1 blocks are possibly lost in loss record 18,501 of 18,614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70A5680: cvRegisterType (in /usr/local/stow/opencv-3.1.0/lib/op               encv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70A58B3: CvType::CvType(char const*, int (*)(void const*), void                (*)(void**), void* (*)(CvFileStorage*, CvFileNode*), void (*)(CvFileStorage*, c               har const*, void const*, CvAttrList), void* (*)(void const*)) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A857D: _GLOBAL__sub_I_histogram.cpp (in /usr/local/stow/openc               v-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 125 bytes in 1 blocks are possibly lost in loss record 18,502 of 18,614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70A5680: cvRegisterType (in /usr/local/stow/opencv-3.1.0/lib/op               encv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70A58B3: CvType::CvType(char const*, int (*)(void const*), void                (*)(void**), void* (*)(CvFileStorage*, CvFileNode*), void (*)(CvFileStorage*, c               har const*, void const*, CvAttrList), void* (*)(void const*)) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA2AF: _GLOBAL__sub_I_persistence.cpp (in /usr/local/stow/ope               ncv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 125 bytes in 1 blocks are possibly lost in loss record 18,503 of 18,614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70A5680: cvRegisterType (in /usr/local/stow/opencv-3.1.0/lib/op               encv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70A58B3: CvType::CvType(char const*, int (*)(void const*), void                (*)(void**), void* (*)(CvFileStorage*, CvFileNode*), void (*)(CvFileStorage*, c               har const*, void const*, CvAttrList), void* (*)(void const*)) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA34F: _GLOBAL__sub_I_persistence.cpp (in /usr/local/stow/ope               ncv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 126 bytes in 7 blocks are still reachable in loss record 18,504 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x8741679: strdup (strdup.c:42)
+==4000==    by 0xE8CDEB2: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE8D66DC: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE8D30D3: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE8D32F8: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE6A5181: start_thread (pthread_create.c:312)
+==4000==    by 0x87B330C: clone (clone.S:111)
+==4000==
+==4000== 126 bytes in 1 blocks are possibly lost in loss record 18,505 of 18,614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70A5680: cvRegisterType (in /usr/local/stow/opencv-3.1.0/lib/op               encv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70A58B3: CvType::CvType(char const*, int (*)(void const*), void                (*)(void**), void* (*)(CvFileStorage*, CvFileNode*), void (*)(CvFileStorage*, c               har const*, void const*, CvAttrList), void* (*)(void const*)) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA39F: _GLOBAL__sub_I_persistence.cpp (in /usr/local/stow/ope               ncv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 128 bytes in 1 blocks are still reachable in loss record 18,506 of 18,6               14
+==4000==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpr               eload_memcheck-amd64-linux.so)
+==4000==    by 0x70FC9A6: cv::TLSDataContainer::TLSDataContainer() (in /usr/loca               l/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70FCBF4: cv::getCoreTlsData() (in /usr/local/stow/opencv-3.1.0/               lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x706A665: cv::ocl::useOpenCL() (in /usr/local/stow/opencv-3.1.0/               lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6F290DB: cv::split(cv::_InputArray const&, cv::_OutputArray con               st&) (in /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1               .0)
+==4000==    by 0x4021A8: spGetRGBHist(char*, int) (in /specific/a/home/cc/studen               ts/cs/alonkollmann/SoftwareProj/hw2/ex2)
+==4000==    by 0x40161F: main (in /specific/a/home/cc/students/cs/alonkollmann/S               oftwareProj/hw2/ex2)
+==4000==
+==4000== 128 bytes in 1 blocks are still reachable in loss record 18,507 of 18,6               14
+==4000==    at 0x4C2B800: operator new[](unsigned long) (in /usr/lib/valgrind/vg               preload_memcheck-amd64-linux.so)
+==4000==    by 0xE8D4368: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE8D466B: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE8D6634: tbb::task_scheduler_init::default_num_threads() (in /u               sr/lib/libtbb.so.2)
+==4000==    by 0x55DBF7A: cv::calcHist(cv::Mat const*, int, int const*, cv::_Inp               utArray const&, cv::_OutputArray const&, int, int const*, float const**, bool, b               ool) (in /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.               3.1.0)
+==4000==    by 0x4022B8: spGetRGBHist(char*, int) (in /specific/a/home/cc/studen               ts/cs/alonkollmann/SoftwareProj/hw2/ex2)
+==4000==    by 0x40161F: main (in /specific/a/home/cc/students/cs/alonkollmann/S               oftwareProj/hw2/ex2)
+==4000==
+==4000== 128 bytes in 1 blocks are possibly lost in loss record 18,508 of 18,614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70A5680: cvRegisterType (in /usr/local/stow/opencv-3.1.0/lib/op               encv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70A58B3: CvType::CvType(char const*, int (*)(void const*), void                (*)(void**), void* (*)(CvFileStorage*, CvFileNode*), void (*)(CvFileStorage*, c               har const*, void const*, CvAttrList), void* (*)(void const*)) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA20F: _GLOBAL__sub_I_persistence.cpp (in /usr/local/stow/ope               ncv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 128 bytes in 1 blocks are definitely lost in loss record 18,509 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x1DF2334B: ???
+==4000==    by 0x1E034A6C: ???
+==4000==    by 0x1DFF60AC: ???
+==4000==    by 0x1DEE376C: ???
+==4000==    by 0x1DEE3405: ???
+==4000==    by 0x1DBB6021: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libOpenCL.so)
+==4000==    by 0x1DBB7D41: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libOpenCL.so)
+==4000==    by 0x1DBB74CF: clGetPlatformIDs (in /usr/local/stow/cuda-7.5.18/lib/               cuda-7.5.18/lib64/libOpenCL.so)
+==4000==    by 0x7077AC4: (anonymous namespace)::opencl_fn3<58, int, unsigned in               t, _cl_platform_id**, unsigned int*>::switch_fn(unsigned int, _cl_platform_id**,                unsigned int*) (in /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_               core.so.3.1.0)
+==4000==    by 0x705E482: cv::ocl::haveOpenCL() (in /usr/local/stow/opencv-3.1.0               /lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x706A684: cv::ocl::useOpenCL() (in /usr/local/stow/opencv-3.1.0/               lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==
+==4000== 128 bytes in 1 blocks are definitely lost in loss record 18,510 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x1DF237F1: ???
+==4000==    by 0x1E034A96: ???
+==4000==    by 0x1DFF60AC: ???
+==4000==    by 0x1DEE376C: ???
+==4000==    by 0x1DEE3405: ???
+==4000==    by 0x1DBB6021: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libOpenCL.so)
+==4000==    by 0x1DBB7D41: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libOpenCL.so)
+==4000==    by 0x1DBB74CF: clGetPlatformIDs (in /usr/local/stow/cuda-7.5.18/lib/               cuda-7.5.18/lib64/libOpenCL.so)
+==4000==    by 0x7077AC4: (anonymous namespace)::opencl_fn3<58, int, unsigned in               t, _cl_platform_id**, unsigned int*>::switch_fn(unsigned int, _cl_platform_id**,                unsigned int*) (in /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_               core.so.3.1.0)
+==4000==    by 0x705E482: cv::ocl::haveOpenCL() (in /usr/local/stow/opencv-3.1.0               /lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x706A684: cv::ocl::useOpenCL() (in /usr/local/stow/opencv-3.1.0/               lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==
+==4000== 129 bytes in 1 blocks are possibly lost in loss record 18,511 of 18,614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70A5680: cvRegisterType (in /usr/local/stow/opencv-3.1.0/lib/op               encv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70A58B3: CvType::CvType(char const*, int (*)(void const*), void                (*)(void**), void* (*)(CvFileStorage*, CvFileNode*), void (*)(CvFileStorage*, c               har const*, void const*, CvAttrList), void* (*)(void const*)) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA3EF: _GLOBAL__sub_I_persistence.cpp (in /usr/local/stow/ope               ncv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 133 bytes in 1 blocks are possibly lost in loss record 18,512 of 18,614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70A5680: cvRegisterType (in /usr/local/stow/opencv-3.1.0/lib/op               encv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70A58B3: CvType::CvType(char const*, int (*)(void const*), void                (*)(void**), void* (*)(CvFileStorage*, CvFileNode*), void (*)(CvFileStorage*, c               har const*, void const*, CvAttrList), void* (*)(void const*)) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA25F: _GLOBAL__sub_I_persistence.cpp (in /usr/local/stow/ope               ncv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 133 bytes in 1 blocks are possibly lost in loss record 18,513 of 18,614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70A5680: cvRegisterType (in /usr/local/stow/opencv-3.1.0/lib/op               encv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70A58B3: CvType::CvType(char const*, int (*)(void const*), void                (*)(void**), void* (*)(CvFileStorage*, CvFileNode*), void (*)(CvFileStorage*, c               har const*, void const*, CvAttrList), void* (*)(void const*)) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA2FF: _GLOBAL__sub_I_persistence.cpp (in /usr/local/stow/ope               ncv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 136 bytes in 1 blocks are still reachable in loss record 18,514 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x401447: main (in /specific/a/home/cc/students/cs/alonkollmann/S               oftwareProj/hw2/ex2)
+==4000==
+==4000== 136 bytes in 1 blocks are still reachable in loss record 18,515 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x40147D: main (in /specific/a/home/cc/students/cs/alonkollmann/S               oftwareProj/hw2/ex2)
+==4000==
+==4000== 176 bytes in 1 blocks are still reachable in loss record 18,516 of 18,6               14
+==4000==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpr               eload_memcheck-amd64-linux.so)
+==4000==    by 0x513C5CF: cv::ImageCodecInitializer::ImageCodecInitializer() (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x5137585: _GLOBAL__sub_I_loadsave.cpp (in /usr/local/stow/opencv               -3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 176 bytes in 1 blocks are still reachable in loss record 18,517 of 18,6               14
+==4000==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpr               eload_memcheck-amd64-linux.so)
+==4000==    by 0x513C8D3: cv::ImageCodecInitializer::ImageCodecInitializer() (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x5137585: _GLOBAL__sub_I_loadsave.cpp (in /usr/local/stow/opencv               -3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 184 bytes in 1 blocks are still reachable in loss record 18,518 of 18,6               14
+==4000==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpr               eload_memcheck-amd64-linux.so)
+==4000==    by 0x513BE98: cv::ImageCodecInitializer::ImageCodecInitializer() (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x5137585: _GLOBAL__sub_I_loadsave.cpp (in /usr/local/stow/opencv               -3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 184 bytes in 1 blocks are still reachable in loss record 18,519 of 18,6               14
+==4000==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpr               eload_memcheck-amd64-linux.so)
+==4000==    by 0x513BFFF: cv::ImageCodecInitializer::ImageCodecInitializer() (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x5137585: _GLOBAL__sub_I_loadsave.cpp (in /usr/local/stow/opencv               -3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 192 bytes in 1 blocks are still reachable in loss record 18,520 of 18,6               14
+==4000==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x40118A2: _dl_check_map_versions (dl-version.c:293)
+==4000==    by 0x4014EEC: dl_open_worker (dl-open.c:278)
+==4000==    by 0x400FFF3: _dl_catch_error (dl-error.c:187)
+==4000==    by 0x40143BA: _dl_open (dl-open.c:661)
+==4000==    by 0xED0902A: dlopen_doit (dlopen.c:66)
+==4000==    by 0x400FFF3: _dl_catch_error (dl-error.c:187)
+==4000==    by 0xED0962C: _dlerror_run (dlerror.c:163)
+==4000==    by 0xED090C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==4000==    by 0xE8CB5DA: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE8CB7C2: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE8CE9A3: ??? (in /usr/lib/libtbb.so.2)
+==4000==
+==4000== 208 bytes in 1 blocks are still reachable in loss record 18,521 of 18,6               14
+==4000==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpr               eload_memcheck-amd64-linux.so)
+==4000==    by 0x513C751: cv::ImageCodecInitializer::ImageCodecInitializer() (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x5137585: _GLOBAL__sub_I_loadsave.cpp (in /usr/local/stow/opencv               -3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 222 (128 direct, 94 indirect) bytes in 1 blocks are definitely lost in                loss record 18,522 of 18,614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x1DF233E7: ???
+==4000==    by 0x1E034A6C: ???
+==4000==    by 0x1DFF60AC: ???
+==4000==    by 0x1DEE376C: ???
+==4000==    by 0x1DEE3405: ???
+==4000==    by 0x1DBB6021: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libOpenCL.so)
+==4000==    by 0x1DBB7D41: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libOpenCL.so)
+==4000==    by 0x1DBB74CF: clGetPlatformIDs (in /usr/local/stow/cuda-7.5.18/lib/               cuda-7.5.18/lib64/libOpenCL.so)
+==4000==    by 0x7077AC4: (anonymous namespace)::opencl_fn3<58, int, unsigned in               t, _cl_platform_id**, unsigned int*>::switch_fn(unsigned int, _cl_platform_id**,                unsigned int*) (in /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_               core.so.3.1.0)
+==4000==    by 0x705E482: cv::ocl::haveOpenCL() (in /usr/local/stow/opencv-3.1.0               /lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x706A684: cv::ocl::useOpenCL() (in /usr/local/stow/opencv-3.1.0/               lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==
+==4000== 256 bytes in 1 blocks are still reachable in loss record 18,523 of 18,6               14
+==4000==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpr               eload_memcheck-amd64-linux.so)
+==4000==    by 0x513B7ED: std::vector<cv::Ptr<cv::BaseImageDecoder>, std::alloca               tor<cv::Ptr<cv::BaseImageDecoder> > >::_M_insert_aux(__gnu_cxx::__normal_iterato               r<cv::Ptr<cv::BaseImageDecoder>*, std::vector<cv::Ptr<cv::BaseImageDecoder>, std               ::allocator<cv::Ptr<cv::BaseImageDecoder> > > >, cv::Ptr<cv::BaseImageDecoder> c               onst&) (in /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs               .so.3.1.0)
+==4000==    by 0x513CD18: cv::ImageCodecInitializer::ImageCodecInitializer() (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x5137585: _GLOBAL__sub_I_loadsave.cpp (in /usr/local/stow/opencv               -3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 256 bytes in 1 blocks are still reachable in loss record 18,524 of 18,6               14
+==4000==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpr               eload_memcheck-amd64-linux.so)
+==4000==    by 0x513BB0D: std::vector<cv::Ptr<cv::BaseImageEncoder>, std::alloca               tor<cv::Ptr<cv::BaseImageEncoder> > >::_M_insert_aux(__gnu_cxx::__normal_iterato               r<cv::Ptr<cv::BaseImageEncoder>*, std::vector<cv::Ptr<cv::BaseImageEncoder>, std               ::allocator<cv::Ptr<cv::BaseImageEncoder> > > >, cv::Ptr<cv::BaseImageEncoder> c               onst&) (in /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs               .so.3.1.0)
+==4000==    by 0x513CCD8: cv::ImageCodecInitializer::ImageCodecInitializer() (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x5137585: _GLOBAL__sub_I_loadsave.cpp (in /usr/local/stow/opencv               -3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 256 bytes in 1 blocks are still reachable in loss record 18,525 of 18,6               14
+==4000==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpr               eload_memcheck-amd64-linux.so)
+==4000==    by 0x513CA55: cv::ImageCodecInitializer::ImageCodecInitializer() (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x5137585: _GLOBAL__sub_I_loadsave.cpp (in /usr/local/stow/opencv               -3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 256 bytes in 1 blocks are still reachable in loss record 18,526 of 18,6               14
+==4000==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpr               eload_memcheck-amd64-linux.so)
+==4000==    by 0x70FCAB8: cv::TLSDataContainer::TLSDataContainer() (in /usr/loca               l/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70FCBF4: cv::getCoreTlsData() (in /usr/local/stow/opencv-3.1.0/               lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x706A665: cv::ocl::useOpenCL() (in /usr/local/stow/opencv-3.1.0/               lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6F290DB: cv::split(cv::_InputArray const&, cv::_OutputArray con               st&) (in /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1               .0)
+==4000==    by 0x4021A8: spGetRGBHist(char*, int) (in /specific/a/home/cc/studen               ts/cs/alonkollmann/SoftwareProj/hw2/ex2)
+==4000==    by 0x40161F: main (in /specific/a/home/cc/students/cs/alonkollmann/S               oftwareProj/hw2/ex2)
+==4000==
+==4000== 256 bytes in 1 blocks are still reachable in loss record 18,527 of 18,6               14
+==4000==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpr               eload_memcheck-amd64-linux.so)
+==4000==    by 0x70FDDE8: cv::TLSDataContainer::getData() const (in /usr/local/s               tow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x706A66D: cv::ocl::useOpenCL() (in /usr/local/stow/opencv-3.1.0/               lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6F290DB: cv::split(cv::_InputArray const&, cv::_OutputArray con               st&) (in /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1               .0)
+==4000==    by 0x4021A8: spGetRGBHist(char*, int) (in /specific/a/home/cc/studen               ts/cs/alonkollmann/SoftwareProj/hw2/ex2)
+==4000==    by 0x40161F: main (in /specific/a/home/cc/students/cs/alonkollmann/S               oftwareProj/hw2/ex2)
+==4000==
+==4000== 264 bytes in 1 blocks are still reachable in loss record 18,528 of 18,6               14
+==4000==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpr               eload_memcheck-amd64-linux.so)
+==4000==    by 0x513C163: cv::ImageCodecInitializer::ImageCodecInitializer() (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x5137585: _GLOBAL__sub_I_loadsave.cpp (in /usr/local/stow/opencv               -3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 280 bytes in 1 blocks are still reachable in loss record 18,529 of 18,6               14
+==4000==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpr               eload_memcheck-amd64-linux.so)
+==4000==    by 0x1A99B331: IlmThread::ThreadPool::ThreadPool(unsigned int) (in /               usr/lib/x86_64-linux-gnu/libIlmThread.so.6.0.0)
+==4000==    by 0x1A99A9A1: ??? (in /usr/lib/x86_64-linux-gnu/libIlmThread.so.6.0               .0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 320 bytes in 1 blocks are definitely lost in loss record 18,530 of 18,6               14
+==4000==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x4012E54: _dl_allocate_tls (dl-tls.c:296)
+==4000==    by 0xE6A5DA0: pthread_create@@GLIBC_2.2.5 (allocatestack.c:589)
+==4000==    by 0xE8D2EF0: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE8D3044: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE8D32F8: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE6A5181: start_thread (pthread_create.c:312)
+==4000==    by 0x87B330C: clone (clone.S:111)
+==4000==
+==4000== 336 bytes in 7 blocks are still reachable in loss record 18,531 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0xE8CDE97: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE8D66DC: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE8D30D3: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE8D32F8: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE6A5181: start_thread (pthread_create.c:312)
+==4000==    by 0x87B330C: clone (clone.S:111)
+==4000==
+==4000== 376 bytes in 1 blocks are still reachable in loss record 18,532 of 18,6               14
+==4000==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0xD6241B0: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libcudart.so.7.5.18)
+==4000==    by 0xD612BC7: __cudaRegisterFatBinary (in /usr/local/stow/cuda-7.5.1               8/lib/cuda-7.5.18/lib64/libcudart.so.7.5.18)
+==4000==    by 0x8AD0920: __sti____cudaRegisterAll_56_tmpxft_00003f70_00000000_1               3_threshold_compute_35_cpp1_ii_71482d89() (in /usr/local/stow/opencv-3.1.0/lib/o               pencv-3.1.0/lib/libopencv_cudaarithm.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 408 bytes in 17 blocks are still reachable in loss record 18,533 of 18,               614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x402094: spGetRGBHist(char*, int) (in /specific/a/home/cc/studen               ts/cs/alonkollmann/SoftwareProj/hw2/ex2)
+==4000==    by 0x40161F: main (in /specific/a/home/cc/students/cs/alonkollmann/S               oftwareProj/hw2/ex2)
+==4000==
+==4000== 488 bytes in 1 blocks are still reachable in loss record 18,534 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x4014081: add_to_global (dl-open.c:106)
+==4000==    by 0x4014F4E: dl_open_worker (dl-open.c:582)
+==4000==    by 0x400FFF3: _dl_catch_error (dl-error.c:187)
+==4000==    by 0x40143BA: _dl_open (dl-open.c:661)
+==4000==    by 0xED0902A: dlopen_doit (dlopen.c:66)
+==4000==    by 0x400FFF3: _dl_catch_error (dl-error.c:187)
+==4000==    by 0xED0962C: _dlerror_run (dlerror.c:163)
+==4000==    by 0xED090C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==4000==    by 0x7077C77: (anonymous namespace)::opencl_fn3<58, int, unsigned in               t, _cl_platform_id**, unsigned int*>::switch_fn(unsigned int, _cl_platform_id**,                unsigned int*) (in /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_               core.so.3.1.0)
+==4000==    by 0x705E482: cv::ocl::haveOpenCL() (in /usr/local/stow/opencv-3.1.0               /lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x706A684: cv::ocl::useOpenCL() (in /usr/local/stow/opencv-3.1.0/               lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==
+==4000== 640 bytes in 2 blocks are possibly lost in loss record 18,535 of 18,614
+==4000==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x4012E54: _dl_allocate_tls (dl-tls.c:296)
+==4000==    by 0xE6A5DA0: pthread_create@@GLIBC_2.2.5 (allocatestack.c:589)
+==4000==    by 0xE8D2EF0: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE8D9DA9: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0x55E4D82: void tbb::interface6::internal::partition_type_base<tb               b::interface6::internal::auto_partition_type>::execute<tbb::interface6::internal               ::start_for<tbb::blocked_range<int>, cv::CalcHist1D_8uInvoker, tbb::auto_partiti               oner const>, tbb::blocked_range<int> >(tbb::interface6::internal::start_for<tbb:               :blocked_range<int>, cv::CalcHist1D_8uInvoker, tbb::auto_partitioner const>&, tb               b::blocked_range<int>&) (in /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/li               bopencv_imgproc.so.3.1.0)
+==4000==    by 0x55E5518: tbb::interface6::internal::start_for<tbb::blocked_rang               e<int>, cv::CalcHist1D_8uInvoker, tbb::auto_partitioner const>::execute() (in /u               sr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0xE8DBB39: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE8D9F8F: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0x55DC1A8: cv::calcHist(cv::Mat const*, int, int const*, cv::_Inp               utArray const&, cv::_OutputArray const&, int, int const*, float const**, bool, b               ool) (in /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.               3.1.0)
+==4000==    by 0x4022B8: spGetRGBHist(char*, int) (in /specific/a/home/cc/studen               ts/cs/alonkollmann/SoftwareProj/hw2/ex2)
+==4000==    by 0x40161F: main (in /specific/a/home/cc/students/cs/alonkollmann/S               oftwareProj/hw2/ex2)
+==4000==
+==4000== 856 bytes in 1 blocks are still reachable in loss record 18,536 of 18,6               14
+==4000==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x137138B1: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libcufft.so.7.5.18)
+==4000==    by 0x136F9917: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libcufft.so.7.5.18)
+==4000==    by 0x1355C93E: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libcufft.so.7.5.18)
+==4000==    by 0x13743745: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libcufft.so.7.5.18)
+==4000==    by 0x134F6A92: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libcufft.so.7.5.18)
+==4000==    by 0xFFF000557: ???
+==4000==    by 0x40100FC: call_init.part.0 (dl-init.c:64)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 1,040 bytes in 1 blocks are still reachable in loss record 18,537 of 18               ,614
+==4000==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x86F46E0: __new_exitfn (cxa_atexit.c:101)
+==4000==    by 0x86F4788: __cxa_atexit (cxa_atexit.c:35)
+==4000==    by 0x1A0F9213: _GLOBAL__sub_I_flann.cpp (in /usr/local/stow/opencv-3               .1.0/lib/opencv-3.1.0/lib/libopencv_flann.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 1,040 bytes in 1 blocks are still reachable in loss record 18,538 of 18               ,614
+==4000==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x86F46E0: __new_exitfn (cxa_atexit.c:101)
+==4000==    by 0x86F4788: __cxa_atexit (cxa_atexit.c:35)
+==4000==    by 0xF794782: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libnppi.so.7.5.18)
+==4000==    by 0x1014A4E5: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libnppi.so.7.5.18)
+==4000==    by 0xF660612: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libnppi.so.7.5.18)
+==4000==    by 0xFFF000557: ???
+==4000==    by 0x40100FC: call_init.part.0 (dl-init.c:64)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 1,040 bytes in 1 blocks are still reachable in loss record 18,539 of 18               ,614
+==4000==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x86F46E0: __new_exitfn (cxa_atexit.c:101)
+==4000==    by 0x86F4788: __cxa_atexit (cxa_atexit.c:35)
+==4000==    by 0x54A8BC7: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 1,040 bytes in 1 blocks are possibly lost in loss record 18,540 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA726: _GLOBAL__sub_I_opencl_kernels_core.cpp (in /usr/local/               stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 1,080 bytes in 1 blocks are possibly lost in loss record 18,541 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA563: _GLOBAL__sub_I_opencl_kernels_core.cpp (in /usr/local/               stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 1,181 bytes in 1 blocks are still reachable in loss record 18,542 of 18               ,614
+==4000==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x400BB23: _dl_new_object (dl-object.c:75)
+==4000==    by 0x4006783: _dl_map_object_from_fd (dl-load.c:1059)
+==4000==    by 0x4008DFF: _dl_map_object (dl-load.c:2605)
+==4000==    by 0x4014A53: dl_open_worker (dl-open.c:235)
+==4000==    by 0x400FFF3: _dl_catch_error (dl-error.c:187)
+==4000==    by 0x40143BA: _dl_open (dl-open.c:661)
+==4000==    by 0xED0902A: dlopen_doit (dlopen.c:66)
+==4000==    by 0x400FFF3: _dl_catch_error (dl-error.c:187)
+==4000==    by 0xED0962C: _dlerror_run (dlerror.c:163)
+==4000==    by 0xED090C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==4000==    by 0x7077C77: (anonymous namespace)::opencl_fn3<58, int, unsigned in               t, _cl_platform_id**, unsigned int*>::switch_fn(unsigned int, _cl_platform_id**,                unsigned int*) (in /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_               core.so.3.1.0)
+==4000==
+==4000== 1,192 bytes in 1 blocks are possibly lost in loss record 18,543 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA7F3: _GLOBAL__sub_I_opencl_kernels_core.cpp (in /usr/local/               stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 1,195 bytes in 1 blocks are still reachable in loss record 18,544 of 18               ,614
+==4000==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x400BB23: _dl_new_object (dl-object.c:75)
+==4000==    by 0x4006783: _dl_map_object_from_fd (dl-load.c:1059)
+==4000==    by 0x4008DFF: _dl_map_object (dl-load.c:2605)
+==4000==    by 0x4014A53: dl_open_worker (dl-open.c:235)
+==4000==    by 0x400FFF3: _dl_catch_error (dl-error.c:187)
+==4000==    by 0x40143BA: _dl_open (dl-open.c:661)
+==4000==    by 0xED0902A: dlopen_doit (dlopen.c:66)
+==4000==    by 0x400FFF3: _dl_catch_error (dl-error.c:187)
+==4000==    by 0xED0962C: _dlerror_run (dlerror.c:163)
+==4000==    by 0xED090C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==4000==    by 0xE8CB5DA: ??? (in /usr/lib/libtbb.so.2)
+==4000==
+==4000== 1,256 bytes in 1 blocks are still reachable in loss record 18,545 of 18               ,614
+==4000==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x1011A651: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libnppi.so.7.5.18)
+==4000==    by 0x101006B7: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libnppi.so.7.5.18)
+==4000==    by 0xF9B405E: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libnppi.so.7.5.18)
+==4000==    by 0x1014A4E5: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libnppi.so.7.5.18)
+==4000==    by 0xF660612: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libnppi.so.7.5.18)
+==4000==    by 0xFFF000557: ???
+==4000==    by 0x40100FC: call_init.part.0 (dl-init.c:64)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 1,264 bytes in 1 blocks are still reachable in loss record 18,546 of 18               ,614
+==4000==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpr               eload_memcheck-amd64-linux.so)
+==4000==    by 0x513BD2C: cv::ImageCodecInitializer::ImageCodecInitializer() (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x5137585: _GLOBAL__sub_I_loadsave.cpp (in /usr/local/stow/opencv               -3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 1,264 bytes in 1 blocks are still reachable in loss record 18,547 of 18               ,614
+==4000==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpr               eload_memcheck-amd64-linux.so)
+==4000==    by 0x513C449: cv::ImageCodecInitializer::ImageCodecInitializer() (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x5137585: _GLOBAL__sub_I_loadsave.cpp (in /usr/local/stow/opencv               -3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 1,264 bytes in 1 blocks are possibly lost in loss record 18,548 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA74F: _GLOBAL__sub_I_opencl_kernels_core.cpp (in /usr/local/               stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 1,272 bytes in 1 blocks are still reachable in loss record 18,549 of 18               ,614
+==4000==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpr               eload_memcheck-amd64-linux.so)
+==4000==    by 0x513C2C7: cv::ImageCodecInitializer::ImageCodecInitializer() (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x5137585: _GLOBAL__sub_I_loadsave.cpp (in /usr/local/stow/opencv               -3.1.0/lib/opencv-3.1.0/lib/libopencv_imgcodecs.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 1,276 bytes in 1 blocks are possibly lost in loss record 18,550 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A8B88: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 1,280 bytes in 4 blocks are possibly lost in loss record 18,551 of 18,6               14
+==4000==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x4012E54: _dl_allocate_tls (dl-tls.c:296)
+==4000==    by 0xE6A5DA0: pthread_create@@GLIBC_2.2.5 (allocatestack.c:589)
+==4000==    by 0xE8D2EF0: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE8D3044: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE8D32F8: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE6A5181: start_thread (pthread_create.c:312)
+==4000==    by 0x87B330C: clone (clone.S:111)
+==4000==
+==4000== 1,348 bytes in 1 blocks are possibly lost in loss record 18,552 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA81C: _GLOBAL__sub_I_opencl_kernels_core.cpp (in /usr/local/               stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 1,408 bytes in 1 blocks are possibly lost in loss record 18,553 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A8ABB: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 1,488 bytes in 31 blocks are still reachable in loss record 18,554 of 1               8,614
+==4000==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpr               eload_memcheck-amd64-linux.so)
+==4000==    by 0x70F9A34: cv::Mutex::Mutex() (in /usr/local/stow/opencv-3.1.0/li               b/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA4BF: _GLOBAL__sub_I_umatrix.cpp (in /usr/local/stow/opencv-               3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 1,600 bytes in 1 blocks are possibly lost in loss record 18,555 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A870C: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 1,716 bytes in 1 blocks are possibly lost in loss record 18,556 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA778: _GLOBAL__sub_I_opencl_kernels_core.cpp (in /usr/local/               stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 1,968 bytes in 1 blocks are possibly lost in loss record 18,557 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA845: _GLOBAL__sub_I_opencl_kernels_core.cpp (in /usr/local/               stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 2,040 bytes in 51 blocks are still reachable in loss record 18,558 of 1               8,614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x4024B8: spGetRGBHist(char*, int) (in /specific/a/home/cc/studen               ts/cs/alonkollmann/SoftwareProj/hw2/ex2)
+==4000==    by 0x40161F: main (in /specific/a/home/cc/students/cs/alonkollmann/S               oftwareProj/hw2/ex2)
+==4000==
+==4000== 2,088 bytes in 1 blocks are possibly lost in loss record 18,559 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A86B3: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 2,376 bytes in 1 blocks are possibly lost in loss record 18,560 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA659: _GLOBAL__sub_I_opencl_kernels_core.cpp (in /usr/local/               stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 2,400 bytes in 1 blocks are possibly lost in loss record 18,561 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A88A6: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 2,416 bytes in 1 blocks are possibly lost in loss record 18,562 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA5B5: _GLOBAL__sub_I_opencl_kernels_core.cpp (in /usr/local/               stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 2,492 bytes in 1 blocks are possibly lost in loss record 18,563 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA58C: _GLOBAL__sub_I_opencl_kernels_core.cpp (in /usr/local/               stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 2,500 bytes in 1 blocks are possibly lost in loss record 18,564 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA86E: _GLOBAL__sub_I_opencl_kernels_core.cpp (in /usr/local/               stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 2,544 bytes in 1 blocks are possibly lost in loss record 18,565 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA682: _GLOBAL__sub_I_opencl_kernels_core.cpp (in /usr/local/               stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 2,632 bytes in 1 blocks are possibly lost in loss record 18,566 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A86E3: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 2,692 bytes in 1 blocks are possibly lost in loss record 18,567 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A875E: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 2,912 bytes in 1 blocks are possibly lost in loss record 18,568 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A894A: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 3,040 bytes in 1 blocks are possibly lost in loss record 18,569 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA6D4: _GLOBAL__sub_I_opencl_kernels_core.cpp (in /usr/local/               stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 3,096 bytes in 3 blocks are possibly lost in loss record 18,570 of 18,6               14
+==4000==    at 0x4C2B800: operator new[](unsigned long) (in /usr/lib/valgrind/vg               preload_memcheck-amd64-linux.so)
+==4000==    by 0xE8D823B: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE8D85BD: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE8D6B02: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE8D6359: ??? (in /usr/lib/libtbb.so.2)
+==4000==    by 0xE8D4800: tbb::internal::allocate_root_with_context_proxy::alloc               ate(unsigned long) const (in /usr/lib/libtbb.so.2)
+==4000==    by 0x55DC0E8: cv::calcHist(cv::Mat const*, int, int const*, cv::_Inp               utArray const&, cv::_OutputArray const&, int, int const*, float const**, bool, b               ool) (in /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.               3.1.0)
+==4000==    by 0x4022B8: spGetRGBHist(char*, int) (in /specific/a/home/cc/studen               ts/cs/alonkollmann/SoftwareProj/hw2/ex2)
+==4000==    by 0x40161F: main (in /specific/a/home/cc/students/cs/alonkollmann/S               oftwareProj/hw2/ex2)
+==4000==
+==4000== 3,120 bytes in 3 blocks are still reachable in loss record 18,571 of 18               ,614
+==4000==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x86F46E0: __new_exitfn (cxa_atexit.c:101)
+==4000==    by 0x86F4788: __cxa_atexit (cxa_atexit.c:35)
+==4000==    by 0x13743745: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libcufft.so.7.5.18)
+==4000==    by 0x134F6A92: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libcufft.so.7.5.18)
+==4000==    by 0xFFF000557: ???
+==4000==    by 0x40100FC: call_init.part.0 (dl-init.c:64)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 3,416 bytes in 1 blocks are possibly lost in loss record 18,572 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA6AB: _GLOBAL__sub_I_opencl_kernels_core.cpp (in /usr/local/               stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 3,556 bytes in 1 blocks are possibly lost in loss record 18,573 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA630: _GLOBAL__sub_I_opencl_kernels_core.cpp (in /usr/local/               stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 3,688 bytes in 1 blocks are possibly lost in loss record 18,574 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A8973: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 3,820 bytes in 1 blocks are possibly lost in loss record 18,575 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A88F8: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 3,932 bytes in 1 blocks are possibly lost in loss record 18,576 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0xD34BB13: _GLOBAL__sub_I_opencl_kernels_features2d.cpp (in /usr/               local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_features2d.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 4,072 bytes in 1 blocks are possibly lost in loss record 18,577 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A8A92: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 4,160 bytes in 4 blocks are still reachable in loss record 18,578 of 18               ,614
+==4000==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x86F46E0: __new_exitfn (cxa_atexit.c:101)
+==4000==    by 0x86F4788: __cxa_atexit (cxa_atexit.c:35)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 4,412 bytes in 1 blocks are possibly lost in loss record 18,579 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A8A69: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 4,492 bytes in 1 blocks are possibly lost in loss record 18,580 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA7CA: _GLOBAL__sub_I_opencl_kernels_core.cpp (in /usr/local/               stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 4,524 bytes in 1 blocks are possibly lost in loss record 18,581 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A87B0: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 4,584 bytes in 1 blocks are possibly lost in loss record 18,582 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA5DE: _GLOBAL__sub_I_opencl_kernels_core.cpp (in /usr/local/               stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 4,624 bytes in 1 blocks are possibly lost in loss record 18,583 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A89C5: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 4,776 bytes in 1 blocks are possibly lost in loss record 18,584 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A8735: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 4,780 bytes in 1 blocks are possibly lost in loss record 18,585 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A89EE: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 4,932 bytes in 1 blocks are possibly lost in loss record 18,586 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A8854: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 5,132 bytes in 1 blocks are possibly lost in loss record 18,587 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A87D9: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 5,856 bytes in 1 blocks are possibly lost in loss record 18,588 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0xD34BB3C: _GLOBAL__sub_I_opencl_kernels_features2d.cpp (in /usr/               local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_features2d.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 5,932 bytes in 1 blocks are possibly lost in loss record 18,589 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A8B0D: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 6,024 bytes in 1 blocks are definitely lost in loss record 18,590 of 18               ,614
+==4000==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x1DF25E9E: ???
+==4000==    by 0x1DF233C5: ???
+==4000==    by 0x1E034A6C: ???
+==4000==    by 0x1DFF60AC: ???
+==4000==    by 0x1DEE376C: ???
+==4000==    by 0x1DEE3405: ???
+==4000==    by 0x1DBB6021: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libOpenCL.so)
+==4000==    by 0x1DBB7D41: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libOpenCL.so)
+==4000==    by 0x1DBB74CF: clGetPlatformIDs (in /usr/local/stow/cuda-7.5.18/lib/               cuda-7.5.18/lib64/libOpenCL.so)
+==4000==    by 0x7077AC4: (anonymous namespace)::opencl_fn3<58, int, unsigned in               t, _cl_platform_id**, unsigned int*>::switch_fn(unsigned int, _cl_platform_id**,                unsigned int*) (in /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_               core.so.3.1.0)
+==4000==    by 0x705E482: cv::ocl::haveOpenCL() (in /usr/local/stow/opencv-3.1.0               /lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==
+==4000== 6,024 bytes in 1 blocks are definitely lost in loss record 18,591 of 18               ,614
+==4000==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x1DF25E9E: ???
+==4000==    by 0x1DF21CD8: ???
+==4000==    by 0x1E034AC3: ???
+==4000==    by 0x1DFF60AC: ???
+==4000==    by 0x1DEE376C: ???
+==4000==    by 0x1DEE3405: ???
+==4000==    by 0x1DBB6021: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libOpenCL.so)
+==4000==    by 0x1DBB7D41: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libOpenCL.so)
+==4000==    by 0x1DBB74CF: clGetPlatformIDs (in /usr/local/stow/cuda-7.5.18/lib/               cuda-7.5.18/lib64/libOpenCL.so)
+==4000==    by 0x7077AC4: (anonymous namespace)::opencl_fn3<58, int, unsigned in               t, _cl_platform_id**, unsigned int*>::switch_fn(unsigned int, _cl_platform_id**,                unsigned int*) (in /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_               core.so.3.1.0)
+==4000==    by 0x705E482: cv::ocl::haveOpenCL() (in /usr/local/stow/opencv-3.1.0               /lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==
+==4000== 6,208 bytes in 1 blocks are possibly lost in loss record 18,592 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A8BDA: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 7,520 bytes in 1 blocks are possibly lost in loss record 18,593 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A8802: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 7,700 bytes in 1 blocks are possibly lost in loss record 18,594 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A8AE4: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 7,760 bytes in 1 blocks are possibly lost in loss record 18,595 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA6FD: _GLOBAL__sub_I_opencl_kernels_core.cpp (in /usr/local/               stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 7,792 bytes in 1 blocks are possibly lost in loss record 18,596 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A899C: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 8,320 bytes in 8 blocks are still reachable in loss record 18,597 of 18               ,614
+==4000==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x86F46E0: __new_exitfn (cxa_atexit.c:101)
+==4000==    by 0x86F4788: __cxa_atexit (cxa_atexit.c:35)
+==4000==    by 0x1014A4E5: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/l               ib64/libnppi.so.7.5.18)
+==4000==    by 0xF660612: ??? (in /usr/local/stow/cuda-7.5.18/lib/cuda-7.5.18/li               b64/libnppi.so.7.5.18)
+==4000==    by 0xFFF000557: ???
+==4000==    by 0x40100FC: call_init.part.0 (dl-init.c:64)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 8,424 bytes in 1 blocks are possibly lost in loss record 18,598 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A8B5F: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 8,480 bytes in 1 blocks are possibly lost in loss record 18,599 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A887D: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 8,660 bytes in 1 blocks are possibly lost in loss record 18,600 of 18,6               14
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A8787: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 10,296 bytes in 1 blocks are possibly lost in loss record 18,601 of 18,               614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A88CF: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 10,952 bytes in 1 blocks are possibly lost in loss record 18,602 of 18,               614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A8921: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 11,264 bytes in 1 blocks are possibly lost in loss record 18,603 of 18,               614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A8BB1: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 11,716 bytes in 1 blocks are possibly lost in loss record 18,604 of 18,               614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA533: _GLOBAL__sub_I_opencl_kernels_core.cpp (in /usr/local/               stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 12,404 bytes in 1 blocks are possibly lost in loss record 18,605 of 18,               614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0xD34BAE3: _GLOBAL__sub_I_opencl_kernels_features2d.cpp (in /usr/               local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_features2d.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 12,420 bytes in 1 blocks are possibly lost in loss record 18,606 of 18,               614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A8A40: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 13,632 bytes in 17 blocks are still reachable in loss record 18,607 of                18,614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x402B9D: spGetSiftDescriptors(char*, int, int*) (in /specific/a/               home/cc/students/cs/alonkollmann/SoftwareProj/hw2/ex2)
+==4000==    by 0x4016A4: main (in /specific/a/home/cc/students/cs/alonkollmann/S               oftwareProj/hw2/ex2)
+==4000==
+==4000== 16,496 bytes in 1 blocks are possibly lost in loss record 18,608 of 18,               614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA7A1: _GLOBAL__sub_I_opencl_kernels_core.cpp (in /usr/local/               stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 16,776 bytes in 1 blocks are possibly lost in loss record 18,609 of 18,               614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A8B36: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 17,008 bytes in 1 blocks are possibly lost in loss record 18,610 of 18,               614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A8A17: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 22,344 bytes in 1 blocks are possibly lost in loss record 18,611 of 18,               614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x6EBA607: _GLOBAL__sub_I_opencl_kernels_core.cpp (in /usr/local/               stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 42,440 bytes in 1 blocks are possibly lost in loss record 18,612 of 18,               614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x4E451D6: _GLOBAL__sub_I_opencl_kernels_xfeatures2d.cpp (in /usr               /local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_xfeatures2d.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 53,856 bytes in 1 blocks are possibly lost in loss record 18,613 of 18,               614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x6EBF401: cv::fastMalloc(unsigned long) (in /usr/local/stow/open               cv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70F830C: cv::String::allocate(unsigned long) (in /usr/local/sto               w/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x70615E0: cv::ocl::ProgramSource::ProgramSource(char const*) (in                /usr/local/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_core.so.3.1.0)
+==4000==    by 0x54A882B: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/loc               al/stow/opencv-3.1.0/lib/opencv-3.1.0/lib/libopencv_imgproc.so.3.1.0)
+==4000==    by 0x4010139: call_init.part.0 (dl-init.c:78)
+==4000==    by 0x4010222: _dl_init (dl-init.c:36)
+==4000==    by 0x4001309: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==4000==
+==4000== 1,744,896 bytes in 1,704 blocks are still reachable in loss record 18,6               14 of 18,614
+==4000==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-               linux.so)
+==4000==    by 0x402C08: spGetSiftDescriptors(char*, int, int*) (in /specific/a/               home/cc/students/cs/alonkollmann/SoftwareProj/hw2/ex2)
+==4000==    by 0x4016A4: main (in /specific/a/home/cc/students/cs/alonkollmann/S               oftwareProj/hw2/ex2)
+==4000==
+==4000== LEAK SUMMARY:
+==4000==    definitely lost: 12,752 bytes in 6 blocks
+==4000==    indirectly lost: 94 bytes in 4 blocks
+==4000==      possibly lost: 426,251 bytes in 93 blocks
+==4000==    still reachable: 3,349,595 bytes in 20,356 blocks
+==4000==         suppressed: 0 bytes in 0 blocks
+==4000==
+==4000== For counts of detected and suppressed errors, rerun with: -v
+==4000== ERROR SUMMARY: 107 errors from 95 contexts (suppressed: 0 from 0)

@@ -1,0 +1,8 @@
+Welcome to Math Is Fun - beta version
+Supported operations are:
+1 - Power Calculation
+2 - Prime Check
+3 - Palindrome Check
+Please enter operation number (1/2/3): 
+Please enter three space separated numbers: 
+res = 5
