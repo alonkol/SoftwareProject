@@ -7,6 +7,9 @@
 struct node* copyNode(struct node* n);
 struct node* newNode(int index, double value);
 
+/**
+ * The queue is implemented as a linked list, consisted of nodes.
+ */
 struct sp_bp_queue_t{
   struct node* first;
   struct node* last;
@@ -14,17 +17,51 @@ struct sp_bp_queue_t{
   int size;
 };
 
+/**
+ * A node contains an element and a pointer to the next node.
+ */
 struct node{
     SPListElement element;
     struct node* next;
 };
 
+/**
+ * Allocates a node in the memory.
+ *
+ * @param node to copy
+ * @return
+ * NULL in case allocation failure occurred
+ * Otherwise, the new node is returned
+ */
+ struct node* newNode(int index, double value){
+     struct node *res = malloc(sizeof(struct node));
+     if (!res){
+        return NULL;
+     }
+
+    res->element = spListElementCreate(index, value);
+    res->next=NULL;
+    return res;
+ }
 
 /**
- * TODO Complete documentation
+ * Creates a separate copy of a node
+ *
+ * @param node to be copied
+ * @return
+ * NULL in case allocation failure occurred
+ * Otherwise, the new node is returned
  */
+ struct node* copyNode(struct node *n){
+     return newNode(spListElementGetIndex(n->element), spListElementGetValue(n->element));
+ }
+
 SPBPQueue spBPQueueCreate(int maxSize){
+    if (maxSize < 0) return NULL;
     struct sp_bp_queue_t *q = malloc(sizeof(struct sp_bp_queue_t));
+    if (!q){
+        return NULL;
+    }
     q->maxSize = maxSize;
     q->size = 0;
     q->first=NULL;
@@ -32,25 +69,18 @@ SPBPQueue spBPQueueCreate(int maxSize){
     return q;
 }
 
-/**
- * TODO Complete documentation
- */
 SPBPQueue spBPQueueCopy(SPBPQueue source){
     SPBPQueue res = spBPQueueCreate(source->maxSize);
-    //struct sp_bp_queue_t *res = malloc(sizeof(struct sp_bp_queue_t));
     if (!res){
         return NULL;
      }
-     //spBPQueueCreate
-    //res->maxSize = source->maxSize;
+
     res->size = source->size;
-    printQueue(res);
     struct node *n = source->first;
     struct node *newNode;
     struct node *prevNode;
 
     res->first = copyNode(n);
-    printQueue(res);
     prevNode = res->first;
     n = n->next;
 
@@ -60,62 +90,26 @@ SPBPQueue spBPQueueCopy(SPBPQueue source){
 
         prevNode = newNode;
         n = n->next;
-        printQueue(res);
     }
     res->last = prevNode;
 
     return res;
 }
 
-
-/**
- * TODO Complete documentation
- */
- struct node* copyNode(struct node *n){
-     struct node *res = malloc(sizeof(struct node));
-     if (!res){
-        return NULL;
-     }
-
-     res->element = spListElementCopy(n->element);
-     res->next=NULL;
-     return res;
- }
-
- /**
- * TODO Complete documentation
- */
- struct node* newNode(int index, double value){
-     struct node *res = malloc(sizeof(struct node));
-     if (!res){
-        return NULL;
-     }
-
-     res->element = spListElementCreate(index, value);
-    res->next=NULL;
-     return res;
- }
-
-
-/**
- * TODO Complete documentation
- */
 void spBPQueueDestroy(SPBPQueue source){
     spBPQueueClear(source);
     free(source);
 }
 
-/**
- * TODO Complete documentation
- */
 void spBPQueueClear(SPBPQueue source){
+    if (!source) return;
     struct node* n = source->first;
+    if (!n) return;
     struct node* next = n->next;
     while(n){
         next = n->next;
         spListElementDestroy(n->element);
         free(n);
-        n=NULL;
         n = next;
     }
     source->size = 0;
@@ -123,23 +117,16 @@ void spBPQueueClear(SPBPQueue source){
     source->last=NULL;
 }
 
-/**
- * TODO Complete documentation
- */
 int spBPQueueSize(SPBPQueue source){
+    if (!source) return -1;
     return source->size;
 }
 
-/**
- * TODO Complete documentation
- */
 int spBPQueueGetMaxSize(SPBPQueue source){
+    if (!source) return -1;
     return source->maxSize;
 }
 
-/**
- * TODO Complete documentation
- */
 SP_BPQUEUE_MSG spBPQueueEnqueue(SPBPQueue source, SPListElement element){
 
     if (!source || !element){
@@ -154,7 +141,7 @@ SP_BPQUEUE_MSG spBPQueueEnqueue(SPBPQueue source, SPListElement element){
     struct node* n = source->first;
     int i;
 
-    if (source->size == source->maxSize){
+    if (source->size >= source->maxSize){
         if (spListElementCompare(new_node->element, source->last->element) == 1) return SP_BPQUEUE_FULL;
         free(source->last);
 
@@ -163,8 +150,8 @@ SP_BPQUEUE_MSG spBPQueueEnqueue(SPBPQueue source, SPListElement element){
         }
         n->next=NULL;
     }
-    n=source->first;
-    if (source->first==NULL){
+    n = source->first;
+    if (!source->first){
         source->first = new_node;
         source->last = new_node;
     } else {
@@ -194,9 +181,6 @@ SP_BPQUEUE_MSG spBPQueueEnqueue(SPBPQueue source, SPListElement element){
 	return SP_BPQUEUE_SUCCESS;
 }
 
-/**
- * TODO Complete documentation
- */
 SP_BPQUEUE_MSG spBPQueueDequeue(SPBPQueue source){
 
     if (!source) return SP_BPQUEUE_INVALID_ARGUMENT;
@@ -211,47 +195,33 @@ SP_BPQUEUE_MSG spBPQueueDequeue(SPBPQueue source){
     return SP_BPQUEUE_SUCCESS;
 }
 
-/**
- * TODO Complete documentation
- */
 SPListElement spBPQueuePeek(SPBPQueue source){
+    if (!source) return NULL;
+    if (source->size==0) return NULL;
     return spListElementCopy(source->first->element);
 }
 
-/**
- * TODO Complete documentation
- */
 SPListElement spBPQueuePeekLast(SPBPQueue source){
+    if (!source) return NULL;
+    if (source->size==0) return NULL;
     return spListElementCopy(source->last->element);
 }
 
-/**
- * TODO Complete documentation
- */
 double spBPQueueMinValue(SPBPQueue source){
     if (!source || source->size==0) return -1;
     return spListElementGetValue(source->first->element);
 }
 
-/**
- * TODO Complete documentation
- */
 double spBPQueueMaxValue(SPBPQueue source){
     if (!source || source->size==0) return -1;
     return spListElementGetValue(source->last->element);
 }
 
-/**
- * TODO Complete documentation
- */
 bool spBPQueueIsEmpty(SPBPQueue source){
     assert(source);
     return source->size==0;
 }
 
-/**
- * TODO Complete documentation
- */
 bool spBPQueueIsFull(SPBPQueue source){
     assert(source);
     return source->size==source->maxSize;

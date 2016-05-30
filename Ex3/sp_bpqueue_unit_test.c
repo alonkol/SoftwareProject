@@ -26,8 +26,7 @@ int main(){
     printQueue(copyq);
     spBPQueueClear(copyq);
     printQueue(copyq);
-    //spBPQueueDestroy(copyq);  NOTWORKING. CHECK WHY
-
+    spBPQueueDestroy(copyq);
     printf("size=%d ",spBPQueueSize(q));
     printf("Maxsize=%d\n",spBPQueueGetMaxSize(q));
     spBPQueueDequeue(q);
@@ -38,5 +37,4 @@ int main(){
     printf("Min=%f\n",spBPQueueMinValue(q));
     printf("Empty - %d ",spBPQueueIsEmpty(q));
     printf("Full - %d\n",spBPQueueIsFull(q));
-    return 0;
 }
