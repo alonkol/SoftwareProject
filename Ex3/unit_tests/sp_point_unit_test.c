@@ -1,6 +1,24 @@
 #include "../SPPoint.h"
 #include "unit_test_util.h"
 #include <stdbool.h>
+#include <stdio.h>
+/*
+bool pointCreateTest() {
+    double data[2] = { 1.0, 1.0 };
+	int dim = 2;
+	int index = 1;
+    SPPoint p = spPointCreate(data, dim, index);
+    ASSERT_TRUE(spPointGetDimension(p)==2);
+    ASSERT_TRUE(spPointGetIndex(p)==1);
+
+    ASSERT_TRUE(spPointCreate(data, dim, -1)==NULL);
+    ASSERT_TRUE(spPointCreate(NULL, dim, index)==NULL);
+    ASSERT_TRUE(spPointCreate(data, 0, index)==NULL);
+
+    spPointDestroy(p);
+    return true;
+
+}
 
 //Checks if copy Works
 bool pointBasicCopyTest() {
@@ -35,8 +53,13 @@ bool pointBasicL2Distance() {
 	spPointDestroy(q);
 	return true;
 }
+
+
 int main() {
+    RUN_TEST(pointCreateTest);
 	RUN_TEST(pointBasicCopyTest);
 	RUN_TEST(pointBasicL2Distance);
 	return 0;
 }
+
+*/
