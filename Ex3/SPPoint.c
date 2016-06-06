@@ -33,13 +33,7 @@ SPPoint spPointCreate(double* data, int dim, int index){
 
 SPPoint spPointCopy(SPPoint source){
     assert (source != NULL);
-
-    struct sp_point_t* res = malloc(sizeof(struct sp_point_t*));
-    if (res == NULL){
-        return NULL;
-    }
-
-    res = spPointCreate(source->data, source->dim, source->index);
+    struct sp_point_t* res = spPointCreate(source->data, source->dim, source->index);
 
     return res;
 }
@@ -78,3 +72,4 @@ double spPointL2SquaredDistance(SPPoint p, SPPoint q){
 
     return res;
 }
+
