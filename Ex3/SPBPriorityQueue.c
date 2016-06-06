@@ -4,37 +4,37 @@
 #include <assert.h>
 #include <stdio.h>
 
-struct node* copyNode(struct node* n);
-struct node* newNode(int index, double value);
+struct Qnode* copyNode(struct Qnode* n);
+struct Qnode* newNode(int index, double value);
 
 /**
  * The queue is implemented as a linked list, consisted of nodes.
  */
 struct sp_bp_queue_t{
-  struct node* first;
-  struct node* last;
+  struct Qnode* first;
+  struct Qnode* last;
   int maxSize;
   int size;
 };
 
 /**
- * A node contains an element and a pointer to the next node.
+ * A Qnode contains an element and a pointer to the next Qnode.
  */
-struct node{
+struct Qnode{
     SPListElement element;
-    struct node* next;
+    struct Qnode* next;
 };
 
 /**
- * Allocates a node in the memory.
+ * Allocates a Qnode in the memory.
  *
  * @param node to copy
  * @return
  * NULL in case allocation failure occurred
  * Otherwise, the new node is returned
  */
- struct node* newNode(int index, double value){
-     struct node *res = malloc(sizeof(struct node));
+ struct Qnode* newNode(int index, double value){
+     struct Qnode *res = malloc(sizeof(struct Qnode));
      if (!res){
         return NULL;
      }
@@ -52,7 +52,7 @@ struct node{
  * NULL in case allocation failure occurred
  * Otherwise, the new node is returned
  */
- struct node* copyNode(struct node *n){
+ struct Qnode* copyNode(struct Qnode *n){
      return newNode(spListElementGetIndex(n->element), spListElementGetValue(n->element));
  }
 
@@ -76,9 +76,9 @@ SPBPQueue spBPQueueCopy(SPBPQueue source){
      }
 
     res->size = source->size;
-    struct node *n = source->first;
-    struct node *newNode;
-    struct node *prevNode;
+    struct Qnode *n = source->first;
+    struct Qnode *newNode;
+    struct Qnode *prevNode;
 
     res->first = copyNode(n);
     prevNode = res->first;
@@ -103,9 +103,9 @@ void spBPQueueDestroy(SPBPQueue source){
 
 void spBPQueueClear(SPBPQueue source){
     if (!source) return;
-    struct node* n = source->first;
+    struct Qnode* n = source->first;
     if (!n) return;
-    struct node* next = n->next;
+    struct Qnode* next = n->next;
     while(n){
         next = n->next;
         spListElementDestroy(n->element);
@@ -133,16 +133,21 @@ SP_BPQUEUE_MSG spBPQueueEnqueue(SPBPQueue source, SPListElement element){
         return SP_BPQUEUE_INVALID_ARGUMENT;
     }
 
-    struct node* new_node = newNode(spListElementGetIndex(element), spListElementGetValue(element));
+    struct Qnode* new_node = newNode(spListElementGetIndex(element), spListElementGetValue(element));
     if (!new_node){
         return SP_BPQUEUE_OUT_OF_MEMORY;
     }
 
-    struct node* n = source->first;
+    struct Qnode* n = source->first;
     int i;
 
     if (source->size >= source->maxSize){
-        if (spListElementCompare(new_node->element, source->last->element) == 1) return SP_BPQUEUE_FULL;
+        if (spListElementCompare(new_node->element, source->last->element) == 1){
+            spListElementDestroy(new_node->element);
+            free(new_node);
+            return SP_BPQUEUE_FULL;
+        }
+        spListElementDestroy(source->last->element);
         free(source->last);
 
         for(i=0;i<source->size-2;i++){
@@ -158,12 +163,11 @@ SP_BPQUEUE_MSG spBPQueueEnqueue(SPBPQueue source, SPListElement element){
         while (n->next && spListElementCompare(n->next->element, new_node->element) == -1){
             n = n->next;
         }
-
         if (!n->next){
             source->last = new_node;
         }
 
-        struct node* oldNext = n->next;
+        struct Qnode* oldNext = n->next;
         n->next = new_node;
         new_node->next = oldNext;
     }
@@ -186,7 +190,7 @@ SP_BPQUEUE_MSG spBPQueueDequeue(SPBPQueue source){
     if (!source) return SP_BPQUEUE_INVALID_ARGUMENT;
     if (source->size == 0) return SP_BPQUEUE_EMPTY;
 
-    struct node* nextNode = source->first->next;
+    struct Qnode* nextNode = source->first->next;
     spListElementDestroy(source->first->element);
     free(source->first);
     source->first = nextNode;
@@ -228,16 +232,4 @@ bool spBPQueueIsFull(SPBPQueue source){
 }
 
 
-/** REMOVE LATER **/
-void printQueue(SPBPQueue q){
-    printf("size: %d\n", spBPQueueSize(q));
-    printf("maxSize: %d\n", spBPQueueGetMaxSize(q));
-
-    struct node* n = q->first;
-    while(n){
-        printf("(%d,%f)->",spListElementGetIndex(n->element),spListElementGetValue(n->element));
-        n = n->next;
-    }
-    printf(" \n");
-}
 
