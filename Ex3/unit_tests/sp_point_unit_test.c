@@ -2,7 +2,7 @@
 #include "unit_test_util.h"
 #include <stdbool.h>
 #include <stdio.h>
-/*
+
 bool pointCreateTest() {
     double data[2] = { 1.0, 1.0 };
 	int dim = 2;
@@ -62,4 +62,4 @@ int main() {
 	return 0;
 }
 
-*/
+

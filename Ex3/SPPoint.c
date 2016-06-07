@@ -10,6 +10,8 @@ struct sp_point_t{
 };
 
 SPPoint spPointCreate(double* data, int dim, int index){
+    int i;
+
     struct sp_point_t* res = malloc(sizeof(struct sp_point_t*));
     if (res == NULL){
         return NULL;
@@ -23,7 +25,6 @@ SPPoint spPointCreate(double* data, int dim, int index){
         return NULL;
     }
 
-    int i;
     for (i = 0; i < dim; i++){
         res->data[i] = data[i];
     }
@@ -63,8 +64,8 @@ double spPointL2SquaredDistance(SPPoint p, SPPoint q){
 
     double res = 0;
     double diff;
-
     int i;
+
     for (i = 0; i < p->dim; i++){
         diff = p->data[i] - q->data[i];
         res += diff*diff;

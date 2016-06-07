@@ -52,6 +52,8 @@ void spLoggerDestroy() {
 
 SP_LOGGER_MSG spLoggerPrintError(const char* msg, const char* file,
 		const char* function, const int line){
+	int success;
+
 
     if (!msg || !file || !function || line < 0){
         return SP_LOGGER_INVAlID_ARGUMENT;
@@ -61,7 +63,7 @@ SP_LOGGER_MSG spLoggerPrintError(const char* msg, const char* file,
         return SP_LOGGER_UNDIFINED;
     }
 
-    int success = fprintf(logger->outputChannel, \
+    success = fprintf(logger->outputChannel, \
                           "---ERROR---\n- file: %s\n- function: %s\n- line: %d\n- message: %s\n", \
                           file, function, line, msg);
 
@@ -74,6 +76,7 @@ SP_LOGGER_MSG spLoggerPrintError(const char* msg, const char* file,
 
 SP_LOGGER_MSG spLoggerPrintWarning(const char* msg, const char* file,
 		const char* function, const int line){
+    int success;
 
     if (!msg || !file || !function || line < 0){
         return SP_LOGGER_INVAlID_ARGUMENT;
@@ -84,7 +87,7 @@ SP_LOGGER_MSG spLoggerPrintWarning(const char* msg, const char* file,
     }
 
     if (logger->level != SP_LOGGER_ERROR_LEVEL){
-        int success = fprintf(logger->outputChannel,
+        success = fprintf(logger->outputChannel,
             "---WARNING---\n- file: %s\n- function: %s\n- line: %d\n- message: %s\n",
              file, function, line, msg);
 
@@ -97,6 +100,8 @@ SP_LOGGER_MSG spLoggerPrintWarning(const char* msg, const char* file,
 }
 
 SP_LOGGER_MSG spLoggerPrintInfo(const char* msg){
+    int success;
+
     if (!msg){
         return SP_LOGGER_INVAlID_ARGUMENT;
     }
@@ -108,7 +113,7 @@ SP_LOGGER_MSG spLoggerPrintInfo(const char* msg){
     if (logger->level == SP_LOGGER_INFO_WARNING_ERROR_LEVEL ||
         logger->level == SP_LOGGER_DEBUG_INFO_WARNING_ERROR_LEVEL){
 
-        int success = fprintf(logger->outputChannel,
+        success = fprintf(logger->outputChannel,
             "---INFO---\n- message: %s\n",
              msg);
 
@@ -123,6 +128,8 @@ SP_LOGGER_MSG spLoggerPrintInfo(const char* msg){
 
 SP_LOGGER_MSG spLoggerPrintDebug(const char* msg, const char* file,
 		const char* function, const int line){
+    int success;
+
     if (!msg || !file || !function || line < 0){
         return SP_LOGGER_INVAlID_ARGUMENT;
     }
@@ -132,7 +139,7 @@ SP_LOGGER_MSG spLoggerPrintDebug(const char* msg, const char* file,
     }
 
     if (logger->level == SP_LOGGER_DEBUG_INFO_WARNING_ERROR_LEVEL){
-        int success = fprintf(logger->outputChannel,
+        success = fprintf(logger->outputChannel,
             "---DEBUG---\n- file: %s\n- function: %s\n- line: %d\n- message: %s\n",
              file, function, line, msg);
 
@@ -145,6 +152,8 @@ SP_LOGGER_MSG spLoggerPrintDebug(const char* msg, const char* file,
 }
 
 SP_LOGGER_MSG spLoggerPrintMsg(const char* msg){
+    int success;
+
     if (!msg){
         return SP_LOGGER_INVAlID_ARGUMENT;
     }
@@ -154,7 +163,7 @@ SP_LOGGER_MSG spLoggerPrintMsg(const char* msg){
     }
 
     if (logger->level == SP_LOGGER_DEBUG_INFO_WARNING_ERROR_LEVEL){
-        int success = fprintf(logger->outputChannel, "%s\n", msg);
+        success = fprintf(logger->outputChannel, "%s\n", msg);
 
         if (success < 0){
             return SP_LOGGER_WRITE_FAIL;
