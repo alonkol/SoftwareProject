@@ -1,0 +1,362 @@
+# depslib dependency file v1.0
+1471695573 source:c:\users\t-alkoll\desktop\softwareproject\finalproject\main.cpp
+	<iostream>
+	"SPImageProc.h"
+	<opencv2/imgproc.hpp>
+	<opencv2/core.hpp>
+	<opencv2/highgui.hpp>
+	<vector>
+	<iostream>
+
+1471686219 source:c:\users\t-alkoll\desktop\softwareproject\finalproject\spimageproc.cpp
+	<cstdlib>
+	<cassert>
+	<cstring>
+	<opencv2/xfeatures2d.hpp>
+	<opencv2/core.hpp>
+	<opencv2/imgproc.hpp>
+	<opencv2/imgcodecs.hpp>
+	<opencv2/highgui.hpp>
+	<cstdio>
+	"SPImageProc.h"
+	"SPLogger.h"
+
+1471694471 c:\opencv\build\include\opencv2\xfeatures2d.hpp
+	"opencv2/features2d.hpp"
+	"opencv2/xfeatures2d/nonfree.hpp"
+
+1471694471 c:\opencv\build\include\opencv2\features2d.hpp
+	"opencv2/core.hpp"
+	"opencv2/flann/miniflann.hpp"
+
+1471694471 c:\opencv\build\include\opencv2\core.hpp
+	"opencv2/core/cvdef.h"
+	"opencv2/core/version.hpp"
+	"opencv2/core/base.hpp"
+	"opencv2/core/cvstd.hpp"
+	"opencv2/core/traits.hpp"
+	"opencv2/core/matx.hpp"
+	"opencv2/core/types.hpp"
+	"opencv2/core/mat.hpp"
+	"opencv2/core/persistence.hpp"
+	"opencv2/opencv.hpp"
+	"opencv2/xfeatures2d.hpp"
+	"opencv2/core/operations.hpp"
+	"opencv2/core/cvstd.inl.hpp"
+	"opencv2/core/utility.hpp"
+	"opencv2/core/optim.hpp"
+
+1471694471 c:\opencv\build\include\opencv2\core\cvdef.h
+	<limits.h>
+	"opencv2/core/hal/interface.h"
+	<emmintrin.h>
+	<pmmintrin.h>
+	<tmmintrin.h>
+	<smmintrin.h>
+	<nmmintrin.h>
+	<nmmintrin.h>
+	<popcntintrin.h>
+	<immintrin.h>
+	<immintrin.h>
+	<Intrin.h>
+	"arm_neon.h"
+	<arm_neon.h>
+	<intrin.h>
+
+1471694472 c:\opencv\build\include\opencv2\core\hal\interface.h
+	<cstddef>
+	<stddef.h>
+	<cstdint>
+	<stdint.h>
+
+1471694472 c:\opencv\build\include\opencv2\core\version.hpp
+
+1471694471 c:\opencv\build\include\opencv2\core\base.hpp
+	<climits>
+	<algorithm>
+	"opencv2/core/cvdef.h"
+	"opencv2/core/cvstd.hpp"
+	"opencv2/core/neon_utils.hpp"
+
+1471694471 c:\opencv\build\include\opencv2\core\cvstd.hpp
+	"opencv2/core/cvdef.h"
+	<cstddef>
+	<cstring>
+	<cctype>
+	<string>
+	<algorithm>
+	<utility>
+	<cstdlib>
+	<cmath>
+	"opencv2/core/ptr.inl.hpp"
+
+1471694472 c:\opencv\build\include\opencv2\core\ptr.inl.hpp
+	<algorithm>
+
+1471694472 c:\opencv\build\include\opencv2\core\neon_utils.hpp
+	"opencv2/core/cvdef.h"
+
+1471694472 c:\opencv\build\include\opencv2\core\traits.hpp
+	"opencv2/core/cvdef.h"
+
+1471694472 c:\opencv\build\include\opencv2\core\matx.hpp
+	"opencv2/core/cvdef.h"
+	"opencv2/core/base.hpp"
+	"opencv2/core/traits.hpp"
+	"opencv2/core/saturate.hpp"
+
+1471694472 c:\opencv\build\include\opencv2\core\saturate.hpp
+	"opencv2/core/cvdef.h"
+	"opencv2/core/fast_math.hpp"
+
+1471694471 c:\opencv\build\include\opencv2\core\fast_math.hpp
+	"opencv2/core/cvdef.h"
+	<fastmath.h>
+	<cmath>
+	<math.h>
+	"tegra_round.hpp"
+
+1471694472 c:\opencv\build\include\opencv2\core\types.hpp
+	<climits>
+	<cfloat>
+	<vector>
+	"opencv2/core/cvdef.h"
+	"opencv2/core/cvstd.hpp"
+	"opencv2/core/matx.hpp"
+
+1471694471 c:\opencv\build\include\opencv2\core\mat.hpp
+	"opencv2/core/matx.hpp"
+	"opencv2/core/types.hpp"
+	"opencv2/core/bufferpool.hpp"
+	"opencv2/core/mat.inl.hpp"
+
+1471694471 c:\opencv\build\include\opencv2\core\bufferpool.hpp
+
+1471694471 c:\opencv\build\include\opencv2\core\mat.inl.hpp
+
+1471694472 c:\opencv\build\include\opencv2\core\persistence.hpp
+	"opencv2/core/types.hpp"
+	"opencv2/core/mat.hpp"
+	"opencv2/opencv.hpp"
+	<time.h>
+
+1471694471 c:\opencv\build\include\opencv2\opencv.hpp
+	"opencv2/core.hpp"
+	"opencv2/imgproc.hpp"
+	"opencv2/photo.hpp"
+	"opencv2/video.hpp"
+	"opencv2/features2d.hpp"
+	"opencv2/objdetect.hpp"
+	"opencv2/calib3d.hpp"
+	"opencv2/imgcodecs.hpp"
+	"opencv2/videoio.hpp"
+	"opencv2/highgui.hpp"
+	"opencv2/ml.hpp"
+
+1471694471 c:\opencv\build\include\opencv2\imgproc.hpp
+	"opencv2/core.hpp"
+	<opencv2/core.hpp>
+	<opencv2/imgproc.hpp>
+	<opencv2/imgcodecs.hpp>
+	<opencv2/highgui.hpp>
+	<iostream>
+	<opencv2/imgproc.hpp>
+	<opencv2/highgui.hpp>
+	<opencv2/imgproc.hpp>
+	<opencv2/highgui.hpp>
+	<math.h>
+	<opencv2/imgproc.hpp>
+	<opencv2/highgui.hpp>
+	"opencv2/imgproc.hpp"
+	"opencv2/highgui.hpp"
+	"opencv2/imgproc/imgproc_c.h"
+
+1471694471 c:\opencv\build\include\opencv2\imgcodecs.hpp
+	"opencv2/core.hpp"
+	<opencv2/opencv.hpp>
+
+1471694471 c:\opencv\build\include\opencv2\highgui.hpp
+	"opencv2/core.hpp"
+	"opencv2/imgcodecs.hpp"
+	"opencv2/videoio.hpp"
+	"opencv2/highgui/highgui_c.h"
+
+1471694471 c:\opencv\build\include\opencv2\videoio.hpp
+	"opencv2/core.hpp"
+	"opencv2/opencv.hpp"
+
+1471694473 c:\opencv\build\include\opencv2\highgui\highgui_c.h
+	"opencv2/core/core_c.h"
+	"opencv2/imgproc/imgproc_c.h"
+	"opencv2/imgcodecs/imgcodecs_c.h"
+	"opencv2/videoio/videoio_c.h"
+
+1471694471 c:\opencv\build\include\opencv2\core\core_c.h
+	"opencv2/core/types_c.h"
+	"cxcore.h"
+	"cxcore.h"
+	"opencv2/core/utility.hpp"
+
+1471694472 c:\opencv\build\include\opencv2\core\types_c.h
+	<ipl.h>
+	<ipl/ipl.h>
+	"opencv2/core/cvdef.h"
+	<assert.h>
+	<stdlib.h>
+	<string.h>
+	<float.h>
+	"opencv2/core.hpp"
+
+1471694472 c:\opencv\build\include\opencv2\core\utility.hpp
+	"opencv2/core.hpp"
+	"opencv2/core/core_c.h"
+
+1471694473 c:\opencv\build\include\opencv2\imgproc\imgproc_c.h
+	"opencv2/imgproc/types_c.h"
+
+1471694473 c:\opencv\build\include\opencv2\imgproc\types_c.h
+	"opencv2/core/core_c.h"
+
+1471694473 c:\opencv\build\include\opencv2\imgcodecs\imgcodecs_c.h
+	"opencv2/core/core_c.h"
+
+1471694474 c:\opencv\build\include\opencv2\videoio\videoio_c.h
+	"opencv2/core/core_c.h"
+
+1471694471 c:\opencv\build\include\opencv2\photo.hpp
+	"opencv2/core.hpp"
+	"opencv2/imgproc.hpp"
+	"opencv2/photo/photo_c.h"
+
+1471694473 c:\opencv\build\include\opencv2\photo\photo_c.h
+	"opencv2/core/core_c.h"
+
+1471694471 c:\opencv\build\include\opencv2\video.hpp
+	"opencv2/video/tracking.hpp"
+	"opencv2/video/background_segm.hpp"
+	"opencv2/video/tracking_c.h"
+
+1471694474 c:\opencv\build\include\opencv2\video\tracking.hpp
+	"opencv2/core.hpp"
+	"opencv2/imgproc.hpp"
+
+1471694474 c:\opencv\build\include\opencv2\video\background_segm.hpp
+	"opencv2/core.hpp"
+
+1471694474 c:\opencv\build\include\opencv2\video\tracking_c.h
+	"opencv2/imgproc/types_c.h"
+
+1471694471 c:\opencv\build\include\opencv2\objdetect.hpp
+	"opencv2/core.hpp"
+	"opencv2/objdetect/detection_based_tracker.hpp"
+	"opencv2/objdetect/objdetect_c.h"
+
+1471694473 c:\opencv\build\include\opencv2\objdetect\detection_based_tracker.hpp
+	<vector>
+
+1471694473 c:\opencv\build\include\opencv2\objdetect\objdetect_c.h
+	"opencv2/core/core_c.h"
+	<deque>
+	<vector>
+
+1471694471 c:\opencv\build\include\opencv2\calib3d.hpp
+	"opencv2/core.hpp"
+	"opencv2/features2d.hpp"
+	"opencv2/core/affine.hpp"
+	"opencv2/calib3d/calib3d_c.h"
+
+1471694471 c:\opencv\build\include\opencv2\core\affine.hpp
+	<opencv2/core.hpp>
+
+1471694471 c:\opencv\build\include\opencv2\calib3d\calib3d_c.h
+	"opencv2/core/core_c.h"
+
+1471694471 c:\opencv\build\include\opencv2\ml.hpp
+	"opencv2/core.hpp"
+	<float.h>
+	<map>
+	<iostream>
+
+1471694472 c:\opencv\build\include\opencv2\core\operations.hpp
+	<cstdio>
+
+1471694471 c:\opencv\build\include\opencv2\core\cvstd.inl.hpp
+	<complex>
+	<ostream>
+
+1471694472 c:\opencv\build\include\opencv2\core\optim.hpp
+	"opencv2/core.hpp"
+
+1471694473 c:\opencv\build\include\opencv2\flann\miniflann.hpp
+	"opencv2/core.hpp"
+	"opencv2/flann/defines.h"
+
+1471694472 c:\opencv\build\include\opencv2\flann\defines.h
+	"config.h"
+
+1471694472 c:\opencv\build\include\opencv2\flann\config.h
+
+1471694474 c:\opencv\build\include\opencv2\xfeatures2d\nonfree.hpp
+	"opencv2/features2d.hpp"
+
+1471693753 c:\users\t-alkoll\desktop\softwareproject\finalproject\spimageproc.h
+	<opencv2/core.hpp>
+	<opencv2/imgcodecs.hpp>
+	<vector>
+	"SPConfig.h"
+	"SPPoint.h"
+
+1471695090 c:\users\t-alkoll\desktop\softwareproject\finalproject\spconfig.h
+	<stdbool.h>
+	<stdio.h>
+	"SPLogger.h"
+
+1471693753 c:\users\t-alkoll\desktop\softwareproject\finalproject\splogger.h
+
+1471693753 c:\users\t-alkoll\desktop\softwareproject\finalproject\sppoint.h
+
+1471693753 source:c:\users\t-alkoll\desktop\softwareproject\finalproject\spbpriorityqueue.c
+	"SPBPriorityQueue.h"
+	"SPListElement.h"
+	<stdlib.h>
+	<assert.h>
+	<stdio.h>
+
+1471693753 c:\users\t-alkoll\desktop\softwareproject\finalproject\spbpriorityqueue.h
+	"SPListElement.h"
+	<stdbool.h>
+
+1471693753 c:\users\t-alkoll\desktop\softwareproject\finalproject\splistelement.h
+
+1471704817 source:c:\users\t-alkoll\desktop\softwareproject\finalproject\spconfig.c
+	<stdbool.h>
+	<stdio.h>
+	"SPLogger.h"
+	"SPConfig.h"
+
+1471693753 source:c:\users\t-alkoll\desktop\softwareproject\finalproject\splist.c
+	"SPList.h"
+	<stdlib.h>
+
+1471693753 c:\users\t-alkoll\desktop\softwareproject\finalproject\splist.h
+	<stdbool.h>
+	"SPListElement.h"
+
+1471693753 source:c:\users\t-alkoll\desktop\softwareproject\finalproject\splistelement.c
+	"SPListElement.h"
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+
+1471693753 source:c:\users\t-alkoll\desktop\softwareproject\finalproject\splogger.c
+	"SPLogger.h"
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1471693753 source:c:\users\t-alkoll\desktop\softwareproject\finalproject\sppoint.c
+	"SPPoint.h"
+	<stdlib.h>
+	<assert.h>
+	<stdio.h>
+
