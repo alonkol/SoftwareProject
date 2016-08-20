@@ -1,9 +1,9 @@
-#include <stdio.h>
-#include <math.h>
-#include <string.h>
-#include <stdlib.h>
+#include <iostream>
+
+using namespace std;
 
 int main()
 {
+    cout << "Hello world!" << endl;
     return 0;
 }
