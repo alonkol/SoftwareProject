@@ -34,7 +34,7 @@ struct Qnode{
  * Otherwise, the new node is returned
  */
  struct Qnode* newNode(int index, double value){
-     struct Qnode *res = malloc(sizeof(struct Qnode));
+     struct Qnode *res = (struct Qnode*)malloc(sizeof(struct Qnode));
      if (!res){
         return NULL;
      }
@@ -58,9 +58,9 @@ struct Qnode{
 
 SPBPQueue spBPQueueCreate(int maxSize){
     struct sp_bp_queue_t *q;
-    if (maxSize < 0) return NULL;
+    if (maxSize <= 0) return NULL;
 
-    q = malloc(sizeof(struct sp_bp_queue_t));
+    q = (struct sp_bp_queue_t *)malloc(sizeof(struct sp_bp_queue_t));
     if (!q){
         return NULL;
     }
@@ -73,11 +73,11 @@ SPBPQueue spBPQueueCreate(int maxSize){
 }
 
 SPBPQueue spBPQueueCopy(SPBPQueue source){
+    if(source==NULL) return NULL;
     struct Qnode *n;
     struct Qnode *newNode;
     struct Qnode *prevNode;
     SPBPQueue res = spBPQueueCreate(source->maxSize);
-
 
     if (!res){
         return NULL;

@@ -12,7 +12,7 @@ struct sp_point_t{
 SPPoint spPointCreate(double* data, int dim, int index){
     int i;
     if(data == NULL || dim <=0 || index < 0) return NULL;
-    struct sp_point_t* res = malloc(sizeof(struct sp_point_t));
+    struct sp_point_t* res =(struct sp_point_t*) malloc(sizeof(struct sp_point_t));
     if (res == NULL){
         return NULL;
     }
@@ -40,6 +40,7 @@ SPPoint spPointCopy(SPPoint source){
 }
 
 void spPointDestroy(SPPoint point){
+    if (point == NULL) return;
     free(point->data);
     free(point);
 }
@@ -73,3 +74,4 @@ double spPointL2SquaredDistance(SPPoint p, SPPoint q){
 
     return res;
 }
+
