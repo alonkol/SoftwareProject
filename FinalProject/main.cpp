@@ -1,12 +1,9 @@
-#include <stdio.h>
-#include <math.h>
-#include <string.h>
-#include <stdlib.h>
+#include <iostream>
 
-// this line might be necessary later on
-//using namespace sp;
+using namespace std;
 
 int main()
 {
+    cout << "Hello world!" << endl;
     return 0;
 }
