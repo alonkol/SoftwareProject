@@ -116,11 +116,11 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
             i++;
             j++;
         }
-        variableValue[j] = '\0';
+        variableValue[j-1] = '\0';
 
 
         // TODO: Verify inputs and log errors
-
+        printf("%s\n",variableName);
         if (strcmp(variableName,"spImagesDirectory") == 0){
             strcpy(cfg->spImagesDirectory,variableValue);
         } else if (strcmp(variableName,"spImagesPrefix") == 0){
@@ -136,7 +136,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
         } else if (strcmp(variableName,"spNumOfFeatures") == 0){
             cfg->spNumOfFeatures = atoi(variableValue);
         } else if (strcmp(variableName,"spExtractionMode") == 0){
-            cfg->spExtractionMode = (variableValue == "true");
+            cfg->spExtractionMode = (strcmp(variableValue,"true")==0);
         } else if (strcmp(variableName,"spNumOfSimilarImages") == 0){
             cfg->spNumOfSimilarImages = atoi(variableValue);
         } else if (strcmp(variableName,"spKDTreeSplitMethod") == 0){
@@ -148,7 +148,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
         } else if (strcmp(variableName,"spKNN") == 0){
             cfg->spKNN = atoi(variableValue);
         } else if (strcmp(variableName,"spMinimalGUI") == 0){
-            cfg->spMinimalGUI = (variableValue == "true");
+            cfg->spMinimalGUI = (strcmp(variableValue,"true")==0);
         } else if (strcmp(variableName,"spLoggerLevel") == 0){
             cfg->spLoggerLevel = atoi(variableValue);
         } else if (strcmp(variableName,"spLoggerFilename") == 0){
@@ -348,4 +348,29 @@ void spConfigDestroy(SPConfig config){
 }
 
 
+/**************************/
+/**************************/
+/**************************/
+/**************************/
+/** printing for testing **/
+void spConfigPrint(SPConfig config){
+    printf("image directory: %s\n",config->spImagesDirectory);
+    printf("image pre: %s\n",config->spImagesPrefix);
+    printf("image suf: %s\n",config->spImagesSuffix);
+    printf("num images: %d\n",config->spNumOfImages);
+    printf("spPCADimension: %d\n",config->spPCADimension);
+    printf("spPCAFilename: %s\n",config->spPCAFilename);
+    printf("spExtractionMode: %d\n",config->spExtractionMode);
+    printf("spNumOfSimilarImages: %d\n",config->spNumOfSimilarImages);
+    printf("spNumOfFeatures: %d\n",config->spNumOfFeatures);
+    printf("spKDTreeSplitMethod: %d\n",config->spKDTreeSplitMethod);
+    printf("spKNN: %d\n",config->spKNN);
+    printf("spMinimalGUI: %d\n",config->spMinimalGUI);
+    printf("spLoggerLevel: %d\n",config->spLoggerLevel);
+    printf("spLoggerFilename: %s\n",config->spLoggerFilename);
+}
+/**************************/
+/**************************/
+/**************************/
+/**************************/
 
