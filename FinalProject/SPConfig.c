@@ -1,7 +1,9 @@
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "SPLogger.h"
 #include "SPConfig.h"
+#define LINESIZE 1024
 
 
 /**
@@ -16,12 +18,12 @@ typedef enum tree_split_method{
 } SPLIT_METHOD;
 
 struct sp_config_t{
-    char spImagesDirectory[1024];
-    char spImagesPrefix[1024];
-    char spImagesSuffix[1024];
+    char spImagesDirectory[LINESIZE];
+    char spImagesPrefix[LINESIZE];
+    char spImagesSuffix[LINESIZE];
     int spNumOfImages;
     int spPCADimension;
-    char spPCAFilename[1024];
+    char spPCAFilename[LINESIZE];
     int spNumOfFeatures;
     bool spExtractionMode;
     int spNumOfSimilarImages;
@@ -29,7 +31,7 @@ struct sp_config_t{
     int spKNN;
     bool spMinimalGUI;
     int spLoggerLevel;
-    char spLoggerFilename[1024];
+    char spLoggerFilename[LINESIZE];
 };
 
 typedef struct sp_config_t* SPConfig;
@@ -60,9 +62,9 @@ typedef struct sp_config_t* SPConfig;
  */
 SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     // declarations
-    char str[1024];
-    char variableName[1024];
-    char variableValue[1024];
+    char str[LINESIZE];
+    char variableName[LINESIZE];
+    char variableValue[LINESIZE];
     int i;
     int j;
     FILE* fp;
@@ -91,7 +93,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
       // ERROR opening the file
     }
 
-    while( fgets (str, 1024, fp) != NULL )
+    while( fgets (str, LINESIZE, fp) != NULL )
     {
         i = 0;
         while (str[i] == ' '){
@@ -111,16 +113,16 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
             i++;
         }
         j = 0;
-        while (str[i] != ' ' && str[i] != '\0'){
+        while (str[i] != ' ' && str[i] != '\0' && str[i] != '\n' && str[i] != '#'){
             variableValue[j] = str[i];
             i++;
             j++;
         }
-        variableValue[j-1] = '\0';
+        variableValue[j] = '\0';
 
 
         // TODO: Verify inputs and log errors
-        printf("%s\n",variableName);
+
         if (strcmp(variableName,"spImagesDirectory") == 0){
             strcpy(cfg->spImagesDirectory,variableValue);
         } else if (strcmp(variableName,"spImagesPrefix") == 0){
@@ -300,18 +302,28 @@ int spConfigGetPCADim(const SPConfig config, SP_CONFIG_MSG* msg){
  */
 SP_CONFIG_MSG spConfigGetImagePath(char* imagePath, const SPConfig config,
 		int index){
+    return spConfigGetPath(imagePath,config,index,config->spImagesSuffix);
+}
+
+SP_CONFIG_MSG spConfigGetPath(char* imagePath, const SPConfig config,
+		int index,char* suffix){
+    int nDigits = floor(log10(config->spNumOfImages))+1;
+    char *strI=(char*)malloc(sizeof(char)*nDigits);
+    sprintf(strI,"%d",index);
+
 	if (imagePath == NULL || config == NULL){
         return SP_CONFIG_INVALID_ARGUMENT;
     }
     if (index >= config->spNumOfImages){
         return SP_CONFIG_INDEX_OUT_OF_RANGE;
     }
-    imagePath = config->spImagesDirectory;
+    strcpy(imagePath,config->spImagesDirectory);
     strcat(imagePath, config->spImagesPrefix);
-    strcat(imagePath, index);
-    strcat(imagePath, config->spImagesSuffix);
-
+    strcat(imagePath, strI);
+    strcat(imagePath, suffix);
+    free(strI);
     return SP_CONFIG_SUCCESS;
+
 }
 
 /**
@@ -334,14 +346,14 @@ SP_CONFIG_MSG spConfigGetPCAPath(char* pcaPath, const SPConfig config){
     if (pcaPath == NULL || config == NULL){
         return SP_CONFIG_INVALID_ARGUMENT;
     }
-    pcaPath = config->spImagesDirectory;
+    strcpy(pcaPath,config->spImagesDirectory);
     strcat(pcaPath, config->spPCAFilename);
     return SP_CONFIG_SUCCESS;
 }
 
 /**
  * Frees all memory resources associate with config.
- * If config == NULL nothig is done.
+ * If config == NULL nothing is done.
  */
 void spConfigDestroy(SPConfig config){
     free(config);

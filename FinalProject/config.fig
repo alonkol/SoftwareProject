@@ -6,11 +6,11 @@
  spNumOfImages = 17
 #the following variables have default values, if not set the default value is choosen
 # spPCADimension = 27 -> notice the default value is chosen since this is a comment
-spPCAFilename = pca.ymlr
+spPCAFilename = pca.yml
 spNumOfFeatures = 17
 spExtractionMode = false
 spMinimalGUI = true
- spNumOfSimilarImages = 5
+ spNumOfSimilarImages = 5#jkjfkdjk
 spLoggerFilename = stdout
 # This is a comment line
  #Another valid comment line
