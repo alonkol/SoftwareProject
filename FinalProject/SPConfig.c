@@ -1,9 +1,10 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "SPLogger.h"
 #include "SPConfig.h"
-#define LINESIZE 1024
+#define MAXLINESIZE 1024
 
 
 /**
@@ -18,12 +19,12 @@ typedef enum tree_split_method{
 } SPLIT_METHOD;
 
 struct sp_config_t{
-    char spImagesDirectory[LINESIZE];
-    char spImagesPrefix[LINESIZE];
-    char spImagesSuffix[LINESIZE];
+    char spImagesDirectory[MAXLINESIZE];
+    char spImagesPrefix[MAXLINESIZE];
+    char spImagesSuffix[MAXLINESIZE];
     int spNumOfImages;
     int spPCADimension;
-    char spPCAFilename[LINESIZE];
+    char spPCAFilename[MAXLINESIZE];
     int spNumOfFeatures;
     bool spExtractionMode;
     int spNumOfSimilarImages;
@@ -31,7 +32,7 @@ struct sp_config_t{
     int spKNN;
     bool spMinimalGUI;
     int spLoggerLevel;
-    char spLoggerFilename[LINESIZE];
+    char spLoggerFilename[MAXLINESIZE];
 };
 
 typedef struct sp_config_t* SPConfig;
@@ -62,9 +63,9 @@ typedef struct sp_config_t* SPConfig;
  */
 SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     // declarations
-    char str[LINESIZE];
-    char variableName[LINESIZE];
-    char variableValue[LINESIZE];
+    char str[MAXLINESIZE];
+    char variableName[MAXLINESIZE];
+    char variableValue[MAXLINESIZE];
     int i;
     int j;
     FILE* fp;
@@ -93,7 +94,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
       // ERROR opening the file
     }
 
-    while( fgets (str, LINESIZE, fp) != NULL )
+    while( fgets (str, MAXLINESIZE, fp) != NULL )
     {
         i = 0;
         while (str[i] == ' '){
@@ -305,22 +306,22 @@ SP_CONFIG_MSG spConfigGetImagePath(char* imagePath, const SPConfig config,
     return spConfigGetPath(imagePath,config,index,config->spImagesSuffix);
 }
 
-SP_CONFIG_MSG spConfigGetPath(char* imagePath, const SPConfig config,
+SP_CONFIG_MSG spConfigGetPath(char* filePath, const SPConfig config,
 		int index,char* suffix){
     int nDigits = floor(log10(config->spNumOfImages))+1;
     char *strI=(char*)malloc(sizeof(char)*nDigits);
     sprintf(strI,"%d",index);
 
-	if (imagePath == NULL || config == NULL){
+	if (filePath == NULL || config == NULL){
         return SP_CONFIG_INVALID_ARGUMENT;
     }
     if (index >= config->spNumOfImages){
         return SP_CONFIG_INDEX_OUT_OF_RANGE;
     }
-    strcpy(imagePath,config->spImagesDirectory);
-    strcat(imagePath, config->spImagesPrefix);
-    strcat(imagePath, strI);
-    strcat(imagePath, suffix);
+    strcpy(filePath,config->spImagesDirectory);
+    strcat(filePath, config->spImagesPrefix);
+    strcat(filePath, strI);
+    strcat(filePath, suffix);
     free(strI);
     return SP_CONFIG_SUCCESS;
 
