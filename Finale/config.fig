@@ -1,0 +1,17 @@
+#this is a valid configuration file
+#The following variables don’t have default values and must be set
+ spImagesDirectory = ./images/
+ spImagesPrefix=img
+ spImagesSuffix = .png
+ spNumOfImages = 17
+#the following variables have default values, if not set the default value is choosen
+spPCADimension = 20 # notice the default value is chosen since this is a comment
+spPCAFilename = pca.yml
+spNumOfFeatures = 80
+spExtractionMode = false
+spMinimalGUI = true
+ spNumOfSimilarImages = 5#jkjfkdjk
+spLoggerFilename = stdout
+# This is a comment line
+ #Another valid comment line
+#####!!!! I can write anything I want!
