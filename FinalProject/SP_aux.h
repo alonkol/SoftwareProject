@@ -1,12 +1,13 @@
+#include "SPPoint.h"
+
 /** feature extraction and tree construction */
 
 
-/** Extracts/loads features into array of  SPImgFeats according to config*/
-SPPoint* spProduceFeats(const SPConfig config)
 
-/** Extracts features of image into array of points and save them */
-SPPoint* spExtractSaveImgFeats(const SPConfig config)
 
 /** loads features  from file */
-SPPoint* spExtractSaveImgFeats(const SPConfig config)
+SPPoint* spLoadImgFeats(const SPConfig config,int numImages,int* totalSize);
+
+/** Extracts features of certain image into array of points and saves them into file */
+SPPoint* spUpdateAndSaveFeats(SPPoint* allFeats,SPPoint* imgFeats,int totalSize,int numFeats,int index,SPConfig config);
 

@@ -106,5 +106,6 @@ double spPointGetAxisCoor(SPPoint point, int axis);
  */
 double spPointL2SquaredDistance(SPPoint p, SPPoint q);
 
+void printPoint(SPPoint p);
 
 #endif /* SPPOINT_H_ */

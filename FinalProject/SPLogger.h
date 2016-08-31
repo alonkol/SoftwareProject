@@ -3,17 +3,17 @@
 /**
  * SP Logger summary:
  * SP Logger is defined at compilation time and it must be initialized
- * by calling the create function prior to the usage. 
+ * by calling the create function prior to the usage.
  *
  * The logger has 4 print levels:
  * 	- Error level: In this level only error messages are printed
  * 	- Warning level: In this level only warning and error messages are printed
  * 	- Info level: in this level info, warning and error messages are printed
  * 	- Debug level: in this level all message are printed
- * 	
+ *
  * The logger supports another printing function which can be called at any level
  * The user must destroy the logger at end of usage
- *	
+ *
  * The following functions are supported:
  * spLoggerCreate 		- Creates and initializes the logger
  * spLoggerDestroy		- Closes are frees all resources of the logger
@@ -26,10 +26,10 @@
 
 /** A type used to decide the level of the logger**/
 typedef enum sp_logger_level_t {
-	SP_LOGGER_ERROR_LEVEL, //Error level
-	SP_LOGGER_WARNING_ERROR_LEVEL, //Warning level
-	SP_LOGGER_INFO_WARNING_ERROR_LEVEL, //Info level
-	SP_LOGGER_DEBUG_INFO_WARNING_ERROR_LEVEL //Debug level
+	SP_LOGGER_ERROR_LEVEL,
+	SP_LOGGER_WARNING_ERROR_LEVEL,
+	SP_LOGGER_INFO_WARNING_ERROR_LEVEL,
+	SP_LOGGER_DEBUG_INFO_WARNING_ERROR_LEVEL
 } SP_LOGGER_LEVEL;
 
 /** A type used to indicate errors in function calls **/
@@ -128,7 +128,7 @@ SP_LOGGER_MSG spLoggerPrintError(const char* msg, const char* file,
  *	SP_LOGGER_WARNING_ERROR_LEVEL,
  *	SP_LOGGER_INFO_WARNING_ERROR_LEVEL,
  *	SP_LOGGER_DEBUG_INFO_WARNING_ERROR_LEVEL
- *  
+ *
  *	A new line will be printed after the print call.
  *
  * @param msg     	- The message to printed
