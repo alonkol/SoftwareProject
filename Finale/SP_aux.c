@@ -24,7 +24,7 @@ SPPoint* spUpdateAndSaveFeats(SPPoint* allFeats,SPPoint* imgFeats,int totalSize,
         return NULL;
     }
     FILE *fp= fopen(featsFileName, "w");
-    fprintf(fp,"%d\n%d\n",index,numFeats);
+    fprintf(fp,"%d\n%d\n%d\n",index,numFeats,spConfigGetPCADim(config,&msg));
     for(j=0; j<numFeats; j++)
     {
         allFeats[totalSize+j] = spPointCopy(imgFeats[j]);
@@ -45,7 +45,7 @@ SPPoint* spLoadImgFeats(const SPConfig config,int numImages,int *totalSize)
 {
     SPPoint* allFeats=NULL;
     SP_CONFIG_MSG msg;
-    int i,j,k,imgIndex,numFeats,dim = spConfigGetPCADim(config,&msg);
+    int i,j,k,imgIndex,numFeats,savedDim,dim = spConfigGetPCADim(config,&msg);
     *totalSize=0;
     char featsFileName[MAXLINESIZE],buff[MAXLINESIZE];
     for (i=0;i<numImages;i++){
@@ -53,8 +53,17 @@ SPPoint* spLoadImgFeats(const SPConfig config,int numImages,int *totalSize)
         FILE *fo = fopen(featsFileName, "r");
         fscanf(fo,"%d",&imgIndex);
         fscanf(fo,"%d",&numFeats);
+        fscanf(fo,"%d",&savedDim);
         if(i!=imgIndex){
             printf("ERROR");
+            return NULL;
+        }
+        if(savedDim>dim){
+            printf("Warning,took only %d dim instead of %d\n",dim,savedDim);
+
+        }
+        if(savedDim<dim){
+            printf("Error");
             return NULL;
         }
         allFeats=(SPPoint*)realloc(allFeats,(*totalSize+numFeats)*sizeof(SPPoint));
