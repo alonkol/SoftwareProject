@@ -360,6 +360,13 @@ void spConfigDestroy(SPConfig config){
     free(config);
 }
 
+/**
+ *
+ */
+SPLIT_METHOD getSplitMethod(const SPConfig config){
+    return config->spKDTreeSplitMethod;
+}
+
 
 /**************************/
 /**************************/
