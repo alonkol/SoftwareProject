@@ -10,7 +10,7 @@ extern "C" {
 #include "SPConfig.h"
 #include "SP_aux.h"
 #include "SPPoint.h"
-#include "SPKDArray.h"
+#include "SPKDTree.h"
 }
 
 #define MAXLINESIZE 1024
@@ -39,9 +39,15 @@ int main(int argc,char** argv)
     printKDARR(t->kdLeft);
     printf("\nRight:\n");
     printKDARR(t->kdRight);
-    spKDArrayDestroy(k);
     splitResDestroy(t);
 */
+    SPKDArray* k = spKDArrayInit(allFeats,featArrSize);
+    KDTreeNode* t = create(k,config);
+
+    destroyKDTree(t);
+    spKDArrayDestroy(k);
+
+
     delete imgProc;
     for(i=0;i<featArrSize;i++){
         spPointDestroy(allFeats[i]);

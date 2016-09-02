@@ -5,12 +5,13 @@
  spImagesSuffix = .png
  spNumOfImages = 4
 #the following variables have default values, if not set the default value is choosen
-spPCADimension = 2 # notice the default value is chosen since this is a comment
+spPCADimension = 3 # notice the default value is chosen since this is a comment
 spPCAFilename = pca.yml
-spNumOfFeatures = 2
+spNumOfFeatures = 7
 spExtractionMode = false
 spMinimalGUI = true
- spNumOfSimilarImages = 5#jkjfkdjk
+spKDTreeSplitMethod = RANDOM
+spNumOfSimilarImages = 5 #jkjfkdjk
 spLoggerFilename = stdout
 # This is a comment line
  #Another valid comment line

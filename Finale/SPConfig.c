@@ -12,12 +12,6 @@
  */
 
 
-typedef enum tree_split_method{
-	RANDOM,
-	MAX_SPREAD,
-	INCREMENTAL
-} SPLIT_METHOD;
-
 struct sp_config_t{
     char spImagesDirectory[MAXLINESIZE];
     char spImagesPrefix[MAXLINESIZE];
@@ -157,7 +151,6 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
         } else if (strcmp(variableName,"spLoggerFilename") == 0){
             strcpy(cfg->spLoggerFilename,variableValue);
         }
-
     }
 
     fclose(fp);
@@ -179,7 +172,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
 bool spConfigIsExtractionMode(const SPConfig config, SP_CONFIG_MSG* msg){
     if (config == NULL){
         msg = SP_CONFIG_INVALID_ARGUMENT;
-        return;
+        return NULL;
     }
     msg = SP_CONFIG_SUCCESS;
     return config->spExtractionMode;
@@ -360,9 +353,6 @@ void spConfigDestroy(SPConfig config){
     free(config);
 }
 
-/**
- *
- */
 SPLIT_METHOD getSplitMethod(const SPConfig config){
     return config->spKDTreeSplitMethod;
 }

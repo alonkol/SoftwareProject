@@ -1,3 +1,5 @@
+#include "SPPoint.h"
+
 typedef struct sp_kd_array
 {
     int dim; //dim for each points

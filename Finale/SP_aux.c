@@ -85,30 +85,6 @@ SPPoint* spLoadImgFeats(const SPConfig config,int numImages,int *totalSize)
 
 }
 
-/*
-SPPoint* spLoadImgFeats(const SPConfig config,int index){
-    SPImgFeats* imgFeats = (SPImgFeats*)malloc(sizeof(SPImgFeats));
-    char fileName[MAXLINESIZE],buff[MAXLINESIZE];
-    spConfigGetImageFeatsPath(fileName,config,imgFeats->imgIndex); //changeeee
-    FILE *fo;
-    fo = fopen(fileName, "r");
-    fscanf(fo,"%d",&imgFeats->imgIndex);
-    fscanf(fo,"%d",&imgFeats->numFeats);
-    imgFeats->feats=(SPPoint*)malloc(sizeof(SPPoint*)*imgFeats->numFeats);
-    for(int i=0;i<imgFeats->numFeats;i++){
-        int dim;
-        fscanf(fo,"%d",&dim);
-        double* vals = (double*)malloc(sizeof(double)*dim);
-        for(int j=0;j<dim;j++){
-            fscanf(fo,"%f",&vals[j]);
-        }
-        fgets(buff,MAXLINESIZE,fo);//skip to next line
-        imgFeats->feats[i] = spPointCreate(vals,dim,index);
-    }
-    return imgFeats;
-}
-
-*/
 
 
 

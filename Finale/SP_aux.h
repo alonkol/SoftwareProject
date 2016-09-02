@@ -2,9 +2,6 @@
 
 /** feature extraction and tree construction */
 
-
-
-
 /** loads features  from file */
 SPPoint* spLoadImgFeats(const SPConfig config,int numImages,int* totalSize);
 

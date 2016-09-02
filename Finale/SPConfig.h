@@ -25,6 +25,12 @@ typedef enum sp_config_msg_t {
 
 typedef struct sp_config_t* SPConfig;
 
+typedef enum tree_split_method{
+	RANDOM,
+	MAX_SPREAD,
+	INCREMENTAL
+} SPLIT_METHOD;
+
 /**
  * Creates a new system configuration struct. The configuration struct
  * is initialized based on the configuration file given by 'filename'.
@@ -169,5 +175,6 @@ SP_CONFIG_MSG spConfigGetPCAPath(char* pcaPath, const SPConfig config);
  * If config == NULL nothig is done.
  */
 void spConfigDestroy(SPConfig config);
+SPLIT_METHOD getSplitMethod(const SPConfig config);
 void spConfigPrint(SPConfig config);
 #endif /* SPCONFIG_H_ */
