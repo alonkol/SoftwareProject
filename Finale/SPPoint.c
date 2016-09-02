@@ -35,7 +35,7 @@ SPPoint spPointCreate(double* data, int dim, int index){
 SPPoint spPointCopy(SPPoint source){
     assert (source != NULL);
     struct sp_point_t* res = spPointCreate(source->data, source->dim, source->index);
-
+    if(res==NULL) printf("CopyFailed!");
     return res;
 }
 

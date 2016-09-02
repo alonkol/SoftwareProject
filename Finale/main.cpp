@@ -10,6 +10,7 @@ extern "C" {
 #include "SPConfig.h"
 #include "SP_aux.h"
 #include "SPPoint.h"
+#include "SPKDArray.h"
 }
 
 #define MAXLINESIZE 1024
@@ -29,6 +30,15 @@ int main(int argc,char** argv)
     int featArrSize,i;
     ImageProc *imgProc = new ImageProc(config);
     SPPoint *allFeats=produceFeatures(config,imgProc,&featArrSize);
+
+    //SPKDArray* k = init(allFeats,featArrSize);
+    //printKDARR(k);
+
+    //SplitRes* t = split(k,0);
+
+    //printKDARR(t->kdLeft);
+    //printKDARR(t->kdRight);
+
 
     delete imgProc;
     for(i=0;i<featArrSize;i++){
@@ -71,6 +81,6 @@ SPPoint* produceFeatures(SPConfig config,ImageProc *imgProc,int* featArrSize){
     }
     printf("Done Extracting/Loading! totalSize of featuresArray: %d\n",totalSize);
     *featArrSize = totalSize;
-
     return allFeats;
+
 }
