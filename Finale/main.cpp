@@ -30,22 +30,25 @@ int main(int argc,char** argv)
     int featArrSize,i;
     ImageProc *imgProc = new ImageProc(config);
     SPPoint *allFeats=produceFeatures(config,imgProc,&featArrSize);
+/*
+    SPKDArray* k = spKDArrayInit(allFeats,featArrSize);
+    printKDARR(k);
 
-    //SPKDArray* k = init(allFeats,featArrSize);
-    //printKDARR(k);
-
-    //SplitRes* t = split(k,0);
-
-    //printKDARR(t->kdLeft);
-    //printKDARR(t->kdRight);
-
-
+    SplitRes* t = spKDArraySplit(k,0);
+    printf("\nLeft:\n");
+    printKDARR(t->kdLeft);
+    printf("\nRight:\n");
+    printKDARR(t->kdRight);
+    spKDArrayDestroy(k);
+    splitResDestroy(t);
+*/
     delete imgProc;
     for(i=0;i<featArrSize;i++){
         spPointDestroy(allFeats[i]);
     }
     free(allFeats);
     spConfigDestroy(config);
+
 
     return 0;
 }

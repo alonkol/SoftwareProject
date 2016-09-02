@@ -12,8 +12,10 @@ typedef struct split_res
     SPKDArray *kdRight;
 } SplitRes;
 
-SPKDArray* init(SPPoint* arr,int size);
 SPKDArray* spKDArrayCreate(SPPoint* points,int dim,int size);
+void spKDArrayDestroy(SPKDArray *kdArr);
+SPKDArray* spKDArrayInit(SPPoint* arr,int size);
 int pntCmp(const void* pntA,const void* pntB);
-SplitRes* split(SPKDArray *kdArr,int coor);
+SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor);
+void splitResDestroy(SplitRes* spRes);
 void printKDARR(SPKDArray *k);

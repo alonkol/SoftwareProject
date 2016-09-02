@@ -77,8 +77,8 @@ double spPointL2SquaredDistance(SPPoint p, SPPoint q){
 //testing pointttttttttttttttttttttttttttt
 void printPoint(SPPoint p){
     int i;
-    printf("%d\n",p->index);
-    printf("%d\n",p->dim);
+    printf("%d\t",p->index);
+    //printf("%d\n",p->dim);
     for(i=0;i<p->dim;i++){
         printf("%f\t",spPointGetAxisCoor(p,i));
 
