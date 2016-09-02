@@ -70,6 +70,7 @@ SPKDArray* spKDArrayInit(SPPoint* arr,int size)
         spPointDestroy(tmpPoints[i].p);
     }
     free(tmpPoints);
+    printf("KdArray initialized\n");
     return kdArr;
 }
 
@@ -87,10 +88,12 @@ int pntCmp(const void* pntA,const void* pntB)
 
 SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
 {
-    int n = ceil(kdArr->size / 2.0);
-    int i,j,index;
-    int* newIndexes;
-    int* isInKdleft = (int*)calloc(kdArr->size,sizeof(int));
+    int i,j,index,ctrLeft = 0,ctrRight = 0,oldIndex,newIndex,n;
+    int *newIndexes,*isInKdleft;
+    SplitRes* spRes;
+
+    n = ceil(kdArr->size / 2.0);
+    isInKdleft = (int*)calloc(kdArr->size,sizeof(int));
     newIndexes = (int*)malloc(sizeof(int)*kdArr->size);
     SPPoint* left = (SPPoint*)malloc(sizeof(SPPoint)*n);
     SPPoint* right = (SPPoint*)malloc(sizeof(SPPoint)*(kdArr->size-n));
@@ -99,7 +102,7 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
         index = kdArr->pointsMat[coor][i];
         left[i] = spPointCopy(kdArr->points[index]);
         newIndexes[index]=i;
-        isInKdleft[index] = 1;
+        isInKdleft[index]= 1;
         if(left[i]==NULL) printf("NULL\t");
     }
     for (i=n; i<kdArr->size; i++)
@@ -111,14 +114,9 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
         if(right[i-n]==NULL) printf("NULL\t");
     }
 
-    SplitRes* spRes = (SplitRes*)malloc(sizeof(SplitRes));
+    spRes = (SplitRes*)malloc(sizeof(SplitRes));
     spRes->kdLeft = spKDArrayCreate(left,kdArr->dim,n);
     spRes->kdRight = spKDArrayCreate(right,kdArr->dim,kdArr->size-n);
-
-    int ctrLeft = 0;
-    int ctrRight = 0;
-    int oldIndex;
-    int newIndex;
 
     for(i=0;i<kdArr->dim;i++){
         ctrLeft = 0;
@@ -135,6 +133,7 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
             }
         }
     }
+    printf("Split was successful by coor: %d\n",coor);
     return spRes;
 }
 
