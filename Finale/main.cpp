@@ -23,7 +23,7 @@ int main(int argc,char** argv)
 
     SP_CONFIG_MSG msg;
     SPConfig config = spConfigCreate(argv[1],&msg);
-
+    spConfigPrint(config);
     // init logger /////////////////////////////////////
 
     int featArrSize,i;
