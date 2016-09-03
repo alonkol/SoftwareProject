@@ -48,12 +48,13 @@ SPPoint* spUpdateAndSaveFeats(SPPoint* allFeats,SPPoint* imgFeats,int totalSize,
 
 SPPoint* spLoadImgFeats(const SPConfig config,int numImages,int *totalSize)
 {
+    char featsFileName[MAXLINESIZE],buff[MAXLINESIZE];
     SPPoint* allFeats=NULL;
     SP_CONFIG_MSG msg;
     FILE *fo;
     int i,j,k,imgIndex,numFeats,savedDim,dim = spConfigGetPCADim(config,&msg);
     *totalSize=0;
-    char featsFileName[MAXLINESIZE],buff[MAXLINESIZE];
+
     for (i=0;i<numImages;i++){
         msg=spConfigGetPath(featsFileName,config,i,featsSuff);
         fo = fopen(featsFileName, "r");

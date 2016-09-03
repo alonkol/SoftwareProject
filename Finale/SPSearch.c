@@ -1,15 +1,18 @@
 #include "SPSearch.h"
-
+#define ALLOC_ERROR_MSG "Memory Allocation Error."
 
 SPBPQueue kNearestNeighbors(SPConfig config,SPKDTreeNode *root, SPPoint p){
 	SPBPQueue bpq = spBPQueueCreate(spConfigGetKNN(config));
-	kNearestNeighborsRec(root,bpq,p);
+	if(kNearestNeighborsRec(root,bpq,p)==-1){
+        spBPQueueDestroy(bpq);
+        return NULL;
+	};
 	return bpq;
 }
 
 
-void kNearestNeighborsRec(SPKDTreeNode *curr, SPBPQueue bpq, SPPoint p){
-	if (curr == NULL) return;
+int kNearestNeighborsRec(SPKDTreeNode *curr, SPBPQueue bpq, SPPoint p){
+	if (curr == NULL) return 0;
 
 	SPListElement element;
 
@@ -19,14 +22,14 @@ void kNearestNeighborsRec(SPKDTreeNode *curr, SPBPQueue bpq, SPPoint p){
 		element = spListElementCreate(spPointGetIndex(curr->data), spPointL2SquaredDistance(curr->data,p));
 		if (element == NULL){
             spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
-            return NULL;
+            return -1;
 		}
 		if (spBPQueueEnqueue(bpq, element) == SP_BPQUEUE_OUT_OF_MEMORY){
             spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
             spListElementDestroy(element);
-            return NULL;
+            return -1;
 		}
-		return;
+		return 0;
 	}
 
 	/* Recursively search the half of the tree that contains the test point. */
@@ -42,8 +45,8 @@ void kNearestNeighborsRec(SPKDTreeNode *curr, SPBPQueue bpq, SPPoint p){
 			kNearestNeighborsRec(curr->left, bpq, p);
 		}
 	 }
+	 return 0;
 }
-
 
 bool diffLessThanPrio(SPKDTreeNode *curr,SPBPQueue bpq, SPPoint p){
 	double diff = (curr->val - spPointGetAxisCoor(p,curr->dim));

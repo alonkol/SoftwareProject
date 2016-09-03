@@ -35,7 +35,7 @@ struct sp_config_t{
     char spLoggerFilename[MAXLINESIZE];
 };
 
-typedef struct sp_config_t* SPConfig;
+//typedef struct sp_config_t* SPConfig;
 
 /**
  * Creates a new system configuration struct. The configuration struct
@@ -90,7 +90,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     cfg->spLoggerLevel = 3;
     strcpy(cfg->spLoggerFilename,"stdout");
 
-    //to check if it was initialized
+    // to check if it was initialized
     cfg->spNumOfImages = -1;
     strcpy(cfg->spImagesSuffix,"");
     strcpy(cfg->spImagesPrefix,"");
