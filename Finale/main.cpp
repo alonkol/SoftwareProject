@@ -16,7 +16,7 @@ extern "C" {
 
 #define MAXLINESIZE 1024
 #define ALLOC_ERROR_MSG "Memory Allocation Error."
-
+#define DEFUALT_CONFIG_FILE_NAME "spcbir.config"
 using namespace sp;
 SPPoint* produceFeatures(SPConfig config,ImageProc *imgProc,int* featArrSize);
 int cmpfunc(const void *a,const void *b);
@@ -24,9 +24,19 @@ int showSimilarQuery(char* query,SPConfig config,ImageProc *imgProc,SPKDTreeNode
 
 int main(int argc,char** argv)
 {
+    char configFileName[MAXLINESIZE];
+    //if more than one param
+    if(argc>2){
+        printf("Invalid command line : use -c <config_filename>\n");
+        return 1;
+    }else if (argc==2){
+        strcpy(configFileName,argv[1]);
+    }else{
+        strcpy(configFileName,DEFUALT_CONFIG_FILE_NAME);
+    }
 
     SP_CONFIG_MSG msg;
-    SPConfig config = spConfigCreate(argv[1],&msg);
+    SPConfig config = spConfigCreate(configFileName,&msg);
     if(config==NULL) return 1;
     spLoggerCreate(spConfigGetLoggerFile(config),spConfigGetLoggerLevel(config));
 
