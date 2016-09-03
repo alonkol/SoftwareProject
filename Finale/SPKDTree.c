@@ -21,7 +21,7 @@ SPKDTreeNode* spKDTreeCreateRec(SPKDArray* kdArr, SPLIT_METHOD method, int prevD
         res->dim=-1;
         res->left=NULL;
         res->right=NULL;
-        printPoint((res->data));
+        //printPoint((res->data));
         return res;
     }
 
@@ -61,4 +61,6 @@ void destroyKDTree(SPKDTreeNode* node){
     free(node);
 }
 
-
+bool isLeaf(SPKDTreeNode* node){
+    return (node->dim==-1);
+}

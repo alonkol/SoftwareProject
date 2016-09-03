@@ -47,14 +47,17 @@ SPKDArray* spKDArrayInit(SPPoint* arr,int size)
 {
     Wrapper* tmpPoints;
     int i,dim,j;
+    SPPoint* pointsCopy = (SPPoint*)malloc(sizeof(SPPoint)*size);
     tmpPoints = (Wrapper*)malloc(sizeof(Wrapper)*size);
     for(i=0; i<size; i++)
     {
         tmpPoints[i].p = spPointCopy(arr[i]);
         tmpPoints[i].idx = i;
+        pointsCopy[i]=spPointCopy(arr[i]);
     }
     dim = spPointGetDimension(arr[0]);
-    SPKDArray* kdArr = spKDArrayCreate(arr,dim,size);
+
+    SPKDArray* kdArr = spKDArrayCreate(pointsCopy,dim,size);
     for(i=0; i<dim; i++)
     {
         sortedDim = i;
@@ -133,7 +136,7 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
             }
         }
     }
-    printf("Split was successful by coor: %d\n",coor);
+    //printf("Split was successful by coor: %d\n",coor);
     return spRes;
 }
 

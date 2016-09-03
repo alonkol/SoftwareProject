@@ -184,4 +184,6 @@ void spConfigDestroy(SPConfig config);
 SPLIT_METHOD getSplitMethod(const SPConfig config);
 int spConfigGetKNN(SPConfig config);
 void spConfigPrint(SPConfig config);
+int spConfigGetNumOfSimilar(SPConfig config);
+
 #endif /* SPCONFIG_H_ */

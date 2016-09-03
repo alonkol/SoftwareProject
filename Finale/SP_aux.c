@@ -4,6 +4,7 @@
 #include "SPConfig.h"
 #include "SPPoint.h"
 #include "SP_aux.h"
+#include "SPBPriorityQueue.h"
 
 #define MAXLINESIZE 1024
 #define featsSuff ".feats"
@@ -82,8 +83,11 @@ SPPoint* spLoadImgFeats(const SPConfig config,int numImages,int *totalSize)
 
     return allFeats;
 
-
 }
+
+
+
+
 
 
 

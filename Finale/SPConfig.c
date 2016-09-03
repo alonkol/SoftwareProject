@@ -480,9 +480,16 @@ int spConfigGetKNN(SPConfig config){
     return config->spKNN;
 }
 
+int spConfigGetNumOfSimilar(SPConfig config){
+    return config->spNumOfSimilarImages;
 
-
-
+}
+char* spConfigGetLoggerFile(SPConfig config){
+    return config->spLoggerFilename;
+}
+int spConfigGetLoggerLevel(SPConfig config){
+    return config->spLoggerLevel;
+}
 
 /**************************/
 /**************************/

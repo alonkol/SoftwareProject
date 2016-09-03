@@ -13,3 +13,4 @@ typedef struct kdnode{
 SPKDTreeNode* spKDTreeCreate(SPKDArray* kdArr, SPConfig config);
 SPKDTreeNode* spKDTreeCreateRec(SPKDArray* kdArr, SPLIT_METHOD method, int prevDim);
 void destroyKDTree(SPKDTreeNode* node);
+bool isLeaf(SPKDTreeNode* node);

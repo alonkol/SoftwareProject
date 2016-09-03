@@ -10,7 +10,6 @@ SPBPQueue kNearestNeighbors(SPConfig config,SPKDTreeNode *root, SPPoint p){
 
 
 void kNearestNeighborsRec(SPKDTreeNode *curr, SPBPQueue bpq, SPPoint p){
-    printf("*");
 	if (curr == NULL) return;
 
 	SPListElement element;

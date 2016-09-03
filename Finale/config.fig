@@ -3,16 +3,17 @@
  spImagesDirectory = ./images/
  spImagesPrefix=img
  spImagesSuffix = .png
- spNumOfImages = 4
+ spNumOfImages = 17
 #the following variables have default values, if not set the default value is choosen
-spPCADimension = 3 # notice the default value is chosen since this is a comment
+spPCADimension = 16 # notice the default value is chosen since this is a comment
 spPCAFilename = pca.yml
-spNumOfFeatures = 7
+spNumOfFeatures = 100
 spExtractionMode = false
-spMinimalGUI = true
+spMinimalGUI = false
 spKDTreeSplitMethod = RANDOM
 spNumOfSimilarImages = 5 #jkjfkdjk
 spLoggerFilename = stdout
+spKNN = 3
 # This is a comment line
  #Another valid comment line
 #####!!!! I can write anything I want!
