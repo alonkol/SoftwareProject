@@ -10,7 +10,10 @@ extern "C" {
 #include "SPConfig.h"
 #include "SP_aux.h"
 #include "SPPoint.h"
-#include "SPKDTree.h"
+//#include "SPKDTree.h"
+#include "SPListElement.h"
+#include "SPBPriorityQueue.h"
+#include "SPSearch.h"
 }
 
 #define MAXLINESIZE 1024
@@ -42,11 +45,32 @@ int main(int argc,char** argv)
     splitResDestroy(t);
 */
     SPKDArray* k = spKDArrayInit(allFeats,featArrSize);
-    SPKDTreeNode* t = spKDTreeCreate(k,config);
+    SPKDTreeNode* root = spKDTreeCreate(k,config);
 
+    char* query = "./images/img0.png";
+    int* res = (int*)calloc(spConfigGetNumOfImages(config,&msg),sizeof(int));
+    int numFeats,j;
+    SPListElement node;
+    SPPoint* queryFeat = imgProc -> getImageFeatures(query,1000,&numFeats);
 
+    for(i=0;i<numFeats;i++){
+            printPoint(queryFeat[i]);
+        SPBPQueue bpq = kNearestNeighbors(config,root,queryFeat[i]);
 
-    destroyKDTree(t);
+        for(j=0;j<spConfigGetKNN(config);j++){
+            node = spBPQueuePeek(bpq);
+            spBPQueueDequeue(bpq);
+            res[spListElementGetIndex(node)]+=1;
+            spListElementDestroy(node);
+        }
+        spBPQueueDestroy(bpq);
+    }
+
+    for(i=0;i<spConfigGetNumOfImages(config,&msg);i++)
+        printf("%d\t",res[i]);
+
+    free(res);
+    destroyKDTree(root);
     spKDArrayDestroy(k);
     delete imgProc;
     for(i=0;i<featArrSize;i++){
@@ -54,7 +78,6 @@ int main(int argc,char** argv)
     }
     free(allFeats);
     spConfigDestroy(config);
-
 
     return 0;
 }

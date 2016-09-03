@@ -172,9 +172,10 @@ SP_CONFIG_MSG spConfigGetPCAPath(char* pcaPath, const SPConfig config);
 
 /**
  * Frees all memory resources associate with config.
- * If config == NULL nothig is done.
+ * If config == NULL nothing is done.
  */
 void spConfigDestroy(SPConfig config);
 SPLIT_METHOD getSplitMethod(const SPConfig config);
+int spConfigGetKNN(SPConfig config);
 void spConfigPrint(SPConfig config);
 #endif /* SPCONFIG_H_ */

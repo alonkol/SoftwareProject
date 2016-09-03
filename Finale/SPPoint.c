@@ -56,6 +56,7 @@ int spPointGetIndex(SPPoint point){
 }
 
 double spPointGetAxisCoor(SPPoint point, int axis){
+    if (point==NULL) printf("$$$$$NULL$$$$$$\n");
     assert (point != NULL && axis < point->dim);
     return point->data[axis];
 }
@@ -76,6 +77,7 @@ double spPointL2SquaredDistance(SPPoint p, SPPoint q){
 }
 //testing pointttttttttttttttttttttttttttt
 void printPoint(SPPoint p){
+    if(p==NULL) printf("NULLL\n");
     int i;
     printf("%d\t",p->index);
     //printf("%d\n",p->dim);

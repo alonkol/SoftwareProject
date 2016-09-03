@@ -357,6 +357,11 @@ SPLIT_METHOD getSplitMethod(const SPConfig config){
     return config->spKDTreeSplitMethod;
 }
 
+int spConfigGetKNN(SPConfig config){
+    return config->spKNN;
+}
+
+
 
 /**************************/
 /**************************/
