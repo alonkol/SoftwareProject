@@ -2,15 +2,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 #include "SPLogger.h"
 #include "SPConfig.h"
 #define MAXLINESIZE 1024
-#define MAX_PARAM_LEN 64;
-
-
+#define MAX_PARAM_LEN 64
 
 #define MEMORY_ALLOC_FAILURE_MSG "Memory allocation failure\n"
-#define FILE_OPEN_FAILURE_MSG "Failed to open configuration file"
 #define INVALID_CONFIG_LINE_MSG "Invalid configuration line"
 #define CONSTRAINT_NOT_MET_MSG "Invalid value - constraint not met"
 
@@ -92,13 +90,19 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     cfg->spLoggerLevel = 3;
     strcpy(cfg->spLoggerFilename,"stdout");
 
+    //to check if it was initialized
+    cfg->spNumOfImages = -1;
+    strcpy(cfg->spImagesSuffix,"");
+    strcpy(cfg->spImagesPrefix,"");
+    strcpy(cfg->spImagesDirectory,"");
+    strcpy(param,"");
 
     // read cfg from file
     fp = fopen(filename, "r");
 
     if(fp == NULL)
     {
-        printf(FILE_OPEN_FAILURE_MSG);
+        printf("The configuration file %s couldn't be opened\n",filename);
         free(cfg);
         return NULL;
     }
@@ -243,20 +247,21 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
 
     // check if any non-default parameter is missing
 
-    if (spNumOfImages == NULL){
-        param = "spNumOfImages";
+    if (cfg->spNumOfImages == -1){
+        strcpy(param,"spNumOfImages");
     }
-    if (spImageSuffix == NULL){
-        param = "spImageSuffix";
+    if (strcmp(cfg->spImagesSuffix, "")==0){
+        strcpy(param,"spImageSuffix");
     }
-    if (spImagePrefix == NULL){
-        param = "spImagePrefix";
+    if (strcmp(cfg->spImagesPrefix, "")==0){
+        strcpy(param,"spImagePrefix");
     }
-    if (spImageDirectory == NULL){
-        param = "spImageDirectory";
+    if (strcmp(cfg->spImagesDirectory, "")==0){
+        strcpy(param,"spImageDirectory");
     }
-    if (param != NULL){
+    if (strcmp(param,"")!=0){
         printMissingParamError(filename, line, param);
+        return NULL;
     }
 
     return cfg;
@@ -290,10 +295,10 @@ void printMissingParamError(const char* filename, int line, char* param){
  */
 bool spConfigIsExtractionMode(const SPConfig config, SP_CONFIG_MSG* msg){
     if (config == NULL){
-        msg = SP_CONFIG_INVALID_ARGUMENT;
+        *msg = SP_CONFIG_INVALID_ARGUMENT;
         return NULL;
     }
-    msg = SP_CONFIG_SUCCESS;
+    *msg = SP_CONFIG_SUCCESS;
     return config->spExtractionMode;
 }
 
@@ -310,10 +315,10 @@ bool spConfigIsExtractionMode(const SPConfig config, SP_CONFIG_MSG* msg){
  */
 bool spConfigMinimalGui(const SPConfig config, SP_CONFIG_MSG* msg){
     if (config == NULL){
-        msg = SP_CONFIG_INVALID_ARGUMENT;
-        return;
+        *msg = SP_CONFIG_INVALID_ARGUMENT;
+        return false;
     }
-    msg = SP_CONFIG_SUCCESS;
+    *msg = SP_CONFIG_SUCCESS;
     return config->spMinimalGUI;
 }
 
@@ -331,13 +336,10 @@ bool spConfigMinimalGui(const SPConfig config, SP_CONFIG_MSG* msg){
  */
 int spConfigGetNumOfImages(const SPConfig config, SP_CONFIG_MSG* msg){
     if (config == NULL){
-        msg = SP_CONFIG_INVALID_ARGUMENT;
-        return;
-    }
-    if (config->spNumOfImages == NULL){
+        *msg = SP_CONFIG_INVALID_ARGUMENT;
         return -1;
     }
-    msg = SP_CONFIG_SUCCESS;
+    *msg = SP_CONFIG_SUCCESS;
     return config->spNumOfImages;
 }
 
@@ -355,13 +357,10 @@ int spConfigGetNumOfImages(const SPConfig config, SP_CONFIG_MSG* msg){
  */
 int spConfigGetNumOfFeatures(const SPConfig config, SP_CONFIG_MSG* msg){
    if (config == NULL){
-        msg = SP_CONFIG_INVALID_ARGUMENT;
-        return;
-    }
-    if (config->spNumOfFeatures == NULL){
+        *msg = SP_CONFIG_INVALID_ARGUMENT;
         return -1;
     }
-    msg = SP_CONFIG_SUCCESS;
+    *msg = SP_CONFIG_SUCCESS;
     return config->spNumOfFeatures;
 }
 
@@ -378,13 +377,10 @@ int spConfigGetNumOfFeatures(const SPConfig config, SP_CONFIG_MSG* msg){
  */
 int spConfigGetPCADim(const SPConfig config, SP_CONFIG_MSG* msg){
    if (config == NULL){
-        msg = SP_CONFIG_INVALID_ARGUMENT;
-        return;
-    }
-    if (config->spPCADimension == NULL){
+        *msg = SP_CONFIG_INVALID_ARGUMENT;
         return -1;
     }
-    msg = SP_CONFIG_SUCCESS;
+    *msg = SP_CONFIG_SUCCESS;
     return config->spPCADimension;
 }
 
@@ -487,7 +483,7 @@ int spConfigGetNumOfSimilar(SPConfig config){
 char* spConfigGetLoggerFile(SPConfig config){
     return config->spLoggerFilename;
 }
-int spConfigGetLoggerLevel(SPConfig config){
+SP_LOGGER_LEVEL spConfigGetLoggerLevel(SPConfig config){
     return config->spLoggerLevel;
 }
 

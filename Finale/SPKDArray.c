@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-
+#define ALLOC_ERROR_MSG "Memory Allocation Error."
 int sortedDim;
 
 typedef struct point_wrapper
@@ -93,7 +93,7 @@ SPKDArray* spKDArrayInit(SPPoint* arr,int size)
 
         // in case of allocation failure
         if (tmpPoints[i].p == NULL || pointsCopy[i] == NULL){
-            spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __function__, __LINE__);
+            spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
             for (j = 0; j <= i; j++){
                 spPointDestroy(tmpPoints[j].p);
                 spPointDestroy(pointsCopy[j]);
@@ -132,7 +132,6 @@ SPKDArray* spKDArrayInit(SPPoint* arr,int size)
         spPointDestroy(tmpPoints[i].p);
     }
     free(tmpPoints);
-    printf("KdArray initialized\n");
     return kdArr;
 }
 
@@ -159,20 +158,20 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
     n = ceil(kdArr->size / 2.0);
     isInKdleft = (int*)calloc(kdArr->size,sizeof(int));
     if (isInKdleft == NULL){
-        spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __function__, __LINE__);
+        spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
         return NULL;
     }
     newIndexes = (int*)malloc(sizeof(int)*kdArr->size);
     if (newIndexes == NULL){
         free(isInKdleft);
-        spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __function__, __LINE__);
+        spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
         return NULL;
     }
     left = (SPPoint*)malloc(sizeof(SPPoint)*n);
     if (left == NULL){
         free(isInKdleft);
         free(newIndexes);
-        spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __function__, __LINE__);
+        spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
         return NULL;
     }
     right = (SPPoint*)malloc(sizeof(SPPoint)*(kdArr->size-n));
@@ -180,7 +179,7 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
         free(isInKdleft);
         free(newIndexes);
         free(left);
-        spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __function__, __LINE__);
+        spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
         return NULL;
     }
     for (i=0; i<n; i++)
@@ -206,7 +205,7 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
         free(newIndexes);
         free(left);
         free(right);
-        spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __function__, __LINE__);
+        spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
         return NULL;
     }
     spRes->kdLeft = spKDArrayCreate(left,kdArr->dim,n);
