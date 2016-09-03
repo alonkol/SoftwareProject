@@ -14,14 +14,23 @@ SPKDTreeNode* spKDTreeCreateRec(SPKDArray* kdArr, SPLIT_METHOD method, int prevD
     double spread;
     double maxSpread = 0;
     int maxDim = 0;
+    SPPoint medianPnt;
+    SPKDTreeNode* res;
+    SPPoint maxPnt;
+    SPPoint minPnt;
+    SplitRes* splitKDArrs;
+
 
     if (kdArr->size == 1){
-        SPKDTreeNode* res = (SPKDTreeNode*)malloc(sizeof(SPKDTreeNode));
+        res = (SPKDTreeNode*)malloc(sizeof(SPKDTreeNode));
+        if (res == NULL){
+            spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
+            return NULL;
+        }
         res->data = *kdArr->points;
         res->dim=-1;
         res->left=NULL;
         res->right=NULL;
-        //printPoint((res->data));
         return res;
     }
 
@@ -29,8 +38,8 @@ SPKDTreeNode* spKDTreeCreateRec(SPKDArray* kdArr, SPLIT_METHOD method, int prevD
         dim = rand()% kdArr->dim;
     } else if (method == MAX_SPREAD){
         for (i = 0; i < kdArr->dim; i++){
-            SPPoint maxPnt = kdArr->points[kdArr->pointsMat[i][kdArr->size - 1]];
-            SPPoint minPnt = kdArr->points[kdArr->pointsMat[i][0]];
+            maxPnt = kdArr->points[kdArr->pointsMat[i][kdArr->size - 1]];
+            minPnt = kdArr->points[kdArr->pointsMat[i][0]];
             spread = spPointGetAxisCoor(maxPnt, i) - spPointGetAxisCoor(minPnt, i);
 
             if (spread > maxSpread){
@@ -42,13 +51,22 @@ SPKDTreeNode* spKDTreeCreateRec(SPKDArray* kdArr, SPLIT_METHOD method, int prevD
     } else if (method == INCREMENTAL){
         dim = (prevDim + 1) % kdArr->dim;
     }
-    SplitRes* splitKDArrs = spKDArraySplit(kdArr,dim);
+    splitKDArrs = spKDArraySplit(kdArr,dim);
 
-    SPKDTreeNode* res = (SPKDTreeNode*)malloc(sizeof(SPKDTreeNode));
+    res = (SPKDTreeNode*)malloc(sizeof(SPKDTreeNode));
+    if (res == NULL){
+        spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
+        return NULL;
+    }
     res->dim = dim;
     res->left = spKDTreeCreateRec(splitKDArrs->kdLeft, method, dim);
     res->right = spKDTreeCreateRec(splitKDArrs->kdRight, method, dim);
-    SPPoint medianPnt = splitKDArrs->kdLeft->points[splitKDArrs->kdLeft->size - 1];
+    if (res->right == NULL || res->left == NULL){
+        // alloc failure: already logged
+        destroyKDTree(res); // frees both nodes
+        return NULL;
+    }
+    medianPnt = splitKDArrs->kdLeft->points[splitKDArrs->kdLeft->size - 1];
     res->val = spPointGetAxisCoor(medianPnt, dim);
     res->data=NULL;
     return res;

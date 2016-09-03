@@ -152,6 +152,8 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
 {
     int i,j,index,ctrLeft = 0,ctrRight = 0,oldIndex,newIndex,n;
     int *newIndexes,*isInKdleft;
+    SPPoint* left;
+    SPPoint* right;
     SplitRes* spRes;
 
     n = ceil(kdArr->size / 2.0);
@@ -166,14 +168,14 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
         spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __function__, __LINE__);
         return NULL;
     }
-    SPPoint* left = (SPPoint*)malloc(sizeof(SPPoint)*n);
+    left = (SPPoint*)malloc(sizeof(SPPoint)*n);
     if (left == NULL){
         free(isInKdleft);
         free(newIndexes);
         spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __function__, __LINE__);
         return NULL;
     }
-    SPPoint* right = (SPPoint*)malloc(sizeof(SPPoint)*(kdArr->size-n));
+    right = (SPPoint*)malloc(sizeof(SPPoint)*(kdArr->size-n));
     if (right == NULL){
         free(isInKdleft);
         free(newIndexes);
