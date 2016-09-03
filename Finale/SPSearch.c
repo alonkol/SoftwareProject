@@ -3,7 +3,6 @@
 
 SPBPQueue kNearestNeighbors(SPConfig config,SPKDTreeNode *root, SPPoint p){
 	SPBPQueue bpq = spBPQueueCreate(spConfigGetKNN(config));
-
 	kNearestNeighborsRec(root,bpq,p);
 	return bpq;
 }
@@ -18,7 +17,15 @@ void kNearestNeighborsRec(SPKDTreeNode *curr, SPBPQueue bpq, SPPoint p){
 	 * point is not as good as the points we've seen so far.*/
 	if (isLeaf(curr)){
 		element = spListElementCreate(spPointGetIndex(curr->data), spPointL2SquaredDistance(curr->data,p));
-		spBPQueueEnqueue(bpq, element);
+		if (element == NULL){
+            spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
+            return NULL;
+		}
+		if (spBPQueueEnqueue(bpq, element) == SP_BPQUEUE_OUT_OF_MEMORY){
+            spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
+            spListElementDestroy(element);
+            return NULL;
+		}
 		return;
 	}
 
