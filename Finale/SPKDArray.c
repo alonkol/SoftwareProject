@@ -15,15 +15,40 @@ typedef struct point_wrapper
 
 SPKDArray* spKDArrayCreate(SPPoint* points,int dim,int size)
 {
-    int i;
+    int i,j;
     SPKDArray *kdArr = (SPKDArray*)malloc(sizeof(SPKDArray));
+    if (kdArr == NULL){
+        spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
+        return NULL;
+    }
     kdArr->dim = dim;
     kdArr->size=size;
     kdArr->points=points;
+
+    // allocate matrix
     kdArr->pointsMat = (int**)malloc(sizeof(int*)*dim);
+
+    // in case of allocation failure, free all memory and return null
+    if (kdArr->pointsMat == NULL){
+        free(kdArr);
+        spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
+        return NULL;
+    }
+
+    // allocate matrix rows
     for(i=0; i<dim; i++)
     {
         kdArr->pointsMat[i]=(int*)malloc(sizeof(int)*(size));
+
+        // in case of allocation failure, free all memory and return null
+        if (kdArr->pointsMat[i] == NULL){
+            for (j = 0; j < i; j++){
+                free(kdArr->pointsMat[j]);
+            }
+            free(kdArr);
+            spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
+            return NULL;
+        }
     }
     return kdArr;
 }
@@ -48,16 +73,50 @@ SPKDArray* spKDArrayInit(SPPoint* arr,int size)
     Wrapper* tmpPoints;
     int i,dim,j;
     SPPoint* pointsCopy = (SPPoint*)malloc(sizeof(SPPoint)*size);
+    // alloc failure: return NULL
+    if (pointsCopy == NULL){
+        spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
+        return NULL;
+    }
     tmpPoints = (Wrapper*)malloc(sizeof(Wrapper)*size);
+    // alloc failure: free pointsCopy and return NULL
+    if (tmpPoints == NULL){
+        free(pointsCopy);
+        spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
+        return NULL;
+    }
     for(i=0; i<size; i++)
     {
         tmpPoints[i].p = spPointCopy(arr[i]);
         tmpPoints[i].idx = i;
-        pointsCopy[i]=spPointCopy(arr[i]);
+        pointsCopy[i] = spPointCopy(arr[i]);
+
+        // in case of allocation failure
+        if (tmpPoints[i].p == NULL || pointsCopy[i] == NULL){
+            spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __function__, __LINE__);
+            for (j = 0; j <= i; j++){
+                spPointDestroy(tmpPoints[j].p);
+                spPointDestroy(pointsCopy[j]);
+            }
+            free(pointsCopy);
+            free(tmpPoints);
+            return NULL;
+        }
     }
     dim = spPointGetDimension(arr[0]);
 
     SPKDArray* kdArr = spKDArrayCreate(pointsCopy,dim,size);
+    if (kdArr == NULL){
+        // alloc failure already logged
+        for (j = 0; j < size; j++){
+            spPointDestroy(tmpPoints[j].p);
+            spPointDestroy(pointsCopy[j]);
+        }
+        free(pointsCopy);
+        free(tmpPoints);
+        return NULL;
+    }
+
     for(i=0; i<dim; i++)
     {
         sortedDim = i;
@@ -97,9 +156,31 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
 
     n = ceil(kdArr->size / 2.0);
     isInKdleft = (int*)calloc(kdArr->size,sizeof(int));
+    if (isInKdleft == NULL){
+        spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __function__, __LINE__);
+        return NULL;
+    }
     newIndexes = (int*)malloc(sizeof(int)*kdArr->size);
+    if (newIndexes == NULL){
+        free(isInKdleft);
+        spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __function__, __LINE__);
+        return NULL;
+    }
     SPPoint* left = (SPPoint*)malloc(sizeof(SPPoint)*n);
+    if (left == NULL){
+        free(isInKdleft);
+        free(newIndexes);
+        spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __function__, __LINE__);
+        return NULL;
+    }
     SPPoint* right = (SPPoint*)malloc(sizeof(SPPoint)*(kdArr->size-n));
+    if (right == NULL){
+        free(isInKdleft);
+        free(newIndexes);
+        free(left);
+        spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __function__, __LINE__);
+        return NULL;
+    }
     for (i=0; i<n; i++)
     {
         index = kdArr->pointsMat[coor][i];
@@ -118,8 +199,35 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
     }
 
     spRes = (SplitRes*)malloc(sizeof(SplitRes));
+    if (spRes == NULL){
+        free(isInKdleft);
+        free(newIndexes);
+        free(left);
+        free(right);
+        spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __function__, __LINE__);
+        return NULL;
+    }
     spRes->kdLeft = spKDArrayCreate(left,kdArr->dim,n);
+    if (spRes->kdLeft == NULL){
+        // alloc failure: already logged
+        free(isInKdleft);
+        free(newIndexes);
+        free(left);
+        free(right);
+        free(spRes);
+        return NULL;
+    }
     spRes->kdRight = spKDArrayCreate(right,kdArr->dim,kdArr->size-n);
+    if (spRes->kdRight == NULL){
+        // alloc failure: already logged
+        free(isInKdleft);
+        free(newIndexes);
+        free(left);
+        free(right);
+        spKDArrayDestroy(spRes->kdLeft);
+        free(spRes);
+        return NULL;
+    }
 
     for(i=0;i<kdArr->dim;i++){
         ctrLeft = 0;
@@ -136,7 +244,6 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
             }
         }
     }
-    //printf("Split was successful by coor: %d\n",coor);
     return spRes;
 }
 
