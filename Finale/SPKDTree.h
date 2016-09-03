@@ -8,8 +8,8 @@ typedef struct kdnode{
     struct kdnode *left;
     struct kdnode *right;
     SPPoint data;
-} KDTreeNode;
+} SPKDTreeNode;
 
-KDTreeNode* create(SPKDArray* kdArr, SPConfig config);
-KDTreeNode* createRec(SPKDArray* kdArr, SPLIT_METHOD method, int prevDim);
-void destroyKDTree(KDTreeNode* node);
+SPKDTreeNode* spKDTreeCreate(SPKDArray* kdArr, SPConfig config);
+SPKDTreeNode* spKDTreeCreateRec(SPKDArray* kdArr, SPLIT_METHOD method, int prevDim);
+void destroyKDTree(SPKDTreeNode* node);

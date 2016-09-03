@@ -42,12 +42,12 @@ int main(int argc,char** argv)
     splitResDestroy(t);
 */
     SPKDArray* k = spKDArrayInit(allFeats,featArrSize);
-    KDTreeNode* t = create(k,config);
+    SPKDTreeNode* t = spKDTreeCreate(k,config);
+
+
 
     destroyKDTree(t);
     spKDArrayDestroy(k);
-
-
     delete imgProc;
     for(i=0;i<featArrSize;i++){
         spPointDestroy(allFeats[i]);

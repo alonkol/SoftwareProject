@@ -5,18 +5,18 @@
 
 
 
-KDTreeNode* create(SPKDArray* kdArr, SPConfig config){
-    return createRec(kdArr, getSplitMethod(config), 0);
+SPKDTreeNode* spKDTreeCreate(SPKDArray* kdArr, SPConfig config){
+    return spKDTreeCreateRec(kdArr, getSplitMethod(config), 0);
 }
 
-KDTreeNode* createRec(SPKDArray* kdArr, SPLIT_METHOD method, int prevDim){
+SPKDTreeNode* spKDTreeCreateRec(SPKDArray* kdArr, SPLIT_METHOD method, int prevDim){
     int dim,i;
     double spread;
     double maxSpread = 0;
     int maxDim = 0;
 
     if (kdArr->size == 1){
-        KDTreeNode* res = (KDTreeNode*)malloc(sizeof(KDTreeNode));
+        SPKDTreeNode* res = (SPKDTreeNode*)malloc(sizeof(SPKDTreeNode));
         res->data = *kdArr->points;
         res->dim=-1;
         res->left=NULL;
@@ -44,17 +44,17 @@ KDTreeNode* createRec(SPKDArray* kdArr, SPLIT_METHOD method, int prevDim){
     }
     SplitRes* splitKDArrs = spKDArraySplit(kdArr,dim);
 
-    KDTreeNode* res = (KDTreeNode*)malloc(sizeof(KDTreeNode));
+    SPKDTreeNode* res = (SPKDTreeNode*)malloc(sizeof(SPKDTreeNode));
     res->dim = dim;
-    res->left = createRec(splitKDArrs->kdLeft, method, dim);
-    res->right = createRec(splitKDArrs->kdRight, method, dim);
+    res->left = spKDTreeCreateRec(splitKDArrs->kdLeft, method, dim);
+    res->right = spKDTreeCreateRec(splitKDArrs->kdRight, method, dim);
     SPPoint medianPnt = splitKDArrs->kdLeft->points[splitKDArrs->kdLeft->size - 1];
     res->val = spPointGetAxisCoor(medianPnt, dim);
     res->data=NULL;
     return res;
 }
 
-void destroyKDTree(KDTreeNode* node){
+void destroyKDTree(SPKDTreeNode* node){
     if (node==NULL) return;
     destroyKDTree(node->left);
     destroyKDTree(node->right);
