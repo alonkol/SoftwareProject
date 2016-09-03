@@ -5,6 +5,14 @@
 #include "SPLogger.h"
 #include "SPConfig.h"
 #define MAXLINESIZE 1024
+#define MAX_PARAM_LEN 64;
+
+
+
+#define MEMORY_ALLOC_FAILURE_MSG "Memory allocation failure\n"
+#define FILE_OPEN_FAILURE_MSG "Failed to open configuration file"
+#define INVALID_CONFIG_LINE_MSG "Invalid configuration line"
+#define CONSTRAINT_NOT_MET_MSG "Invalid value - constraint not met"
 
 
 /**
@@ -60,12 +68,17 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     char str[MAXLINESIZE];
     char variableName[MAXLINESIZE];
     char variableValue[MAXLINESIZE];
+    char param[MAX_PARAM_LEN];
     int i;
     int j;
+    int line = 0;
     FILE* fp;
 
     SPConfig cfg = (SPConfig)malloc(sizeof(struct sp_config_t));
-    // TODO: handle allocation failure
+    if (cfg == NULL){
+        printf(MEMORY_ALLOC_FAILURE_MSG);
+        return NULL;
+    }
 
     // init
     cfg->spPCADimension = 20;
@@ -85,11 +98,14 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
 
     if(fp == NULL)
     {
-      // ERROR opening the file
+        printf(FILE_OPEN_FAILURE_MSG);
+        free(cfg);
+        return NULL;
     }
 
     while( fgets (str, MAXLINESIZE, fp) != NULL )
     {
+        line++;
         i = 0;
         while (str[i] == ' '){
             i++;
@@ -104,7 +120,16 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
             j++;
         }
         variableName[j] = '\0';
-        while (str[i] == '=' || str[i] == ' '){
+        while (str[i] == ' '){
+            i++;
+        }
+        if (str[i] != '='){
+            printConfigError(filename, line, INVALID_CONFIG_LINE_MSG);
+            free(cfg);
+            return NULL;
+        }
+        i++;
+        while (str[i] == ' '){
             i++;
         }
         j = 0;
@@ -115,39 +140,100 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
         }
         variableValue[j] = '\0';
 
-
-        // TODO: Verify inputs and log errors
+        // check if invalid end of row
+        while (str[i] == ' '){
+            i++;
+        }
+        if (str[i] != '\0' && str[i] != '\n' && str[i] != '#'){
+            printConfigError(filename, line, INVALID_CONFIG_LINE_MSG);
+            free(cfg);
+            return NULL;
+        }
 
         if (strcmp(variableName,"spImagesDirectory") == 0){
             strcpy(cfg->spImagesDirectory,variableValue);
         } else if (strcmp(variableName,"spImagesPrefix") == 0){
             strcpy(cfg->spImagesPrefix,variableValue);
         } else if (strcmp(variableName,"spImagesSuffix") == 0){
+            if (strcmp(variableValue, ".jpg") != 0 &&
+                strcmp(variableValue, ".png") != 0 &&
+                strcmp(variableValue, ".bmp") != 0 &&
+                strcmp(variableValue, ".gif") != 0){
+                printConfigError(filename, line, CONSTRAINT_NOT_MET_MSG);
+                free(cfg);
+                return NULL;
+            }
             strcpy(cfg->spImagesSuffix,variableValue);
         } else if (strcmp(variableName,"spNumOfImages") == 0){
             cfg->spNumOfImages = atoi(variableValue);
+            if (cfg->spNumOfImages <= 0){
+                printConfigError(filename, line, CONSTRAINT_NOT_MET_MSG);
+                free(cfg);
+                return NULL;
+            }
         } else if (strcmp(variableName,"spPCADimension") == 0){
             cfg->spPCADimension = atoi(variableValue);
+            if (cfg->spPCADimension < 10 || cfg->spPCADimension > 28){
+                printConfigError(filename, line, CONSTRAINT_NOT_MET_MSG);
+                free(cfg);
+                return NULL;
+            }
         } else if (strcmp(variableName,"spPCAFilename") == 0){
             strcpy(cfg->spPCAFilename,variableValue);
         } else if (strcmp(variableName,"spNumOfFeatures") == 0){
             cfg->spNumOfFeatures = atoi(variableValue);
+            if (cfg->spNumOfFeatures <= 0){
+                printConfigError(filename, line, CONSTRAINT_NOT_MET_MSG);
+                free(cfg);
+                return NULL;
+            }
         } else if (strcmp(variableName,"spExtractionMode") == 0){
+            if (strcmp(variableValue,"true") != 0 && strcmp(variableValue,"false") != 0){
+                printConfigError(filename, line, CONSTRAINT_NOT_MET_MSG);
+                free(cfg);
+                return NULL;
+            }
             cfg->spExtractionMode = (strcmp(variableValue,"true")==0);
         } else if (strcmp(variableName,"spNumOfSimilarImages") == 0){
             cfg->spNumOfSimilarImages = atoi(variableValue);
+            if (cfg->spNumOfSimilarImages <= 0){
+                printConfigError(filename, line, CONSTRAINT_NOT_MET_MSG);
+                free(cfg);
+                return NULL;
+            }
         } else if (strcmp(variableName,"spKDTreeSplitMethod") == 0){
             if (strcmp(variableValue, "RANDOM") == 0){
                 cfg->spKDTreeSplitMethod = RANDOM;
             } else if (strcmp(variableValue, "INCREMENTAL") == 0){
                 cfg->spKDTreeSplitMethod = INCREMENTAL;
+            } else if (strcmp(variableValue, "MAX_SPREAD") == 0){
+                cfg->spKDTreeSplitMethod = MAX_SPREAD;
+            } else {
+                printConfigError(filename, line, CONSTRAINT_NOT_MET_MSG);
+                free(cfg);
+                return NULL;
             }
         } else if (strcmp(variableName,"spKNN") == 0){
             cfg->spKNN = atoi(variableValue);
+            if (cfg->spKNN <= 0){
+                printConfigError(filename, line, CONSTRAINT_NOT_MET_MSG);
+                free(cfg);
+                return NULL;
+            }
         } else if (strcmp(variableName,"spMinimalGUI") == 0){
+            if (strcmp(variableValue,"true") != 0 && strcmp(variableValue,"false") != 0){
+                printConfigError(filename, line, CONSTRAINT_NOT_MET_MSG);
+                free(cfg);
+                return NULL;
+            }
             cfg->spMinimalGUI = (strcmp(variableValue,"true")==0);
         } else if (strcmp(variableName,"spLoggerLevel") == 0){
             cfg->spLoggerLevel = atoi(variableValue);
+            if (cfg->spLoggerLevel <= 0 || cfg->spLoggerLevel > 4){
+                printConfigError(filename, line, CONSTRAINT_NOT_MET_MSG);
+                free(cfg);
+                return NULL;
+            }
         } else if (strcmp(variableName,"spLoggerFilename") == 0){
             strcpy(cfg->spLoggerFilename,variableValue);
         }
@@ -155,7 +241,40 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
 
     fclose(fp);
 
+    // check if any non-default parameter is missing
+
+    if (spNumOfImages == NULL){
+        param = "spNumOfImages";
+    }
+    if (spImageSuffix == NULL){
+        param = "spImageSuffix";
+    }
+    if (spImagePrefix == NULL){
+        param = "spImagePrefix";
+    }
+    if (spImageDirectory == NULL){
+        param = "spImageDirectory";
+    }
+    if (param != NULL){
+        printMissingParamError(filename, line, param);
+    }
+
     return cfg;
+}
+
+
+// auxiliary functions for printing config error messages
+
+void printConfigError(const char* filename, int line, char* msg){
+    printf("File: %s\n", filename);
+    printf("Line: %d\n", line);
+    printf("Message: %s\n", msg);
+}
+
+void printMissingParamError(const char* filename, int line, char* param){
+    printf("File: %s\n", filename);
+    printf("Line: %d\n", line);
+    printf("Message: Parameter %s is not set\n", param);
 }
 
 /*
@@ -360,6 +479,8 @@ SPLIT_METHOD getSplitMethod(const SPConfig config){
 int spConfigGetKNN(SPConfig config){
     return config->spKNN;
 }
+
+
 
 
 
