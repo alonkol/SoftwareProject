@@ -14,7 +14,8 @@ SPPoint* spUpdateAndSaveFeats(SPPoint* allFeats,SPPoint* imgFeats,int totalSize,
 {
     int j,k;
     SP_CONFIG_MSG msg;
-    char featsFileName[MAXLINESIZE];
+    FILE *fp;
+    char featsFileName[MAXLINESIZE],buff[MAXLINESIZE];;
     allFeats=(SPPoint*)realloc(allFeats,(totalSize+numFeats)*sizeof(SPPoint));
     if(allFeats==NULL){
         spLoggerPrintError(ALLOC_ERROR_MSG,__FILE__,__func__,__LINE__ );
@@ -25,7 +26,7 @@ SPPoint* spUpdateAndSaveFeats(SPPoint* allFeats,SPPoint* imgFeats,int totalSize,
         spLoggerPrintError("problem with filepath",__FILE__,__func__,__LINE__ );
         return NULL;
     }
-    FILE *fp= fopen(featsFileName, "w");
+    fp= fopen(featsFileName, "w");
     fprintf(fp,"%d\n%d\n%d\n",index,numFeats,spConfigGetPCADim(config,&msg));
     for(j=0; j<numFeats; j++)
     {
@@ -39,7 +40,6 @@ SPPoint* spUpdateAndSaveFeats(SPPoint* allFeats,SPPoint* imgFeats,int totalSize,
     }
     fclose(fp);
     free(imgFeats);
-    char buff[MAXLINESIZE];
     sprintf(buff,"Img %d features were saved to file %s.",index,featsFileName);
     spLoggerPrintInfo(buff);
     return allFeats;
@@ -50,12 +50,13 @@ SPPoint* spLoadImgFeats(const SPConfig config,int numImages,int *totalSize)
 {
     SPPoint* allFeats=NULL;
     SP_CONFIG_MSG msg;
+    FILE *fo;
     int i,j,k,imgIndex,numFeats,savedDim,dim = spConfigGetPCADim(config,&msg);
     *totalSize=0;
     char featsFileName[MAXLINESIZE],buff[MAXLINESIZE];
     for (i=0;i<numImages;i++){
         msg=spConfigGetPath(featsFileName,config,i,featsSuff);
-        FILE *fo = fopen(featsFileName, "r");
+        fo = fopen(featsFileName, "r");
         fscanf(fo,"%d",&imgIndex);
         fscanf(fo,"%d",&numFeats);
         fscanf(fo,"%d",&savedDim);
