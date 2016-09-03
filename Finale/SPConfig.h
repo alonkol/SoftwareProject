@@ -185,5 +185,7 @@ SPLIT_METHOD getSplitMethod(const SPConfig config);
 int spConfigGetKNN(SPConfig config);
 void spConfigPrint(SPConfig config);
 int spConfigGetNumOfSimilar(SPConfig config);
+char* spConfigGetLoggerFile(SPConfig config);
+SP_LOGGER_LEVEL spConfigGetLoggerLevel(SPConfig config);
 
 #endif /* SPCONFIG_H_ */

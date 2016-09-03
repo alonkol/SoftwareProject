@@ -1,8 +1,7 @@
-
 #include "SPPoint.h"
 #include "SPKDTree.h"
 #include <stdlib.h>
-
+#define ALLOC_ERROR_MSG "Memory Allocation Error."
 
 
 SPKDTreeNode* spKDTreeCreate(SPKDArray* kdArr, SPConfig config){

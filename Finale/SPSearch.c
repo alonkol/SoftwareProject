@@ -49,4 +49,3 @@ bool diffLessThanPrio(SPKDTreeNode *curr,SPBPQueue bpq, SPPoint p){
 	double diff = (curr->val - spPointGetAxisCoor(p,curr->dim));
 	return diff*diff < spBPQueueMaxValue(bpq);
 }
-
