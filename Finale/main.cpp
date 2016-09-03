@@ -70,7 +70,7 @@ int main(int argc,char** argv)
         return 1;
     }
 
-    spLoggerPrintInfo("Preprocessing finished succesfully.");
+    spLoggerPrintInfo("Preprocessing finished successfully.");
 
     char query[MAXLINESIZE];
     printf("Please enter an image path:\n");
