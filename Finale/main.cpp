@@ -5,12 +5,7 @@
 
 #include "SPImageProc.h"
 extern "C" {
-//#include "SPLogger.h"
-//#include "SPConfig.h"
 #include "SPFeatExtract.h"
-//#include "SPPoint.h"
-//#include "SPListElement.h"
-//#include "SPBPriorityQueue.h"
 #include "SPSearch.h"
 }
 
@@ -33,7 +28,7 @@ int main(int argc,char** argv)
     int featArrSize,i,searchRes=0;
     ImageProc *imgProc;
     SPPoint *allFeats;
-    SPKDArray* k;
+    SPKDArray* kdArray;
     SPKDTreeNode* root;
 
 
@@ -53,7 +48,7 @@ int main(int argc,char** argv)
         return 1;
     }
 
-    loggerMsg= spLoggerCreate(spConfigGetLoggerFile(config),spConfigGetLoggerLevel(config));
+    loggerMsg = spLoggerCreate(spConfigGetLoggerFile(config),spConfigGetLoggerLevel(config));
     if(loggerMsg==SP_LOGGER_OUT_OF_MEMORY){
         spConfigDestroy(config);
         printf(EXIT_MSG);
@@ -67,39 +62,40 @@ int main(int argc,char** argv)
     {
         spConfigDestroy(config);
         spLoggerDestroy();
+        delete imgProc;
         printf(EXIT_MSG);
         return 1;
     }
 
-    k = spKDArrayInit(allFeats,featArrSize);
+    kdArray = spKDArrayInit(allFeats,featArrSize);
 
-    if (k==NULL)
+    if (kdArray==NULL)
     {
         spConfigDestroy(config);
         spLoggerDestroy();
+        delete imgProc;
         for(i=0; i<featArrSize; i++)
         {
             spPointDestroy(allFeats[i]);
-            allFeats[i]=NULL;
         }
         free(allFeats);
         printf(EXIT_MSG);
         return 1;
     }
 
-    root = spKDTreeCreate(k,config);
+    root = spKDTreeCreate(kdArray,config);
 
     if(root==NULL)
     {
         spConfigDestroy(config);
         spLoggerDestroy();
+        delete imgProc;
         for(i=0; i<featArrSize; i++)
         {
             spPointDestroy(allFeats[i]);
-            allFeats[i]=NULL;
         }
         free(allFeats);
-        spKDArrayDestroy(k);
+        spKDArrayDestroy(kdArray);
         printf(EXIT_MSG);
         return 1;
     }
@@ -118,12 +114,11 @@ int main(int argc,char** argv)
         scanf("%s",query);
     }
 
-    spKDArrayDestroy(k);
+    spKDArrayDestroy(kdArray);
     destroyKDTree(root);
     for(i=0; i<featArrSize; i++)
     {
         spPointDestroy(allFeats[i]);
-        allFeats[i]=NULL;
     }
     free(allFeats);
     spConfigDestroy(config);
@@ -241,7 +236,6 @@ int showSimilarQuery(char* query,SPConfig config,ImageProc *imgProc,SPKDTreeNode
     for(i=0; i<numFeats; i++)
     {
         spPointDestroy(queryFeat[i]);
-        queryFeat[i]=NULL;
     }
     free(queryFeat);
     sprintf(buff,"Finished working with query %s.",query);

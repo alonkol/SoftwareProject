@@ -33,7 +33,7 @@ SPConfig.o: SPConfig.c SPConfig.h SPLogger.h
 SPLogger.o: SPLogger.c SPLogger.h
 	$(CC) $(C_COMP_FLAG) -c $*.c
 
-SPBPriorityQueue.o: SPBPriorityQueue.c SPList.h SPListElement.h SPBPriorityQueue.h
+SPBPriorityQueue.o: SPBPriorityQueue.c SPListElement.h SPBPriorityQueue.h
 	$(CC) $(C_COMP_FLAG) -c $*.c
 
 SPListElement.o: SPListElement.c SPListElement.h

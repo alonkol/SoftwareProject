@@ -22,3 +22,4 @@ int pntCmp(const void* pntA,const void* pntB);
 SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor);
 void splitResDestroy(SplitRes* spRes);
 void printKDARR(SPKDArray *k);
+void spPointsArrayDestroy(SPPoint* points, int size);
