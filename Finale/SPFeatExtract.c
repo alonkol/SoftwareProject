@@ -52,6 +52,7 @@ SPPoint* spLoadImgFeats(const SPConfig config,int numImages,int *totalSize)
     SPPoint* allFeats=NULL;
     SP_CONFIG_MSG msg;
     FILE *fo;
+    double* data;
     int i,j,k,imgIndex,numFeats,savedDim,dim = spConfigGetPCADim(config,&msg);
     *totalSize=0;
 
@@ -77,12 +78,13 @@ SPPoint* spLoadImgFeats(const SPConfig config,int numImages,int *totalSize)
         }
         allFeats=(SPPoint*)realloc(allFeats,(*totalSize+numFeats)*sizeof(SPPoint));
         for(j=0;j<numFeats;j++){
-            double* data=(double*)malloc(sizeof(double)*dim);
+            data=(double*)malloc(sizeof(double)*dim);
             for(k=0;k<dim;k++){
                 fscanf(fo,"%lf",&data[k]);
             }
             fgets(buff,MAXLINESIZE,fo);//skip to next line
             allFeats[*totalSize+j] = spPointCreate(data,dim,imgIndex);
+            free(data);
         }
         *totalSize+=numFeats;
         fclose(fo);

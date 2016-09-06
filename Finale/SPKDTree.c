@@ -31,7 +31,7 @@ SPKDTreeNode* spKDTreeCreateRec(SPKDArray* kdArr, SPLIT_METHOD method, int prevD
         res->left=NULL;
         res->right=NULL;
         //spKDArrayDestroy(kdArr);
-        printf("Leaf added\n");
+        //printf("Leaf added\n");
         return res;
     }
 

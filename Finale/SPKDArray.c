@@ -62,7 +62,7 @@ SPKDArray* spKDArrayCreate(SPPoint* points,int dim,int size)
 void spKDArrayDestroy(SPKDArray *kdArr)
 {
     if(kdArr==NULL) return;
-    printf("%d %d\n",kdArr->size,kdArr->dim);
+    //printf("%d %d\n",kdArr->size,kdArr->dim);
     int i;
     for (i=0; i<kdArr->size; i++)
     {
@@ -292,7 +292,7 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
             }
         }
     }
-    printf("SPLITTTT - %d %d \n",kdArr->size, kdArr->dim);
+    //printf("SPLITTTT - %d %d \n",kdArr->size, kdArr->dim);
     spKDArrayDestroy(kdArr);
     free(isInKdleft);
     free(newIndexes);
@@ -314,9 +314,7 @@ void splitResDestroy(SplitRes* spRes)
 {
     if (spRes==NULL) return;
     spKDArrayDestroy(spRes->kdLeft);
-
     spKDArrayDestroy(spRes->kdRight);
-
     free(spRes);
 }
 

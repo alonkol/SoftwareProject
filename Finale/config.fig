@@ -3,12 +3,12 @@
 spImagesDirectory = ./images/
 spImagesPrefix=img
  spImagesSuffix = .png
- spNumOfImages = 4
+ spNumOfImages = 5
 #the following variables have default values, if not set the default value is choosen
 spPCADimension = 10 # notice the default value is chosen since this is a comment
 spPCAFilename = pca.yml
-spNumOfFeatures = 3
-spExtractionMode = true
+spNumOfFeatures = 10
+spExtractionMode = false
 spMinimalGUI = false
 spKDTreeSplitMethod = INCREMENTAL
 spNumOfSimilarImages = 3 #jkjfkdjk
