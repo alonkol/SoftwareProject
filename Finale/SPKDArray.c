@@ -17,7 +17,8 @@ SPKDArray* spKDArrayCreate(SPPoint* points,int dim,int size)
 {
     int i,j;
     SPKDArray *kdArr = (SPKDArray*)malloc(sizeof(SPKDArray));
-    if (kdArr == NULL){
+    if (kdArr == NULL)
+    {
         spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
         return NULL;
     }
@@ -29,7 +30,8 @@ SPKDArray* spKDArrayCreate(SPPoint* points,int dim,int size)
     kdArr->pointsMat = (int**)malloc(sizeof(int*)*dim);
 
     // in case of allocation failure, free all memory and return null
-    if (kdArr->pointsMat == NULL){
+    if (kdArr->pointsMat == NULL)
+    {
         free(kdArr);
         spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
         return NULL;
@@ -41,8 +43,10 @@ SPKDArray* spKDArrayCreate(SPPoint* points,int dim,int size)
         kdArr->pointsMat[i]=(int*)malloc(sizeof(int)*size);
 
         // in case of allocation failure, free all memory and return null
-        if (kdArr->pointsMat[i] == NULL){
-            for (j = 0; j < i; j++){
+        if (kdArr->pointsMat[i] == NULL)
+        {
+            for (j = 0; j < i; j++)
+            {
                 free(kdArr->pointsMat[j]);
             }
             free(kdArr->pointsMat);
@@ -55,14 +59,19 @@ SPKDArray* spKDArrayCreate(SPPoint* points,int dim,int size)
 }
 
 
-void spKDArrayDestroy(SPKDArray *kdArr){
+void spKDArrayDestroy(SPKDArray *kdArr)
+{
     if(kdArr==NULL) return;
+    printf("%d %d\n",kdArr->size,kdArr->dim);
     int i;
-    for (i=0;i<kdArr->size;i++){
+    for (i=0; i<kdArr->size; i++)
+    {
         spPointDestroy(kdArr->points[i]);
     }
     free(kdArr->points);
-    for(i=0;i<kdArr->dim;i++){
+
+    for(i=0; i<kdArr->dim; i++)
+    {
         free(kdArr->pointsMat[i]);
     }
     free(kdArr->pointsMat);
@@ -76,13 +85,15 @@ SPKDArray* spKDArrayInit(SPPoint* points,int size)
     int i,dim,j;
     SPPoint* pointsCopy = (SPPoint*)malloc(sizeof(SPPoint)*size);
     // alloc failure: return NULL
-    if (pointsCopy == NULL){
+    if (pointsCopy == NULL)
+    {
         spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
         return NULL;
     }
     tmpPoints = (Wrapper*)malloc(sizeof(Wrapper)*size);
     // alloc failure: free pointsCopy and return NULL
-    if (tmpPoints == NULL){
+    if (tmpPoints == NULL)
+    {
         free(pointsCopy);
         spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
         return NULL;
@@ -94,9 +105,11 @@ SPKDArray* spKDArrayInit(SPPoint* points,int size)
         pointsCopy[i] = spPointCopy(points[i]);
 
         // in case of allocation failure
-        if (tmpPoints[i].point == NULL || pointsCopy[i] == NULL){
+        if (tmpPoints[i].point == NULL || pointsCopy[i] == NULL)
+        {
             spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
-            for (j = 0; j <= i; j++){
+            for (j = 0; j <= i; j++)
+            {
                 spPointDestroy(tmpPoints[j].point);
                 spPointDestroy(pointsCopy[j]);
             }
@@ -109,9 +122,11 @@ SPKDArray* spKDArrayInit(SPPoint* points,int size)
     dim = spPointGetDimension(points[0]);
 
     SPKDArray* kdArr = spKDArrayCreate(pointsCopy,dim,size);
-    if (kdArr == NULL){
+    if (kdArr == NULL)
+    {
         // alloc failure already logged
-        for (j = 0; j < size; j++){
+        for (j = 0; j < size; j++)
+        {
             spPointDestroy(tmpPoints[j].point);
             spPointDestroy(pointsCopy[j]);
         }
@@ -161,25 +176,29 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
     leftSize = ceil(kdArr->size / 2.0);
     rightSize = kdArr->size - leftSize;
     isInKdleft = (int*)calloc(kdArr->size,sizeof(int));
-    if (isInKdleft == NULL){
+    if (isInKdleft == NULL)
+    {
         spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
         return NULL;
     }
     newIndexes = (int*)malloc(sizeof(int)*kdArr->size);
-    if (newIndexes == NULL){
+    if (newIndexes == NULL)
+    {
         free(isInKdleft);
         spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
         return NULL;
     }
     left = (SPPoint*)malloc(sizeof(SPPoint)*leftSize);
-    if (left == NULL){
+    if (left == NULL)
+    {
         free(isInKdleft);
         free(newIndexes);
         spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
         return NULL;
     }
     right = (SPPoint*)malloc(sizeof(SPPoint)*rightSize);
-    if (right == NULL){
+    if (right == NULL)
+    {
         free(isInKdleft);
         free(newIndexes);
         free(left);
@@ -190,7 +209,8 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
     {
         index = kdArr->pointsMat[coor][i];
         left[i] = spPointCopy(kdArr->points[index]);
-        if(left[i]==NULL){
+        if(left[i]==NULL)
+        {
             // alloc failure
             spPointsArrayDestroy(left, i);
             free(isInKdleft);
@@ -205,7 +225,8 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
     {
         index = kdArr->pointsMat[coor][i];
         right[i-leftSize] = spPointCopy(kdArr->points[index]);
-        if(right[i-leftSize]==NULL){
+        if(right[i-leftSize]==NULL)
+        {
             // alloc failure
             spPointsArrayDestroy(right, i-leftSize);
             spPointsArrayDestroy(left, leftSize);
@@ -218,7 +239,8 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
     }
 
     spRes = (SplitRes*)malloc(sizeof(SplitRes));
-    if (spRes == NULL){
+    if (spRes == NULL)
+    {
         free(isInKdleft);
         free(newIndexes);
         spPointsArrayDestroy(left, leftSize);
@@ -227,7 +249,8 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
         return NULL;
     }
     spRes->kdLeft = spKDArrayCreate(left,kdArr->dim,leftSize);
-    if (spRes->kdLeft == NULL){
+    if (spRes->kdLeft == NULL)
+    {
         // alloc failure: already logged
         free(isInKdleft);
         free(newIndexes);
@@ -237,7 +260,8 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
         return NULL;
     }
     spRes->kdRight = spKDArrayCreate(right,kdArr->dim,rightSize);
-    if (spRes->kdRight == NULL){
+    if (spRes->kdRight == NULL)
+    {
         // alloc failure: already logged
         free(isInKdleft);
         free(newIndexes);
@@ -248,58 +272,74 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
     }
 
     // create new matrices
-    for(i=0;i<kdArr->dim;i++){
+    for(i=0; i<kdArr->dim; i++)
+    {
         ctrLeft = 0;
         ctrRight = 0;
-        for(j=0;j<kdArr->size;j++){
+        for(j=0; j<kdArr->size; j++)
+        {
             oldIndex = kdArr->pointsMat[i][j];
             newIndex = newIndexes[oldIndex];
-            if(isInKdleft[oldIndex]){
+            if(isInKdleft[oldIndex])
+            {
                 spRes->kdLeft->pointsMat[i][ctrLeft] = newIndex;
                 ctrLeft++;
-            } else {
+            }
+            else
+            {
                 spRes->kdRight->pointsMat[i][ctrRight] = newIndex;
                 ctrRight++;
             }
         }
     }
+    printf("SPLITTTT - %d %d \n",kdArr->size, kdArr->dim);
     spKDArrayDestroy(kdArr);
     free(isInKdleft);
     free(newIndexes);
     return spRes;
 }
 
-void spPointsArrayDestroy(SPPoint* points, int size){
+void spPointsArrayDestroy(SPPoint* points, int size)
+{
     if (points == NULL) return;
     int j;
-    for (j=0; j<size; j++){
+    for (j=0; j<size; j++)
+    {
         spPointDestroy(points[j]);
     }
     free(points);
 }
 
-void splitResDestroy(SplitRes* spRes){
+void splitResDestroy(SplitRes* spRes)
+{
     if (spRes==NULL) return;
     spKDArrayDestroy(spRes->kdLeft);
+
     spKDArrayDestroy(spRes->kdRight);
+
     free(spRes);
 }
 
-void printKDARR(SPKDArray *k){
+void printKDARR(SPKDArray *k)
+{
     int i,j;
     printf("%d %d \n",k->size, k->dim);
     printf("Points..:\n");
-    for(i=0;i<k->size;i++){
+    for(i=0; i<k->size; i++)
+    {
         printf("(%d)\t",spPointGetIndex(k->points[i]));
     }
     printf("\n");
-    for(i=0;i<k->size;i++){
+    for(i=0; i<k->size; i++)
+    {
         printf("%d:",i);
         printPoint(k->points[i]);
     }
     printf("Mat:\n");
-    for(i=0;i<k->dim;i++){
-        for(j=0;j<k->size;j++){
+    for(i=0; i<k->dim; i++)
+    {
+        for(j=0; j<k->size; j++)
+        {
             printf("%d\t",k->pointsMat[i][j]);
         }
         printf("\n");

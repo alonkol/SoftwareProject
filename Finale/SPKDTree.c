@@ -27,15 +27,11 @@ SPKDTreeNode* spKDTreeCreateRec(SPKDArray* kdArr, SPLIT_METHOD method, int prevD
             return NULL;
         }
         res->data = spPointCopy(*kdArr->points);
-        if (res->data == NULL){
-            spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
-            free(res);
-            return NULL;
-        }
         res->dim=-1;
         res->left=NULL;
         res->right=NULL;
-        spKDArrayDestroy(kdArr);
+        //spKDArrayDestroy(kdArr);
+        printf("Leaf added\n");
         return res;
     }
 
@@ -67,28 +63,32 @@ SPKDTreeNode* spKDTreeCreateRec(SPKDArray* kdArr, SPLIT_METHOD method, int prevD
         return NULL;
     }
     res->dim = dim;
+    //printf("::%d %d\n",splitKDArrs->kdLeft->size,splitKDArrs->kdRight->size);
+    medianPnt = splitKDArrs->kdLeft->points[splitKDArrs->kdLeft->size - 1];
+    res->val = spPointGetAxisCoor(medianPnt, dim);
+    res->data=NULL;
     res->left = spKDTreeCreateRec(splitKDArrs->kdLeft, method, dim);
     res->right = spKDTreeCreateRec(splitKDArrs->kdRight, method, dim);
     if (res->right == NULL || res->left == NULL){
         // alloc failure: already logged
+        printf("NULLLLLLLLL\n");
         destroyKDTree(res); // frees both nodes
         splitResDestroy(splitKDArrs);
         return NULL;
     }
-    medianPnt = splitKDArrs->kdLeft->points[splitKDArrs->kdLeft->size - 1];
-    res->val = spPointGetAxisCoor(medianPnt, dim);
-    res->data = NULL;
-    splitResDestroy(splitKDArrs);
+
+    //splitResDestroy(splitKDArrs); //causes problems
     return res;
 }
 
 void destroyKDTree(SPKDTreeNode* node){
-    if (node == NULL) return;
+    if (node==NULL) return;
     destroyKDTree(node->left);
     destroyKDTree(node->right);
+    spPointDestroy(node->data);
     free(node);
 }
 
 bool isLeaf(SPKDTreeNode* node){
-    return (node->dim == -1);
+    return (node->dim==-1);
 }

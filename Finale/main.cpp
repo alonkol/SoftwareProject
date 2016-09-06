@@ -68,7 +68,7 @@ int main(int argc,char** argv)
     }
 
     kdArray = spKDArrayInit(allFeats,featArrSize);
-
+    printf("KDARRAY SUCCESFUL\n");
     if (kdArray==NULL)
     {
         spConfigDestroy(config);
@@ -87,6 +87,7 @@ int main(int argc,char** argv)
 
     if(root==NULL)
     {
+        printf("NULL");
         spConfigDestroy(config);
         spLoggerDestroy();
         delete imgProc;
@@ -99,7 +100,7 @@ int main(int argc,char** argv)
         printf(EXIT_MSG);
         return 1;
     }
-
+    printf("Tree SUCCESFUL\n");
     spLoggerPrintInfo("Preprocessing finished successfully.");
 
     printf("Please enter an image path:\n");
@@ -114,7 +115,7 @@ int main(int argc,char** argv)
         scanf("%s",query);
     }
 
-    spKDArrayDestroy(kdArray);
+    //spKDArrayDestroy(kdArray);
     destroyKDTree(root);
     for(i=0; i<featArrSize; i++)
     {
