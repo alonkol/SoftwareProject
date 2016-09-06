@@ -5,12 +5,12 @@
 
 #include "SPImageProc.h"
 extern "C" {
-#include "SPLogger.h"
-#include "SPConfig.h"
+//#include "SPLogger.h"
+//#include "SPConfig.h"
 #include "SPFeatExtract.h"
-#include "SPPoint.h"
-#include "SPListElement.h"
-#include "SPBPriorityQueue.h"
+//#include "SPPoint.h"
+//#include "SPListElement.h"
+//#include "SPBPriorityQueue.h"
 #include "SPSearch.h"
 }
 
@@ -72,6 +72,7 @@ int main(int argc,char** argv)
     }
 
     k = spKDArrayInit(allFeats,featArrSize);
+
     if (k==NULL)
     {
         spConfigDestroy(config);
@@ -87,6 +88,7 @@ int main(int argc,char** argv)
     }
 
     root = spKDTreeCreate(k,config);
+
     if(root==NULL)
     {
         spConfigDestroy(config);

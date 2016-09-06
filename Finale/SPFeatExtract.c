@@ -1,10 +1,10 @@
 /** feature extraction */
 #include <stdio.h>
 #include <stdlib.h>
-#include "SPConfig.h"
-#include "SPPoint.h"
+//#include "SPConfig.h"
+//#include "SPPoint.h"
 #include "SPFeatExtract.h"
-#include "SPBPriorityQueue.h"
+//#include "SPBPriorityQueue.h"
 
 #define MAXLINESIZE 1024
 #define featsSuff ".feats"

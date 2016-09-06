@@ -1,4 +1,5 @@
 #include "SPPoint.h"
+#include "SPConfig.h"
 
 /** feature extraction and tree construction */
 

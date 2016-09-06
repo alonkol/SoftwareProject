@@ -1,4 +1,4 @@
-#include "SPPoint.h"
+//#include "SPPoint.h"
 #include "SPKDTree.h"
 #include <stdlib.h>
 #define ALLOC_ERROR_MSG "Memory Allocation Error."
@@ -26,10 +26,11 @@ SPKDTreeNode* spKDTreeCreateRec(SPKDArray* kdArr, SPLIT_METHOD method, int prevD
             spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
             return NULL;
         }
-        res->data = *kdArr->points;
+        res->data = spPointCopy(*kdArr->points);
         res->dim=-1;
         res->left=NULL;
         res->right=NULL;
+        spKDArrayDestroy(kdArr);
         return res;
     }
 
@@ -51,10 +52,13 @@ SPKDTreeNode* spKDTreeCreateRec(SPKDArray* kdArr, SPLIT_METHOD method, int prevD
         dim = (prevDim + 1) % kdArr->dim;
     }
     splitKDArrs = spKDArraySplit(kdArr,dim);
-
+    if(splitKDArrs==NULL){
+        return NULL;
+    }
     res = (SPKDTreeNode*)malloc(sizeof(SPKDTreeNode));
     if (res == NULL){
         spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
+        splitResDestroy(splitKDArrs);
         return NULL;
     }
     res->dim = dim;
@@ -63,11 +67,13 @@ SPKDTreeNode* spKDTreeCreateRec(SPKDArray* kdArr, SPLIT_METHOD method, int prevD
     if (res->right == NULL || res->left == NULL){
         // alloc failure: already logged
         destroyKDTree(res); // frees both nodes
+        splitResDestroy(splitKDArrs);
         return NULL;
     }
     medianPnt = splitKDArrs->kdLeft->points[splitKDArrs->kdLeft->size - 1];
     res->val = spPointGetAxisCoor(medianPnt, dim);
     res->data=NULL;
+    splitResDestroy(splitKDArrs);
     return res;
 }
 

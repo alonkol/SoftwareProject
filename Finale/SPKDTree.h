@@ -2,6 +2,7 @@
 #include "SPKDArray.h"
 #include "SPConfig.h"
 
+
 typedef struct kdnode{
     int dim;
     double val;

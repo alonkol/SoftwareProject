@@ -1,4 +1,4 @@
-#include "SPPoint.h"
+//#include "SPPoint.h"
 #include "SPKDArray.h"
 #include <stdlib.h>
 #include <stdio.h>
@@ -55,6 +55,7 @@ SPKDArray* spKDArrayCreate(SPPoint* points,int dim,int size)
 
 
 void spKDArrayDestroy(SPKDArray *kdArr){
+    if(kdArr==NULL) return;
     int i;
     for (i=0;i<kdArr->size;i++){
         spPointDestroy(kdArr->points[i]);
@@ -245,10 +246,14 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
             }
         }
     }
+    spKDArrayDestroy(kdArr);
+    free(isInKdleft);
+    free(newIndexes);
     return spRes;
 }
 
 void splitResDestroy(SplitRes* spRes){
+    if (spRes==NULL) return;
     spKDArrayDestroy(spRes->kdLeft);
     spKDArrayDestroy(spRes->kdRight);
     free(spRes);

@@ -29,6 +29,7 @@ int kNearestNeighborsRec(SPKDTreeNode *curr, SPBPQueue bpq, SPPoint p){
             spListElementDestroy(element);
             return -1;
 		}
+		spListElementDestroy(element);
 		return 0;
 	}
 

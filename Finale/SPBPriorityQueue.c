@@ -148,7 +148,6 @@ SP_BPQUEUE_MSG spBPQueueEnqueue(SPBPQueue source, SPListElement element){
         return SP_BPQUEUE_INVALID_ARGUMENT;
     }
 
-
     // create new node using the element's data
     new_node = newNode(spListElementGetIndex(element), spListElementGetValue(element));
 

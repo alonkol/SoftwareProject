@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-#include "SPLogger.h"
+//#include "SPLogger.h"
 #include "SPConfig.h"
 #define MAXLINESIZE 1024
 #define MAX_PARAM_LEN 64
@@ -16,7 +16,6 @@
 /**
  * A data-structure which is used for configuring the system.
  */
-
 
 struct sp_config_t{
     char spImagesDirectory[MAXLINESIZE];
@@ -35,7 +34,7 @@ struct sp_config_t{
     char spLoggerFilename[MAXLINESIZE];
 };
 
-//typedef struct sp_config_t* SPConfig;
+
 
 /**
  * Creates a new system configuration struct. The configuration struct
@@ -71,6 +70,11 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     int j;
     int line = 0;
     FILE* fp;
+
+    if (filename==NULL){
+        *msg = SP_CONFIG_INVALID_ARGUMENT;
+        return NULL;
+    }
 
     SPConfig cfg = (SPConfig)malloc(sizeof(struct sp_config_t));
     if (cfg == NULL){
@@ -137,18 +141,17 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
             i++;
         }
         j = 0;
-        while (str[i] != ' ' && str[i] != '\0' && str[i] != '\n' && str[i] != '#'){
+        while (str[i] != ' ' && str[i] != '\0' && str[i] != '\n' && str[i] != '#' && str[i]!='\r'){
             variableValue[j] = str[i];
             i++;
             j++;
         }
         variableValue[j] = '\0';
-
         // check if invalid end of row
         while (str[i] == ' '){
             i++;
         }
-        if (str[i] != '\0' && str[i] != '\n' && str[i] != '#'){
+        if (str[i] != '\0' && str[i] != '\n' && str[i] != '#' && str[i]!='\r'){
             printConfigError(filename, line, INVALID_CONFIG_LINE_MSG);
             free(cfg);
             return NULL;
@@ -163,6 +166,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
                 strcmp(variableValue, ".png") != 0 &&
                 strcmp(variableValue, ".bmp") != 0 &&
                 strcmp(variableValue, ".gif") != 0){
+                printf("fff\n");
                 printConfigError(filename, line, CONSTRAINT_NOT_MET_MSG);
                 free(cfg);
                 return NULL;
@@ -263,7 +267,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
         printMissingParamError(filename, line, param);
         return NULL;
     }
-
+    *msg = SP_CONFIG_SUCCESS;
     return cfg;
 }
 
@@ -416,8 +420,11 @@ SP_CONFIG_MSG spConfigGetImagePath(char* imagePath, const SPConfig config,
 
 SP_CONFIG_MSG spConfigGetPath(char* filePath, const SPConfig config,
 		int index,char* suffix){
-    int nDigits = floor(log10(config->spNumOfImages))+1;
+    int nDigits = floor(log10(config->spNumOfImages))+2;
     char *strI=(char*)malloc(sizeof(char)*nDigits);
+    if(strI==NULL){
+        return SP_CONFIG_ALLOC_FAIL;
+    }
     sprintf(strI,"%d",index);
 
 	if (filePath == NULL || config == NULL){

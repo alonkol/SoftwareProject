@@ -57,8 +57,6 @@ typedef enum tree_split_method{
  */
 SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg);
 
-
-
 /* auxiliary functions for printing config error messages */
 void printConfigError(const char* filename, int line, char* msg);
 void printMissingParamError(const char* filename, int line, char* param);

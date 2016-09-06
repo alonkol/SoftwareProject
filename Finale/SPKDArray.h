@@ -1,4 +1,5 @@
 #include "SPPoint.h"
+#include "SPLogger.h"
 
 typedef struct sp_kd_array
 {
