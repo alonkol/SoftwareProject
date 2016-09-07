@@ -15,126 +15,91 @@ extern "C" {
 #define EXIT_MSG "Exiting...\n"
 
 using namespace sp;
-SPPoint* produceFeatures(SPConfig config,ImageProc *imgProc,int* featArrSize);
+SPPoint* produceFeatures(SPConfig config,ImageProc *imgProc,int* featArrSize,SP_LOGGER_MSG loggerMsg);
 int showSimilarQuery(char* query,SPConfig config,ImageProc *imgProc,SPKDTreeNode *root);
-int cmpfunc(const void *a,const void *b);
+int freeMemMain(SPConfig config, SPKDTreeNode* root,SPPoint* allFeats,int featArrSize, ImageProc *imgProc,int exitVal);
+
 
 int main(int argc,char** argv)
 {
     char configFileName[MAXLINESIZE], query[MAXLINESIZE];
     SP_CONFIG_MSG msg;
-    SPConfig config;
+    SPConfig config=NULL;
+    int featArrSize=0,searchRes=0;
+    ImageProc *imgProc=NULL;
+    SPPoint *allFeats=NULL;
+    SPKDTreeNode* root=NULL;
     SP_LOGGER_MSG loggerMsg;
-    int featArrSize,i,searchRes=0;
-    ImageProc *imgProc;
-    SPPoint *allFeats;
-    SPKDArray* kdArray;
-    SPKDTreeNode* root;
-
-
     //if more than one parameter given
-    if(argc>2){
+    if(argc>2)
+    {
         printf("Invalid command line : use -c <config_filename>\n");
         return 1;
-    }else if (argc==2){
+    }
+    else if (argc==2)
+    {
         strcpy(configFileName,argv[1]);
-    }else{
+    }
+    else
+    {
         strcpy(configFileName,DEFUALT_CONFIG_FILE_NAME);
     }
-
     config = spConfigCreate(configFileName,&msg);
-    if(config==NULL){
+    if(config==NULL)
+    {
         printf(EXIT_MSG);
         return 1;
     }
-
-    loggerMsg = spLoggerCreate(spConfigGetLoggerFile(config),spConfigGetLoggerLevel(config));
-    if(loggerMsg==SP_LOGGER_OUT_OF_MEMORY){
-        spConfigDestroy(config);
-        printf(EXIT_MSG);
-        return 1;
-    }
-
+    loggerMsg=spLoggerCreate(spConfigGetLoggerFile(config),spConfigGetLoggerLevel(config));
+    if(loggerMsg!=SP_LOGGER_SUCCESS) printf("imgProc\n");
     imgProc = new ImageProc(config);
+    if(imgProc==NULL) printf("imgProc\n");
+    allFeats=produceFeatures(config,imgProc,&featArrSize,loggerMsg);
+    if(allFeats==NULL) printf("allFeats\n");
+    root = spKDTreeCreate(allFeats,featArrSize,config);
+    //somewhere in the process at least one of the following returned NULL: logger,imgProc,allFeats,root
 
-    allFeats=produceFeatures(config,imgProc,&featArrSize);
-    if(allFeats==NULL)
-    {
-        spConfigDestroy(config);
-        spLoggerDestroy();
-        delete imgProc;
-        printf(EXIT_MSG);
-        return 1;
+    if(root==NULL) {
+
+        return freeMemMain(config,root,allFeats,featArrSize,imgProc,1);
     }
-
-    kdArray = spKDArrayInit(allFeats,featArrSize);
-    printf("KDARRAY SUCCESFUL\n");
-    if (kdArray==NULL)
-    {
-        spConfigDestroy(config);
-        spLoggerDestroy();
-        delete imgProc;
-        for(i=0; i<featArrSize; i++)
-        {
-            spPointDestroy(allFeats[i]);
-        }
-        free(allFeats);
-        printf(EXIT_MSG);
-        return 1;
-    }
-
-    root = spKDTreeCreate(kdArray,config);
-
-    if(root==NULL)
-    {
-        printf("NULL");
-        spConfigDestroy(config);
-        spLoggerDestroy();
-        delete imgProc;
-        for(i=0; i<featArrSize; i++)
-        {
-            spPointDestroy(allFeats[i]);
-        }
-        free(allFeats);
-        spKDArrayDestroy(kdArray);
-        printf(EXIT_MSG);
-        return 1;
-    }
-    printf("Tree SUCCESFUL\n");
     spLoggerPrintInfo("Preprocessing finished successfully.");
-
     printf("Please enter an image path:\n");
     scanf("%s",query);
     while (strcmp(query,"<>")!=0)
     {
         searchRes = showSimilarQuery(query,config,imgProc,root);
-        if(searchRes==-1){
-            break;
+        if(searchRes==-1)
+        {
+             return freeMemMain(config,root,allFeats,featArrSize,imgProc,1);
         }
         printf("Please enter an image path:\n");
         scanf("%s",query);
     }
-
-    //spKDArrayDestroy(kdArray);
-    destroyKDTree(root);
-    for(i=0; i<featArrSize; i++)
-    {
-        spPointDestroy(allFeats[i]);
-    }
-    free(allFeats);
-    spConfigDestroy(config);
-    delete imgProc;
-    printf(EXIT_MSG);
-    return 0;
+    return freeMemMain(config,root,allFeats,featArrSize,imgProc,0);
 }
 
-SPPoint* produceFeatures(SPConfig config,ImageProc *imgProc,int* featArrSize)
+int freeMemMain(SPConfig config, SPKDTreeNode* root,SPPoint* allFeats,int featArrSize, ImageProc *imgProc,int exitVal)
+{
+    spConfigDestroy(config);
+    destroyKDTree(root);
+    destroyPointsArr(allFeats,featArrSize);
+    spLoggerDestroy();
+    delete imgProc;
+    printf(EXIT_MSG);
+    return exitVal;
+}
+
+SPPoint* produceFeatures(SPConfig config,ImageProc *imgProc,int* featArrSize,SP_LOGGER_MSG loggerMsg)
 {
     SP_CONFIG_MSG msg;
     SPPoint *allFeats=NULL,*imgFeats;
     char buff[MAXLINESIZE],imagePath[MAXLINESIZE];
-    int totalSize = 0, numFeats = 0, i;
-    int numImages = spConfigGetNumOfImages(config,&msg);
+    int totalSize = 0, numFeats = 0, i,numImages;
+
+    if(config==NULL || imgProc==NULL || loggerMsg!=SP_LOGGER_SUCCESS) return NULL;
+    numImages = spConfigGetNumOfImages(config,&msg);
+
     if(spConfigIsExtractionMode(config,&msg))
     {
         for (i=0; i<numImages; i++)
@@ -166,7 +131,7 @@ SPPoint* produceFeatures(SPConfig config,ImageProc *imgProc,int* featArrSize)
 int showSimilarQuery(char* query,SPConfig config,ImageProc *imgProc,SPKDTreeNode *root)
 {
     SP_CONFIG_MSG msg;
-    int numFeats,j,i;
+    int numFeats,i,j;
     char buff[MAXLINESIZE],imgPath[MAXLINESIZE];
     SPListElement node;
     SPBPQueue bpq;
@@ -181,7 +146,6 @@ int showSimilarQuery(char* query,SPConfig config,ImageProc *imgProc,SPKDTreeNode
     queryFeat = imgProc -> getImageFeatures(query,numberOfImages+1,&numFeats);
     if(queryFeat==NULL)
     {
-        spLoggerPrintError(ALLOC_ERROR_MSG,__FILE__,__func__,__LINE__);
         free(cntSim);
         return -1;
     }
@@ -199,12 +163,7 @@ int showSimilarQuery(char* query,SPConfig config,ImageProc *imgProc,SPKDTreeNode
         if(bpq==NULL)
         {
             free(cntSim);
-            for(i=0; i<numFeats; i++)
-            {
-                spPointDestroy(queryFeat[i]);
-                queryFeat[i]=NULL;
-            }
-            free(queryFeat);
+            destroyPointsArr(queryFeat,numFeats);
             return -1;
 
         }
@@ -218,7 +177,6 @@ int showSimilarQuery(char* query,SPConfig config,ImageProc *imgProc,SPKDTreeNode
         spBPQueueDestroy(bpq);
     }
     qsort(cntSim,numberOfImages,sizeof(int)*2,cmpfunc);
-
 
     if(!spConfigMinimalGui(config,&msg)) printf("Best candidates for - %s - are:\n",query);
     for(i=0; i<spConfigGetNumOfSimilar(config); i++)
@@ -234,22 +192,10 @@ int showSimilarQuery(char* query,SPConfig config,ImageProc *imgProc,SPKDTreeNode
         }
     }
     free(cntSim);
-    for(i=0; i<numFeats; i++)
-    {
-        spPointDestroy(queryFeat[i]);
-    }
-    free(queryFeat);
+    destroyPointsArr(queryFeat,numFeats);
     sprintf(buff,"Finished working with query %s.",query);
     spLoggerPrintInfo(buff);
     return 0;
 }
 
-int cmpfunc(const void *a,const void *b)
-{
-    const int* da = (const int*)a;
-    const int* db = (const int*)b;
-    if(db[1]>da[1]) return 1;
-    if(db[1]<da[1]) return -1;
-    if(db[0]<da[0]) return 1;
-    return -1;
-}
+

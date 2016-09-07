@@ -83,6 +83,7 @@ SPKDArray* spKDArrayInit(SPPoint* points,int size)
 {
     Wrapper* tmpPoints;
     int i,dim,j;
+    if(points==NULL) return NULL;
     SPPoint* pointsCopy = (SPPoint*)malloc(sizeof(SPPoint)*size);
     // alloc failure: return NULL
     if (pointsCopy == NULL)
@@ -175,29 +176,13 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
 
     leftSize = ceil(kdArr->size / 2.0);
     rightSize = kdArr->size - leftSize;
+
     isInKdleft = (int*)calloc(kdArr->size,sizeof(int));
-    if (isInKdleft == NULL)
-    {
-        spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
-        return NULL;
-    }
     newIndexes = (int*)malloc(sizeof(int)*kdArr->size);
-    if (newIndexes == NULL)
-    {
-        free(isInKdleft);
-        spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
-        return NULL;
-    }
     left = (SPPoint*)malloc(sizeof(SPPoint)*leftSize);
-    if (left == NULL)
-    {
-        free(isInKdleft);
-        free(newIndexes);
-        spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
-        return NULL;
-    }
     right = (SPPoint*)malloc(sizeof(SPPoint)*rightSize);
-    if (right == NULL)
+
+    if (right == NULL || left==NULL || newIndexes==NULL || isInKdleft==NULL)
     {
         free(isInKdleft);
         free(newIndexes);
@@ -249,22 +234,14 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
         return NULL;
     }
     spRes->kdLeft = spKDArrayCreate(left,kdArr->dim,leftSize);
-    if (spRes->kdLeft == NULL)
+    spRes->kdRight = spKDArrayCreate(right,kdArr->dim,rightSize);
+
+    if (spRes->kdRight == NULL ||spRes->kdLeft == NULL)
     {
         // alloc failure: already logged
         free(isInKdleft);
         free(newIndexes);
         spPointsArrayDestroy(left, leftSize);
-        spPointsArrayDestroy(right, rightSize);
-        free(spRes);
-        return NULL;
-    }
-    spRes->kdRight = spKDArrayCreate(right,kdArr->dim,rightSize);
-    if (spRes->kdRight == NULL)
-    {
-        // alloc failure: already logged
-        free(isInKdleft);
-        free(newIndexes);
         spPointsArrayDestroy(right, rightSize);
         spKDArrayDestroy(spRes->kdLeft);
         free(spRes);

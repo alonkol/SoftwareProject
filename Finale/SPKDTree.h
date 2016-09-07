@@ -11,7 +11,7 @@ typedef struct kdnode{
     SPPoint data;
 } SPKDTreeNode;
 
-SPKDTreeNode* spKDTreeCreate(SPKDArray* kdArr, SPConfig config);
+SPKDTreeNode* spKDTreeCreate(SPPoint* allFeats,int featArrSize, SPConfig config);
 SPKDTreeNode* spKDTreeCreateRec(SPKDArray* kdArr, SPLIT_METHOD method, int prevDim);
 void destroyKDTree(SPKDTreeNode* node);
 bool isLeaf(SPKDTreeNode* node);

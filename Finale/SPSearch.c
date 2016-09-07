@@ -53,3 +53,14 @@ bool diffLessThanPrio(SPKDTreeNode *curr,SPBPQueue bpq, SPPoint p){
 	double diff = (curr->val - spPointGetAxisCoor(p,curr->dim));
 	return diff*diff < spBPQueueMaxValue(bpq);
 }
+
+//compare func used in search function in main
+int cmpfunc(const void *a,const void *b)
+{
+    const int* da = (const int*)a;
+    const int* db = (const int*)b;
+    if(db[1]>da[1]) return 1;
+    if(db[1]<da[1]) return -1;
+    if(db[0]<da[0]) return 1;
+    return -1;
+}

@@ -4,7 +4,9 @@
 #define ALLOC_ERROR_MSG "Memory Allocation Error."
 
 
-SPKDTreeNode* spKDTreeCreate(SPKDArray* kdArr, SPConfig config){
+SPKDTreeNode* spKDTreeCreate(SPPoint* allFeats,int featArrSize, SPConfig config){
+    SPKDArray* kdArr = spKDArrayInit(allFeats,featArrSize);
+    if(kdArr==NULL) return NULL;
     return spKDTreeCreateRec(kdArr, getSplitMethod(config), 0);
 }
 
