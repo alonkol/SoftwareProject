@@ -7,12 +7,14 @@ typedef struct sp_kd_array
     int size; //number of points
     SPPoint* points;
     int** pointsMat;
+    int index;
 } SPKDArray;
 
 typedef struct split_res
 {
     SPKDArray *kdLeft;
     SPKDArray *kdRight;
+    int index;
 } SplitRes;
 
 SPKDArray* spKDArrayCreate(SPPoint* points,int dim,int size);
@@ -23,3 +25,6 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor);
 void splitResDestroy(SplitRes* spRes);
 void printKDARR(SPKDArray *k);
 void spPointsArrayDestroy(SPPoint* points, int size);
+void printKDARRS();
+void printSplits();
+

@@ -2,7 +2,8 @@
 #include "SPKDTree.h"
 #include <stdlib.h>
 #define ALLOC_ERROR_MSG "Memory Allocation Error."
-
+int nodeIndex = 0;
+int nodes[100]={0};
 
 SPKDTreeNode* spKDTreeCreate(SPPoint* allFeats,int featArrSize, SPConfig config){
     SPKDArray* kdArr = spKDArrayInit(allFeats,featArrSize);
@@ -28,11 +29,16 @@ SPKDTreeNode* spKDTreeCreateRec(SPKDArray* kdArr, SPLIT_METHOD method, int prevD
             spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
             return NULL;
         }
-        res->data = spPointCopy(*kdArr->points);
+        res->data = spPointCopy(kdArr->points[0]);
         res->dim=-1;
         res->left=NULL;
         res->right=NULL;
-        //spKDArrayDestroy(kdArr);
+
+        res->index=nodeIndex;
+        nodes[nodeIndex]=1;
+        nodeIndex++;
+
+        spKDArrayDestroy(kdArr);
         //printf("Leaf added\n");
         return res;
     }
@@ -54,7 +60,9 @@ SPKDTreeNode* spKDTreeCreateRec(SPKDArray* kdArr, SPLIT_METHOD method, int prevD
     } else if (method == INCREMENTAL){
         dim = (prevDim + 1) % kdArr->dim;
     }
+
     splitKDArrs = spKDArraySplit(kdArr,dim);
+
     if(splitKDArrs==NULL){
         return NULL;
     }
@@ -69,17 +77,23 @@ SPKDTreeNode* spKDTreeCreateRec(SPKDArray* kdArr, SPLIT_METHOD method, int prevD
     medianPnt = splitKDArrs->kdLeft->points[splitKDArrs->kdLeft->size - 1];
     res->val = spPointGetAxisCoor(medianPnt, dim);
     res->data=NULL;
+
+    res->index = nodeIndex;
+    nodes[nodeIndex]=1;
+    nodeIndex++;
+
+
     res->left = spKDTreeCreateRec(splitKDArrs->kdLeft, method, dim);
     res->right = spKDTreeCreateRec(splitKDArrs->kdRight, method, dim);
+
     if (res->right == NULL || res->left == NULL){
         // alloc failure: already logged
-        printf("NULLLLLLLLL\n");
         destroyKDTree(res); // frees both nodes
         splitResDestroy(splitKDArrs);
         return NULL;
     }
-
-    //splitResDestroy(splitKDArrs); //causes problems
+    //free(splitKDArrs);
+    splitResDestroy(splitKDArrs); //causes problems
     return res;
 }
 
@@ -88,9 +102,23 @@ void destroyKDTree(SPKDTreeNode* node){
     destroyKDTree(node->left);
     destroyKDTree(node->right);
     spPointDestroy(node->data);
+
+
+    if(nodes[node->index]==0) printf("TREE PROBLEM!!!! %d\n",node->index);
+
+    nodes[node->index]=0;
     free(node);
+    node=NULL;
 }
 
 bool isLeaf(SPKDTreeNode* node){
     return (node->dim==-1);
+}
+void printNodes(){
+    printf("KDTREENODES:\n");
+    int i;
+    for(i=0;i<100;i++){
+        printf("%d ",nodes[i]);
+    }
+    printf("\n\n");
 }

@@ -31,14 +31,14 @@ int main(int argc,char** argv)
     SPKDTreeNode* root=NULL;
     SP_LOGGER_MSG loggerMsg;
     //if more than one parameter given
-    if(argc>2)
+    if(argc>3 || argc==2)
     {
         printf("Invalid command line : use -c <config_filename>\n");
         return 1;
     }
-    else if (argc==2)
+    else if ((argc==3) && (strcmp(argv[1],"-c")==0))
     {
-        strcpy(configFileName,argv[1]);
+        strcpy(configFileName,argv[2]);
     }
     else
     {
@@ -60,9 +60,11 @@ int main(int argc,char** argv)
     //somewhere in the process at least one of the following returned NULL: logger,imgProc,allFeats,root
 
     if(root==NULL) {
-
         return freeMemMain(config,root,allFeats,featArrSize,imgProc,1);
     }
+    printKDARRS();
+    printNodes();
+    printSplits();
     spLoggerPrintInfo("Preprocessing finished successfully.");
     printf("Please enter an image path:\n");
     scanf("%s",query);
@@ -76,6 +78,7 @@ int main(int argc,char** argv)
         printf("Please enter an image path:\n");
         scanf("%s",query);
     }
+
     return freeMemMain(config,root,allFeats,featArrSize,imgProc,0);
 }
 
@@ -83,6 +86,9 @@ int freeMemMain(SPConfig config, SPKDTreeNode* root,SPPoint* allFeats,int featAr
 {
     spConfigDestroy(config);
     destroyKDTree(root);
+    printKDARRS();
+    printNodes();
+    printSplits();
     destroyPointsArr(allFeats,featArrSize);
     spLoggerDestroy();
     delete imgProc;

@@ -5,6 +5,10 @@
 #include <math.h>
 #define ALLOC_ERROR_MSG "Memory Allocation Error."
 int sortedDim;
+int kdArrIndex=0;
+int splitIndex=0;
+int kdArrs[100]={0};
+int splits[100]={0};
 
 typedef struct point_wrapper
 {
@@ -25,6 +29,9 @@ SPKDArray* spKDArrayCreate(SPPoint* points,int dim,int size)
     kdArr->dim = dim;
     kdArr->size=size;
     kdArr->points=points;
+    kdArr->index=kdArrIndex;
+    kdArrs[kdArrIndex]=1;
+    kdArrIndex++;
 
     // allocate matrix
     kdArr->pointsMat = (int**)malloc(sizeof(int*)*dim);
@@ -55,15 +62,21 @@ SPKDArray* spKDArrayCreate(SPPoint* points,int dim,int size)
             return NULL;
         }
     }
+    //printf("KDARRAY %d created\n",kdArr->index);
     return kdArr;
 }
 
 
 void spKDArrayDestroy(SPKDArray *kdArr)
 {
+
     if(kdArr==NULL) return;
+    //printf("KDARRAY %d destroyed\n",kdArr->index);
+    if(kdArrs[kdArr->index]==0) printf("KDARR PROBLEM! %d\n",kdArr->index);
+    kdArrs[kdArr->index]=0;
     //printf("%d %d\n",kdArr->size,kdArr->dim);
     int i;
+
     for (i=0; i<kdArr->size; i++)
     {
         spPointDestroy(kdArr->points[i]);
@@ -76,8 +89,18 @@ void spKDArrayDestroy(SPKDArray *kdArr)
     }
     free(kdArr->pointsMat);
     free(kdArr);
+    kdArr=NULL;
 }
 
+void printKDARRS(){
+    printf("KDARRS:\n");
+    int i;
+    for(i=0;i<100;i++){
+        printf("%d ",kdArrs[i]);
+    }
+    printf("\n");
+
+}
 
 SPKDArray* spKDArrayInit(SPPoint* points,int size)
 {
@@ -113,6 +136,7 @@ SPKDArray* spKDArrayInit(SPPoint* points,int size)
             {
                 spPointDestroy(tmpPoints[j].point);
                 spPointDestroy(pointsCopy[j]);
+                //free(tmpPoints[j]);
             }
             free(pointsCopy);
             free(tmpPoints);
@@ -129,6 +153,7 @@ SPKDArray* spKDArrayInit(SPPoint* points,int size)
         for (j = 0; j < size; j++)
         {
             spPointDestroy(tmpPoints[j].point);
+            //free(tmpPoints[j]);
             spPointDestroy(pointsCopy[j]);
         }
         free(pointsCopy);
@@ -149,6 +174,7 @@ SPKDArray* spKDArrayInit(SPPoint* points,int size)
     for(i=0; i<size; i++)
     {
         spPointDestroy(tmpPoints[i].point);
+        //free(tmpPoints[i]);
     }
     free(tmpPoints);
     return kdArr;
@@ -179,14 +205,15 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
 
     isInKdleft = (int*)calloc(kdArr->size,sizeof(int));
     newIndexes = (int*)malloc(sizeof(int)*kdArr->size);
-    left = (SPPoint*)malloc(sizeof(SPPoint)*leftSize);
-    right = (SPPoint*)malloc(sizeof(SPPoint)*rightSize);
+    left = (SPPoint*)malloc(leftSize*sizeof(SPPoint));
+    right = (SPPoint*)malloc(rightSize*sizeof(SPPoint));
 
     if (right == NULL || left==NULL || newIndexes==NULL || isInKdleft==NULL)
     {
         free(isInKdleft);
         free(newIndexes);
         free(left);
+        free(right);
         spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
         return NULL;
     }
@@ -200,6 +227,7 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
             spPointsArrayDestroy(left, i);
             free(isInKdleft);
             free(newIndexes);
+            free(right);
             spLoggerPrintError(ALLOC_ERROR_MSG, __FILE__, __func__, __LINE__);
             return NULL;
         }
@@ -273,8 +301,23 @@ SplitRes* spKDArraySplit(SPKDArray *kdArr,int coor)
     spKDArrayDestroy(kdArr);
     free(isInKdleft);
     free(newIndexes);
+
+    spRes->index=splitIndex;
+    splits[splitIndex]=1;
+    splitIndex++;
+
     return spRes;
 }
+
+void printSplits(){
+    printf("SPLITS:\n");
+    int i;
+    for(i=0;i<100;i++){
+        printf("%d ",splits[i]);
+    }
+    printf("\n\n");
+}
+
 
 void spPointsArrayDestroy(SPPoint* points, int size)
 {
@@ -290,8 +333,12 @@ void spPointsArrayDestroy(SPPoint* points, int size)
 void splitResDestroy(SplitRes* spRes)
 {
     if (spRes==NULL) return;
-    spKDArrayDestroy(spRes->kdLeft);
-    spKDArrayDestroy(spRes->kdRight);
+    if(splits[spRes->index]==0) printf("SPLIT PROBLEM!!!\n");
+    splits[spRes->index]=0;
+    //spKDArrayDestroy(spRes->kdLeft);
+    //spRes->kdLeft=NULL;
+    //spKDArrayDestroy(spRes->kdRight);
+    //spRes->kdRight = NULL;
     free(spRes);
 }
 
