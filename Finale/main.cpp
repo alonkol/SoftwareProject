@@ -13,10 +13,40 @@ extern "C" {
 #define ALLOC_ERROR_MSG "Memory Allocation Error."
 #define DEFUALT_CONFIG_FILE_NAME "spcbir.config"
 #define EXIT_MSG "Exiting...\n"
+#define INVALID_CMD "Invalid command line : use -c <config_filename>\n"
+#define PREPROCCESING_SECCESSFULL "Preprocessing finished successfully."
+#define ENTER_IMAGE_PATH "Please enter an image path:\n"
 
 using namespace sp;
+
+/** This function produces features array based on the configuration file
+* @param config - the configuration file.
+* @param imgProc - the imageProc class instance.
+* @param featArrSize - used to return the resulting features array.
+* @param loggerMsg - used to identify if the logger was successfully initialized.
+* @return features array containing all the features it extracted/loaded in success or NULL in failure.
+**/
 SPPoint* produceFeatures(SPConfig config,ImageProc *imgProc,int* featArrSize,SP_LOGGER_MSG loggerMsg);
+
+/** This function chooses for any query its SPKNN images that are most related to it
+*   and displays them based on the configuration file.
+* @param query - file path for the query image.
+* @param config - the configuration file.
+* @param imgProc - the imageProc class instance.
+* @param root - the root of the SPKDTree.
+* @return 0 on success, -1 on failure.
+**/
 int showSimilarQuery(char* query,SPConfig config,ImageProc *imgProc,SPKDTreeNode *root);
+
+/** This function clears all the memory used in main and return exitVal
+* @param config - configuration file.
+* @param root - root of SPKDTree.
+* @param allFeats - features array.
+* @param featArrSize - size of features Array.
+* @param imgProc - the imageProc class instance.
+* @param exitVal - the exitVal to be returned.
+* @return exitVal.
+**/
 int freeMemMain(SPConfig config, SPKDTreeNode* root,SPPoint* allFeats,int featArrSize, ImageProc *imgProc,int exitVal);
 
 
@@ -30,10 +60,11 @@ int main(int argc,char** argv)
     SPPoint *allFeats=NULL;
     SPKDTreeNode* root=NULL;
     SP_LOGGER_MSG loggerMsg;
-    //if more than one parameter given
+
+    //checks that the input is legit.
     if(argc>3 || argc==2)
     {
-        printf("Invalid command line : use -c <config_filename>\n");
+        printf(INVALID_CMD);
         return 1;
     }
     else if ((argc==3) && (strcmp(argv[1],"-c")==0))
@@ -44,29 +75,27 @@ int main(int argc,char** argv)
     {
         strcpy(configFileName,DEFUALT_CONFIG_FILE_NAME);
     }
+    //creates config file.
     config = spConfigCreate(configFileName,&msg);
-    if(config==NULL)
+    if(config==NULL || msg!=SP_CONFIG_SUCCESS)
     {
         printf(EXIT_MSG);
         return 1;
     }
+    //if config file is created successfully the preprocessing can continue.
     loggerMsg=spLoggerCreate(spConfigGetLoggerFile(config),spConfigGetLoggerLevel(config));
-    if(loggerMsg!=SP_LOGGER_SUCCESS) printf("imgProc\n");
     imgProc = new ImageProc(config);
-    if(imgProc==NULL) printf("imgProc\n");
     allFeats=produceFeatures(config,imgProc,&featArrSize,loggerMsg);
-    if(allFeats==NULL) printf("allFeats\n");
     root = spKDTreeCreate(allFeats,featArrSize,config);
-    //somewhere in the process at least one of the following returned NULL: logger,imgProc,allFeats,root
 
+    //root is NULL if somewhere in the process at least one of the following returned NULL: logger,imgProc,allFeats,root
     if(root==NULL) {
         return freeMemMain(config,root,allFeats,featArrSize,imgProc,1);
     }
-    printKDARRS();
-    printNodes();
-    printSplits();
-    spLoggerPrintInfo("Preprocessing finished successfully.");
-    printf("Please enter an image path:\n");
+    spLoggerPrintInfo(PREPROCCESING_SECCESSFULL);
+
+    //We can start the image query check.
+    printf(ENTER_IMAGE_PATH);
     scanf("%s",query);
     while (strcmp(query,"<>")!=0)
     {
@@ -75,10 +104,9 @@ int main(int argc,char** argv)
         {
              return freeMemMain(config,root,allFeats,featArrSize,imgProc,1);
         }
-        printf("Please enter an image path:\n");
+        printf(ENTER_IMAGE_PATH);
         scanf("%s",query);
     }
-
     return freeMemMain(config,root,allFeats,featArrSize,imgProc,0);
 }
 
@@ -86,9 +114,6 @@ int freeMemMain(SPConfig config, SPKDTreeNode* root,SPPoint* allFeats,int featAr
 {
     spConfigDestroy(config);
     destroyKDTree(root);
-    printKDARRS();
-    printNodes();
-    printSplits();
     destroyPointsArr(allFeats,featArrSize);
     spLoggerDestroy();
     delete imgProc;
@@ -107,6 +132,7 @@ SPPoint* produceFeatures(SPConfig config,ImageProc *imgProc,int* featArrSize,SP_
     numImages = spConfigGetNumOfImages(config,&msg);
 
     if(spConfigIsExtractionMode(config,&msg))
+    // if we nned to extract features.
     {
         for (i=0; i<numImages; i++)
         {
@@ -124,6 +150,7 @@ SPPoint* produceFeatures(SPConfig config,ImageProc *imgProc,int* featArrSize,SP_
         }
     }
     else
+    //if we need to only load features.
     {
         allFeats=spLoadImgFeats(config,numImages,&totalSize);
     }
@@ -137,18 +164,20 @@ SPPoint* produceFeatures(SPConfig config,ImageProc *imgProc,int* featArrSize,SP_
 int showSimilarQuery(char* query,SPConfig config,ImageProc *imgProc,SPKDTreeNode *root)
 {
     SP_CONFIG_MSG msg;
-    int numFeats,i,j;
+    int numFeats,i,j,*cntSim,numberOfImages;
     char buff[MAXLINESIZE],imgPath[MAXLINESIZE];
     SPListElement node;
     SPBPQueue bpq;
     SPPoint* queryFeat;
-    int numberOfImages = spConfigGetNumOfImages(config,&msg);
-    int* cntSim = (int*)malloc(numberOfImages*sizeof(int)*2);
+
+    numberOfImages = spConfigGetNumOfImages(config,&msg);
+    cntSim = (int*)malloc(numberOfImages*sizeof(int)*2); //this will act as a counter array for the images, see below.
     if(cntSim==NULL)
     {
         spLoggerPrintError(ALLOC_ERROR_MSG,__FILE__,__func__,__LINE__);
         return -1;
     }
+    //get the query features.
     queryFeat = imgProc -> getImageFeatures(query,numberOfImages+1,&numFeats);
     if(queryFeat==NULL)
     {
@@ -157,12 +186,14 @@ int showSimilarQuery(char* query,SPConfig config,ImageProc *imgProc,SPKDTreeNode
     }
     sprintf(buff,"Extracted from query %d features.",numFeats);
     spLoggerPrintInfo(buff);
-
+    //initilaize similar array
     for(i=0; i<numberOfImages; i++)
     {
-        cntSim[2*i]=i;
-        cntSim[2*i+1]=0;
+        cntSim[2*i]=i; //this will be the index of the image
+        cntSim[2*i+1]=0; //this will act as the counter
     }
+    /* for every feat find the spKNN closest features, now for each node in the resulting bpq,
+    update the correct counter in the similar images array. */
     for(i=0; i<numFeats; i++)
     {
         bpq = kNearestNeighbors(config,root,queryFeat[i]);
@@ -182,8 +213,10 @@ int showSimilarQuery(char* query,SPConfig config,ImageProc *imgProc,SPKDTreeNode
         }
         spBPQueueDestroy(bpq);
     }
+    //sort the array of similar image counters, the first spKNN will be the most similar images.
     qsort(cntSim,numberOfImages,sizeof(int)*2,cmpfunc);
 
+    //show those similar images according to the configuration file.
     if(!spConfigMinimalGui(config,&msg)) printf("Best candidates for - %s - are:\n",query);
     for(i=0; i<spConfigGetNumOfSimilar(config); i++)
     {

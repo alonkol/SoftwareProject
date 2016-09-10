@@ -1,7 +1,6 @@
 #include "SPBPriorityQueue.h"
 #include "SPKDTree.h"
 
-
 /**
  * This function initializes and returns a BPQ with the K nearest neighbors of a point p.
  *

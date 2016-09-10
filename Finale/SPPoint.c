@@ -35,7 +35,6 @@ SPPoint spPointCreate(double* data, int dim, int index){
 SPPoint spPointCopy(SPPoint source){
     assert (source != NULL);
     struct sp_point_t* res = spPointCreate(source->data, source->dim, source->index);
-    if(res==NULL) printf("CopyFailed!");
     return res;
 }
 
@@ -74,17 +73,5 @@ double spPointL2SquaredDistance(SPPoint p, SPPoint q){
 
     return res;
 }
-//testing pointttttttttttttttttttttttttttt
-void printPoint(SPPoint p){
-    if(p==NULL) printf("NULLL\n");
-    int i;
-    printf("%d\t",p->index);
-    //printf("%d\n",p->dim);
-    for(i=0;i<p->dim;i++){
-        printf("%f\t",spPointGetAxisCoor(p,i));
 
-    }
-    printf("\n");
-
-}
 

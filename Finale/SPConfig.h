@@ -62,7 +62,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg);
 void printConfigError(const char* filename, int line, char* msg);
 void printMissingParamError(const char* filename, int line, char* param);
 
-/*
+/**
  * Returns true if spExtractionMode = true, false otherwise.
  *
  * @param config - the configuration structure
@@ -75,7 +75,7 @@ void printMissingParamError(const char* filename, int line, char* param);
  */
 bool spConfigIsExtractionMode(const SPConfig config, SP_CONFIG_MSG* msg);
 
-/*
+/**
  * Returns true if spMinimalGUI = true, false otherwise.
  *
  * @param config - the configuration structure
@@ -88,7 +88,7 @@ bool spConfigIsExtractionMode(const SPConfig config, SP_CONFIG_MSG* msg);
  */
 bool spConfigMinimalGui(const SPConfig config, SP_CONFIG_MSG* msg);
 
-/*
+/**
  * Returns the number of images set in the configuration file, i.e the value
  * of spNumOfImages.
  *
@@ -102,7 +102,7 @@ bool spConfigMinimalGui(const SPConfig config, SP_CONFIG_MSG* msg);
  */
 int spConfigGetNumOfImages(const SPConfig config, SP_CONFIG_MSG* msg);
 
-/*
+/**
  * Returns the number of features to be extracted. i.e the value
  * of spNumOfFeatures.
  *
@@ -116,7 +116,7 @@ int spConfigGetNumOfImages(const SPConfig config, SP_CONFIG_MSG* msg);
  */
 int spConfigGetNumOfFeatures(const SPConfig config, SP_CONFIG_MSG* msg);
 
-/*
+/**
  * Returns the split method to be used on extraction
  *
  * @param config - the configuration structure
@@ -124,7 +124,7 @@ int spConfigGetNumOfFeatures(const SPConfig config, SP_CONFIG_MSG* msg);
  */
 SPLIT_METHOD getSplitMethod(const SPConfig config);
 
-/*
+/**
  * Returns the KNN value configured
  *
  * @param config - the configuration structure
@@ -132,7 +132,7 @@ SPLIT_METHOD getSplitMethod(const SPConfig config);
  */
 int spConfigGetKNN(SPConfig config);
 
-/*
+/**
  * Returns the number of similar images to present
  *
  * @param config - the configuration structure
@@ -140,7 +140,7 @@ int spConfigGetKNN(SPConfig config);
  */
 int spConfigGetNumOfSimilar(SPConfig config);
 
-/*
+/**
  * Returns the name of the logger file
  *
  * @param config - the configuration structure
@@ -148,7 +148,7 @@ int spConfigGetNumOfSimilar(SPConfig config);
  */
 char* spConfigGetLoggerFile(SPConfig config);
 
-/*
+/**
  * Returns the level of the logger
  *
  * @param config - the configuration structure

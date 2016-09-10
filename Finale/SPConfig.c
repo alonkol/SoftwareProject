@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-//#include "SPLogger.h"
 #include "SPConfig.h"
 #define MAXLINESIZE 1024
 #define MAX_PARAM_LEN 64
@@ -79,6 +78,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     SPConfig cfg = (SPConfig)malloc(sizeof(struct sp_config_t));
     if (cfg == NULL){
         printf(MEMORY_ALLOC_FAILURE_MSG);
+        *msg=SP_CONFIG_ALLOC_FAIL;
         return NULL;
     }
 
@@ -108,6 +108,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     {
         printf("The configuration file %s couldn't be opened\n",filename);
         free(cfg);
+        *msg=SP_CONFIG_CANNOT_OPEN_FILE;
         return NULL;
     }
 
@@ -120,7 +121,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
             i++;
         }
         // if a '#' was found, skip row
-        if (str[i] == '#'){
+        if (str[i] == '#' || str[i]=='\n' || str[i]=='\r'){
             continue;
         }
         j = 0;
@@ -137,6 +138,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
         if (str[i] != '='){
             printConfigError(filename, line, INVALID_CONFIG_LINE_MSG);
             free(cfg);
+            *msg=SP_CONFIG_INVALID_STRING;
             return NULL;
         }
         i++;
@@ -157,6 +159,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
         if (str[i] != '\0' && str[i] != '\n' && str[i] != '#' && str[i]!='\r'){
             printConfigError(filename, line, INVALID_CONFIG_LINE_MSG);
             free(cfg);
+            *msg=SP_CONFIG_INVALID_STRING;
             return NULL;
         }
 
@@ -169,9 +172,9 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
                 strcmp(variableValue, ".png") != 0 &&
                 strcmp(variableValue, ".bmp") != 0 &&
                 strcmp(variableValue, ".gif") != 0){
-                printf("fff\n");
                 printConfigError(filename, line, CONSTRAINT_NOT_MET_MSG);
                 free(cfg);
+                *msg=SP_CONFIG_INVALID_STRING;
                 return NULL;
             }
             strcpy(cfg->spImagesSuffix,variableValue);
@@ -180,6 +183,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
             if (cfg->spNumOfImages <= 0){
                 printConfigError(filename, line, CONSTRAINT_NOT_MET_MSG);
                 free(cfg);
+                *msg=SP_CONFIG_INVALID_INTEGER;
                 return NULL;
             }
         } else if (strcmp(variableName,"spPCADimension") == 0){
@@ -187,6 +191,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
             if (cfg->spPCADimension < 10 || cfg->spPCADimension > 28){
                 printConfigError(filename, line, CONSTRAINT_NOT_MET_MSG);
                 free(cfg);
+                *msg=SP_CONFIG_INVALID_INTEGER;
                 return NULL;
             }
         } else if (strcmp(variableName,"spPCAFilename") == 0){
@@ -196,12 +201,14 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
             if (cfg->spNumOfFeatures <= 0){
                 printConfigError(filename, line, CONSTRAINT_NOT_MET_MSG);
                 free(cfg);
+                *msg=SP_CONFIG_INVALID_INTEGER;
                 return NULL;
             }
         } else if (strcmp(variableName,"spExtractionMode") == 0){
             if (strcmp(variableValue,"true") != 0 && strcmp(variableValue,"false") != 0){
                 printConfigError(filename, line, CONSTRAINT_NOT_MET_MSG);
                 free(cfg);
+                 *msg=SP_CONFIG_INVALID_STRING;
                 return NULL;
             }
             cfg->spExtractionMode = (strcmp(variableValue,"true")==0);
@@ -210,6 +217,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
             if (cfg->spNumOfSimilarImages <= 0){
                 printConfigError(filename, line, CONSTRAINT_NOT_MET_MSG);
                 free(cfg);
+                *msg=SP_CONFIG_INVALID_INTEGER;
                 return NULL;
             }
         } else if (strcmp(variableName,"spKDTreeSplitMethod") == 0){
@@ -222,6 +230,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
             } else {
                 printConfigError(filename, line, CONSTRAINT_NOT_MET_MSG);
                 free(cfg);
+                *msg=SP_CONFIG_INVALID_STRING;
                 return NULL;
             }
         } else if (strcmp(variableName,"spKNN") == 0){
@@ -229,12 +238,14 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
             if (cfg->spKNN <= 0){
                 printConfigError(filename, line, CONSTRAINT_NOT_MET_MSG);
                 free(cfg);
+                *msg=SP_CONFIG_INVALID_INTEGER;
                 return NULL;
             }
         } else if (strcmp(variableName,"spMinimalGUI") == 0){
             if (strcmp(variableValue,"true") != 0 && strcmp(variableValue,"false") != 0){
                 printConfigError(filename, line, CONSTRAINT_NOT_MET_MSG);
                 free(cfg);
+                *msg=SP_CONFIG_INVALID_STRING;
                 return NULL;
             }
             cfg->spMinimalGUI = (strcmp(variableValue,"true")==0);
@@ -243,6 +254,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
             if (cfg->spLoggerLevel <= 0 || cfg->spLoggerLevel > 4){
                 printConfigError(filename, line, CONSTRAINT_NOT_MET_MSG);
                 free(cfg);
+                *msg=SP_CONFIG_INVALID_INTEGER;
                 return NULL;
             }
         } else if (strcmp(variableName,"spLoggerFilename") == 0){
@@ -251,6 +263,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
             // variable name not valid - print error
             printConfigError(filename, line, INVALID_CONFIG_LINE_MSG);
             free(cfg);
+            *msg=SP_CONFIG_INVALID_STRING;
             return NULL;
         }
     }
@@ -260,15 +273,19 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     // check if any non-default parameter is missing
     if (cfg->spNumOfImages == -1){
         strcpy(param,"spNumOfImages");
+        *msg=SP_CONFIG_MISSING_NUM_IMAGES;
     }
     if (strcmp(cfg->spImagesSuffix, "")==0){
         strcpy(param,"spImageSuffix");
+        *msg=SP_CONFIG_MISSING_SUFFIX;
     }
     if (strcmp(cfg->spImagesPrefix, "")==0){
         strcpy(param,"spImagePrefix");
+        *msg=SP_CONFIG_MISSING_PREFIX;
     }
     if (strcmp(cfg->spImagesDirectory, "")==0){
         strcpy(param,"spImageDirectory");
+        *msg=SP_CONFIG_MISSING_DIR;
     }
     if (strcmp(param,"")!=0){
         printMissingParamError(filename, line, param);
@@ -277,7 +294,6 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     *msg = SP_CONFIG_SUCCESS;
     return cfg;
 }
-
 
 // auxiliary functions for printing config error messages
 
