@@ -115,13 +115,16 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     {
         line++;
         i = 0;
+        // get rid of any spaces at the beginning of the row
         while (str[i] == ' '){
             i++;
         }
+        // if a '#' was found, skip row
         if (str[i] == '#'){
             continue;
         }
         j = 0;
+        // move indexes until reaching a '#' or a blank space.
         while (str[i] != '=' && str[i] != ' '){
             variableName[j] = str[i];
             i++;
@@ -244,13 +247,17 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
             }
         } else if (strcmp(variableName,"spLoggerFilename") == 0){
             strcpy(cfg->spLoggerFilename,variableValue);
+        } else {
+            // variable name not valid - print error
+            printConfigError(filename, line, INVALID_CONFIG_LINE_MSG);
+            free(cfg);
+            return NULL;
         }
     }
 
     fclose(fp);
 
     // check if any non-default parameter is missing
-
     if (cfg->spNumOfImages == -1){
         strcpy(param,"spNumOfImages");
     }
@@ -493,30 +500,3 @@ char* spConfigGetLoggerFile(SPConfig config){
 SP_LOGGER_LEVEL spConfigGetLoggerLevel(SPConfig config){
     return config->spLoggerLevel;
 }
-
-/**************************/
-/**************************/
-/**************************/
-/**************************/
-/** printing for testing **/
-void spConfigPrint(SPConfig config){
-    printf("image directory: %s\n",config->spImagesDirectory);
-    printf("image pre: %s\n",config->spImagesPrefix);
-    printf("image suf: %s\n",config->spImagesSuffix);
-    printf("num images: %d\n",config->spNumOfImages);
-    printf("spPCADimension: %d\n",config->spPCADimension);
-    printf("spPCAFilename: %s\n",config->spPCAFilename);
-    printf("spExtractionMode: %d\n",config->spExtractionMode);
-    printf("spNumOfSimilarImages: %d\n",config->spNumOfSimilarImages);
-    printf("spNumOfFeatures: %d\n",config->spNumOfFeatures);
-    printf("spKDTreeSplitMethod: %d\n",config->spKDTreeSplitMethod);
-    printf("spKNN: %d\n",config->spKNN);
-    printf("spMinimalGUI: %d\n",config->spMinimalGUI);
-    printf("spLoggerLevel: %d\n",config->spLoggerLevel);
-    printf("spLoggerFilename: %s\n",config->spLoggerFilename);
-}
-/**************************/
-/**************************/
-/**************************/
-/**************************/
-

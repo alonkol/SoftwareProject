@@ -57,6 +57,7 @@ typedef enum tree_split_method{
  */
 SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg);
 
+
 /* auxiliary functions for printing config error messages */
 void printConfigError(const char* filename, int line, char* msg);
 void printMissingParamError(const char* filename, int line, char* param);
@@ -115,6 +116,46 @@ int spConfigGetNumOfImages(const SPConfig config, SP_CONFIG_MSG* msg);
  */
 int spConfigGetNumOfFeatures(const SPConfig config, SP_CONFIG_MSG* msg);
 
+/*
+ * Returns the split method to be used on extraction
+ *
+ * @param config - the configuration structure
+ * @return SPLIT_METHOD
+ */
+SPLIT_METHOD getSplitMethod(const SPConfig config);
+
+/*
+ * Returns the KNN value configured
+ *
+ * @param config - the configuration structure
+ * @return int KNN value
+ */
+int spConfigGetKNN(SPConfig config);
+
+/*
+ * Returns the number of similar images to present
+ *
+ * @param config - the configuration structure
+ * @return int number of images
+ */
+int spConfigGetNumOfSimilar(SPConfig config);
+
+/*
+ * Returns the name of the logger file
+ *
+ * @param config - the configuration structure
+ * @return char* logger file name
+ */
+char* spConfigGetLoggerFile(SPConfig config);
+
+/*
+ * Returns the level of the logger
+ *
+ * @param config - the configuration structure
+ * @return SP_LOGGER_LEVEL
+ */
+SP_LOGGER_LEVEL spConfigGetLoggerLevel(SPConfig config);
+
 /**
  * Returns the dimension of the PCA. i.e the value of spPCADimension.
  *
@@ -155,7 +196,6 @@ int spConfigGetPCADim(const SPConfig config, SP_CONFIG_MSG* msg);
  */
 SP_CONFIG_MSG spConfigGetImagePath(char* imagePath, const SPConfig config,
 		int index);
-SP_CONFIG_MSG spConfigGetPath(char* imagePath, const SPConfig config,int index,char* suffix);
 /**
  * The function stores in pcaPath the full path of the pca file.
  * For example given the values of:
@@ -179,11 +219,23 @@ SP_CONFIG_MSG spConfigGetPCAPath(char* pcaPath, const SPConfig config);
  * If config == NULL nothing is done.
  */
 void spConfigDestroy(SPConfig config);
-SPLIT_METHOD getSplitMethod(const SPConfig config);
-int spConfigGetKNN(SPConfig config);
-void spConfigPrint(SPConfig config);
-int spConfigGetNumOfSimilar(SPConfig config);
-char* spConfigGetLoggerFile(SPConfig config);
-SP_LOGGER_LEVEL spConfigGetLoggerLevel(SPConfig config);
+
+/**
+ * This is an auxiliary function.
+ * Given an index 'index' and a suffix 'suffix', this function stores in imagePath the full path of the
+ * ith image.
+ *
+ * @param imagePath - an address to store the result in, it must contain enough space.
+ * @param config - the configuration structure
+ * @param index - the index of the image.
+ * @param suffix - the suffix of the file.
+ *
+ * @return
+ * - SP_CONFIG_INVALID_ARGUMENT - if imagePath == NULL or config == NULL
+ * - SP_CONFIG_INDEX_OUT_OF_RANGE - if index >= spNumOfImages
+ * - SP_CONFIG_SUCCESS - in case of success
+ */
+SP_CONFIG_MSG spConfigGetPath(char* imagePath, const SPConfig config,int index,char* suffix);
+
 
 #endif /* SPCONFIG_H_ */
